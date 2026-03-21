@@ -364,12 +364,12 @@ export default function WhyChooseUsContent() {
                 <motion.div
                   key={item.number}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
+                  viewport={{ once: true, margin: "-10px" }}
                   transition={{ duration: 0.5, delay: index * 0.06, ease }}
                   className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden"
                 >
                   {/* Illustration */}
-                  <div className="relative h-[160px] md:h-auto bg-apple-gray-light/50 overflow-hidden">
+                  <div className="relative h-[200px] sm:h-[160px] md:h-auto bg-apple-gray-light/50 overflow-hidden">
                     <Visual />
                   </div>
                   {/* Content */}

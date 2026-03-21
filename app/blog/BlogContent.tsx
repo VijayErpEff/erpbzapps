@@ -183,12 +183,12 @@ export default function BlogContent() {
                   <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
+                    viewport={{ once: true, margin: "-10px" }}
                     transition={{ duration: 0.5, delay: i * 0.06, ease }}
                     className="group rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-pointer"
                   >
                     {/* Illustration */}
-                    <div className="relative h-[140px] bg-apple-gray-light/50 overflow-hidden">
+                    <div className="relative h-[180px] sm:h-[140px] bg-apple-gray-light/50 overflow-hidden">
                       <Visual />
                       {/* Category pill */}
                       <div className="absolute top-3 left-3 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1">

@@ -319,13 +319,13 @@ export default function ServicesContent() {
                   key={service.title}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
+                  viewport={{ once: true, margin: "-10px" }}
                   transition={{ duration: 0.5, delay: i * 0.06, ease }}
                 >
                   <Link href={service.href} className="block group">
                     <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden h-full">
                       {/* Illustration */}
-                      <div className="relative h-[150px] bg-apple-gray-light/60 overflow-hidden">
+                      <div className="relative h-[180px] sm:h-[150px] bg-apple-gray-light/60 overflow-hidden">
                         <Visual />
                         {service.partner && (
                           <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1">
@@ -345,7 +345,7 @@ export default function ServicesContent() {
                           {service.title}
                         </h3>
                         <p className="text-[0.8125rem] text-apple-gray leading-relaxed">{service.description}</p>
-                        <div className="mt-4 text-brand-500 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                        <div className="mt-4 text-brand-500 text-sm font-medium flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:translate-y-1 md:group-hover:translate-y-0">
                           Learn more
                           <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                         </div>

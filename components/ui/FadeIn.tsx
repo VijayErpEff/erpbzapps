@@ -26,7 +26,7 @@ export default function FadeIn({
     <motion.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: "-80px" }}
+      viewport={{ once, margin: "-20px" }}
       transition={{ duration, delay, ease }}
       className={className}
     >
@@ -48,7 +48,7 @@ export function FadeInStagger({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-20px" }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: staggerDelay } },
