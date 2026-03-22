@@ -111,17 +111,17 @@ export default function IndustriesContent() {
                 <FadeInChild
                   key={industry.title}
                   index={index}
-                  className="group rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-default"
+                  className="group card-hover cursor-default"
                 >
                   {/* Illustration area */}
-                  <div className="relative h-[140px] bg-apple-gray-light/60 overflow-hidden">
+                  <div className="card-shimmer relative h-[140px] bg-apple-gray-light/60 overflow-hidden">
                     {/* Subtle gradient overlay */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${industry.accent} opacity-[0.03]`} />
                     <Icon className="relative z-10" />
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 md:p-6">
+                  <div className="card-content p-5 md:p-6">
                     {/* Metric badge — Kivyo-inspired */}
                     <div className="flex items-center gap-2 mb-3">
                       <div className={`w-1.5 h-1.5 rounded-full ${industry.accentBg}`} />

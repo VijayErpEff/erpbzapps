@@ -59,7 +59,7 @@ export default function Testimonials() {
             <FadeInChild
               key={testimonial.name}
               index={i}
-              className="rounded-[22px] bg-white border border-black/[0.04] shadow-card p-6 md:p-8 flex flex-col"
+              className="card-hover p-6 md:p-8 flex flex-col"
             >
               {/* Accent bar */}
               <div className={`w-8 h-1 rounded-full ${testimonial.accent} opacity-40 mb-5`} />

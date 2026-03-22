@@ -157,10 +157,10 @@ export default function BlogContent() {
                 <Link key={article.title} href={article.href} className="block">
                   <FadeInChild
                     index={i}
-                    className="group rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-pointer"
+                    className="group card-hover cursor-pointer"
                   >
                     {/* Illustration */}
-                    <div className="relative h-[180px] sm:h-[140px] bg-apple-gray-light/50 overflow-hidden">
+                    <div className="card-shimmer relative h-[180px] sm:h-[140px] bg-apple-gray-light/50 overflow-hidden">
                       <Visual />
                       {/* Category pill */}
                       <div className="absolute top-3 left-3 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1">
@@ -168,7 +168,7 @@ export default function BlogContent() {
                       </div>
                     </div>
                     {/* Content */}
-                    <div className="p-5 md:p-6">
+                    <div className="card-content p-5 md:p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />
                         <span className="text-[0.6875rem] font-semibold text-apple-gray-dark tracking-tight">{article.tag}</span>

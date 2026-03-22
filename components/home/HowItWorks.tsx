@@ -358,15 +358,15 @@ export default function HowItWorks() {
               <FadeIn
                 key={step.number}
                 delay={index * 0.1}
-                className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden"
+                className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] card-hover"
               >
                 {/* Illustration — hidden on mobile for cleaner layout */}
-                <div className="relative h-[120px] md:h-auto bg-apple-gray-light/50 overflow-hidden" aria-hidden="true">
+                <div className="card-shimmer relative h-[120px] md:h-auto bg-apple-gray-light/50 overflow-hidden" aria-hidden="true">
                   <Visual />
                 </div>
 
                 {/* Content */}
-                <div className="p-6 md:p-8 flex flex-col justify-center">
+                <div className="card-content p-6 md:p-8 flex flex-col justify-center">
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gradient leading-none">
                       {step.number}

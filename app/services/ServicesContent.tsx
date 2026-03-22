@@ -286,9 +286,9 @@ export default function ServicesContent() {
                   index={i}
                 >
                   <Link href={service.href} className="block group">
-                    <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden h-full">
+                    <div className="card-hover h-full">
                       {/* Illustration */}
-                      <div className="relative h-[180px] sm:h-[150px] bg-apple-gray-light/60 overflow-hidden">
+                      <div className="card-shimmer relative h-[180px] sm:h-[150px] bg-apple-gray-light/60 overflow-hidden">
                         <Visual />
                         {service.partner && (
                           <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/80 backdrop-blur-sm rounded-full px-2.5 py-1">
@@ -298,7 +298,7 @@ export default function ServicesContent() {
                         )}
                       </div>
                       {/* Content */}
-                      <div className="p-5 md:p-6">
+                      <div className="card-content p-5 md:p-6">
                         <div className="flex items-center gap-2 mb-3">
                           <div className={`w-1.5 h-1.5 rounded-full ${service.accent}`} />
                           <span className="text-[0.6875rem] font-semibold text-apple-gray-dark tracking-tight">{service.metric}</span>

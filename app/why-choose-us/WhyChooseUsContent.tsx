@@ -292,14 +292,14 @@ export default function WhyChooseUsContent() {
                   delay={index * 0.1}
                 >
                   <div
-                    className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden"
+                    className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] card-hover"
                   >
                     {/* Illustration */}
-                    <div className="relative h-[200px] sm:h-[160px] md:h-auto bg-apple-gray-light/50 overflow-hidden">
+                    <div className="card-shimmer relative h-[200px] sm:h-[160px] md:h-auto bg-apple-gray-light/50 overflow-hidden">
                       <Visual />
                     </div>
                     {/* Content */}
-                    <div className="p-5 md:p-7 flex flex-col justify-center">
+                    <div className="card-content p-5 md:p-7 flex flex-col justify-center">
                       <div className="flex items-center gap-2 mb-3">
                         <div className={`w-1.5 h-1.5 rounded-full ${item.accent}`} />
                         <span className="text-[0.6875rem] font-bold text-gradient tracking-wide">{item.number}</span>

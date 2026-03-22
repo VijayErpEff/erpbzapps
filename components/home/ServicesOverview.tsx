@@ -285,9 +285,9 @@ export default function ServicesOverview() {
                 index={i}
               >
                 <Link href={service.href} className="block group">
-                  <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-pointer">
-                    {/* Illustration area — reduced on mobile */}
-                    <div className="relative h-[120px] sm:h-[180px] bg-apple-gray-light/60 overflow-hidden" aria-hidden="true">
+                  <div className="card-hover">
+                    {/* Illustration area */}
+                    <div className="card-shimmer relative h-[120px] sm:h-[180px] bg-apple-gray-light/60 overflow-hidden" aria-hidden="true">
                       <Illustration />
                       {/* Partner badge overlay */}
                       {service.partner && (
@@ -308,7 +308,7 @@ export default function ServicesOverview() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-5 md:p-6">
+                    <div className="card-content p-5 md:p-6">
                       {/* Metric badge */}
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-brand-500" />

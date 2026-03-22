@@ -49,11 +49,22 @@ export default function FadeIn({
     return () => observer.disconnect();
   }, []);
 
-  const style: CSSProperties = {
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? "translateY(0)" : `translateY(${y}px)`,
-    transition: `opacity ${duration}s ${EASING} ${delay}s, transform ${duration}s ${EASING} ${delay}s`,
-  };
+  const style: CSSProperties = isVisible
+    ? {
+        opacity: 1,
+        transform: "translateY(0) scale(1)",
+        filter: "blur(0)",
+        transition: [
+          `opacity ${duration}s ${EASING} ${delay}s`,
+          `transform ${duration + 0.1}s ${EASING} ${delay}s`,
+          `filter ${duration}s ${EASING} ${delay}s`,
+        ].join(", "),
+      }
+    : {
+        opacity: 0,
+        transform: `translateY(${y}px) scale(0.97)`,
+        filter: "blur(3px)",
+      };
 
   return createElement(as, { ref, style, className }, children);
 }

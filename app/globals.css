@@ -69,7 +69,7 @@
 
   .card-apple:hover {
     @apply shadow-card-hover;
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.01);
   }
 
   .mesh-gradient {
@@ -85,19 +85,92 @@
   }
 }
 
-/* FadeIn stagger system */
+/* ── FadeIn stagger system ── */
 .stagger-hidden > .fade-in-child {
   opacity: 0;
-  transform: translateY(var(--child-y, 30px));
+  transform: translateY(var(--child-y, 24px)) scale(0.97);
+  filter: blur(3px);
 }
 
 .stagger-visible > .fade-in-child {
   opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transition:
+    opacity 0.6s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    transform 0.7s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    filter 0.6s cubic-bezier(0.21, 0.45, 0.27, 0.9);
+  transition-delay: calc(var(--child-index, 0) * var(--stagger-delay, 0.12s));
+}
+
+/* Internal card content stagger — illustration first, text follows */
+.stagger-visible > .fade-in-child .card-illustration {
+  transition: opacity 0.5s ease 0s;
+}
+
+.stagger-hidden > .fade-in-child .card-content {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.stagger-visible > .fade-in-child .card-content {
+  opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 0.7s cubic-bezier(0.21, 0.45, 0.27, 0.9),
-    transform 0.7s cubic-bezier(0.21, 0.45, 0.27, 0.9);
-  transition-delay: calc(var(--child-index, 0) * var(--stagger-delay, 0.1s));
+    opacity 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9) 0.15s,
+    transform 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9) 0.15s;
+}
+
+/* Illustration shimmer sweep on reveal */
+.stagger-hidden > .fade-in-child .card-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+}
+
+.stagger-visible > .fade-in-child .card-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 60%
+  );
+  animation: shimmer 0.8s cubic-bezier(0.21, 0.45, 0.27, 0.9) forwards;
+  animation-delay: calc(var(--child-index, 0) * var(--stagger-delay, 0.12s));
+}
+
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* ── Enhanced card hover ── */
+.card-hover {
+  @apply rounded-[22px] bg-white border border-black/[0.04] overflow-hidden cursor-pointer;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    box-shadow 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(37, 99, 235, 0.08),
+    0 0 0 1px rgba(37, 99, 235, 0.04);
 }
 
 /* Reduced motion — respect user preference */
@@ -109,5 +182,16 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .stagger-hidden > .fade-in-child {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .stagger-hidden > .fade-in-child .card-content {
+    opacity: 1;
+    transform: none;
   }
 }

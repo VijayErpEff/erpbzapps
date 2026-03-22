@@ -346,15 +346,15 @@ export default function ValueProps() {
               <FadeInChild
                 key={item.title}
                 index={index}
-                className="group rounded-[22px] bg-white/[0.03] border border-white/[0.06] overflow-hidden hover:bg-white/[0.05] transition-all duration-500"
+                className="group card-hover rounded-[22px] bg-white/[0.03] border border-white/[0.06] overflow-hidden hover:bg-white/[0.05] transition-all duration-500"
               >
                 {/* Illustration — reduced height on mobile */}
-                <div className="relative h-[100px] sm:h-[160px] overflow-hidden" aria-hidden="true">
+                <div className="card-shimmer relative h-[100px] sm:h-[160px] overflow-hidden" aria-hidden="true">
                   <Visual />
                 </div>
 
                 {/* Content */}
-                <div className="p-5 md:p-6">
+                <div className="card-content p-5 md:p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${item.gradient}`} />
                     <span className="text-[0.6875rem] font-semibold text-white/60 tracking-tight">
