@@ -114,9 +114,9 @@ export default function IndustriesContent() {
                   className="group card-hover cursor-default"
                 >
                   {/* Illustration area */}
-                  <div className="card-shimmer relative h-[140px] bg-apple-gray-light/60 overflow-hidden">
-                    {/* Subtle gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${industry.accent} opacity-[0.03]`} />
+                  <div className="card-shimmer relative h-[160px] bg-gradient-to-br from-slate-50 to-slate-100/80 overflow-hidden">
+                    {/* Accent gradient overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${industry.accent} opacity-[0.06]`} />
                     <Icon className="relative z-10" />
                   </div>
 
