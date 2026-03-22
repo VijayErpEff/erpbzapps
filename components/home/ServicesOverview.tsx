@@ -332,7 +332,7 @@ export default function ServicesOverview() {
                 key={service.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "-10px" }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease }}
               >
                 <Link href={service.href} className="block group">
