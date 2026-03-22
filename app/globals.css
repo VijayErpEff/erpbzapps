@@ -154,7 +154,22 @@
   to { transform: translateX(100%); opacity: 0; }
 }
 
-/* ── Enhanced card hover ── */
+/* Dark shimmer variant */
+.stagger-visible > .fade-in-child .card-shimmer-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  animation: shimmer 0.8s cubic-bezier(0.21, 0.45, 0.27, 0.9) forwards;
+  animation-delay: calc(var(--child-index, 0) * var(--stagger-delay, 0.12s));
+}
+
+/* ── Enhanced card hover (light theme) ── */
 .card-hover {
   @apply rounded-[22px] bg-white border border-black/[0.04] overflow-hidden cursor-pointer;
   box-shadow:
@@ -171,6 +186,33 @@
     0 4px 12px rgba(0, 0, 0, 0.06),
     0 20px 40px rgba(37, 99, 235, 0.08),
     0 0 0 1px rgba(37, 99, 235, 0.04);
+}
+
+/* ── Dark theme card hover ── */
+.card-hover-dark {
+  @apply rounded-[22px] overflow-hidden cursor-pointer;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    box-shadow 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    background 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    border-color 0.5s cubic-bezier(0.21, 0.45, 0.27, 0.9);
+}
+
+.card-hover-dark:hover {
+  transform: translateY(-6px) scale(1.015);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 20px 40px rgba(37, 99, 235, 0.12),
+    0 0 0 1px rgba(37, 99, 235, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Reduced motion — respect user preference */

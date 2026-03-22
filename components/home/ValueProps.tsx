@@ -9,32 +9,32 @@ function SMBVisual() {
     <svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* Grid */}
       {[0, 1, 2, 3, 4, 5].map((i) => (
-        <line key={i} x1="8" y1={15 + i * 22} x2="252" y2={15 + i * 22} stroke="white" strokeWidth="0.3" opacity="0.025" />
+        <line key={i} x1="8" y1={15 + i * 22} x2="252" y2={15 + i * 22} stroke="white" strokeWidth="0.3" opacity="0.06" />
       ))}
 
       {/* ── Bar chart ── */}
       {bars.map((h, i) => (
         <rect key={i} x={16 + i * 13} y={115 - h} width="8" height={h} rx="2"
-          fill="url(#smb-bar)" opacity={0.06 + i * 0.015} />
+          fill="url(#smb-bar)" opacity={0.15 + i * 0.04} />
       ))}
       {/* Trend line */}
       <path d="M20 100 C35 85, 42 90, 50 82 S65 65, 75 70 S90 52, 105 44"
-        stroke="#14b8a6" strokeWidth="1.5" fill="none" opacity="0.25" strokeLinecap="round" />
-      <circle cx="105" cy="44" r="2.5" fill="#14b8a6" opacity="0.35" />
+        stroke="#14b8a6" strokeWidth="2" fill="none" opacity="0.55" strokeLinecap="round" />
+      <circle cx="105" cy="44" r="3" fill="#14b8a6" opacity="0.6" />
       {/* Axis */}
-      <text x="16" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.12">Q1</text>
-      <text x="95" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.12">Q7</text>
+      <text x="16" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.3">Q1</text>
+      <text x="95" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.3">Q7</text>
 
       {/* ── Growth ring ── */}
       <g>
-        <circle cx="148" cy="62" r="28" stroke="white" strokeWidth="1" opacity="0.04" />
+        <circle cx="148" cy="62" r="28" stroke="white" strokeWidth="1" opacity="0.08" />
         <circle cx="148" cy="62" r="28" stroke="url(#smb-ring)" strokeWidth="3.5"
-          fill="none" opacity="0.22" strokeLinecap="round"
+          fill="none" opacity="0.5" strokeLinecap="round"
           strokeDasharray={`${Math.round(2 * Math.PI * 28 * 0.78)} ${Math.round(2 * Math.PI * 28 * 0.22)}`}
           transform="rotate(-90 148 62)"
           strokeDashoffset="0" />
-        <text x="148" y="58" fontSize="15" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">3×</text>
-        <text x="148" y="70" fontSize="4.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.18">Growth</text>
+        <text x="148" y="58" fontSize="15" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.7">3×</text>
+        <text x="148" y="70" fontSize="4.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">Growth</text>
       </g>
 
       {/* ── KPI cards ── */}
@@ -44,11 +44,11 @@ function SMBVisual() {
         { y: 90, label: "Efficiency", value: "94%", iconD: "M211 97 L214 100 L220 92" },
       ].map((kpi) => (
         <g key={kpi.label}>
-          <rect x="198" y={kpi.y} width="54" height="28" rx="6" fill="white" opacity="0.035" />
-          <rect x="198" y={kpi.y} width="54" height="28" rx="6" stroke="white" strokeWidth="0.3" opacity="0.05" />
-          <path d={kpi.iconD} stroke="#14b8a6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3" />
-          <text x="228" y={kpi.y + 11} fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.18">{kpi.label}</text>
-          <text x="228" y={kpi.y + 21} fontSize="7" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.38">{kpi.value}</text>
+          <rect x="198" y={kpi.y} width="54" height="28" rx="6" fill="white" opacity="0.07" />
+          <rect x="198" y={kpi.y} width="54" height="28" rx="6" stroke="white" strokeWidth="0.5" opacity="0.1" />
+          <path d={kpi.iconD} stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.6" />
+          <text x="228" y={kpi.y + 11} fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.4">{kpi.label}</text>
+          <text x="228" y={kpi.y + 21} fontSize="7" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.7">{kpi.value}</text>
         </g>
       ))}
 
@@ -83,45 +83,45 @@ function E2EVisual() {
   return (
     <svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* Timeline backbone */}
-      <line x1="32" y1="30" x2="232" y2="30" stroke="white" strokeWidth="0.5" opacity="0.06" />
+      <line x1="32" y1="30" x2="232" y2="30" stroke="white" strokeWidth="0.5" opacity="0.12" />
 
       {/* Phase nodes */}
       {phases.map((p) => (
         <g key={p.label}>
-          <circle cx={p.x + 10} cy="30" r="10" stroke={p.color} strokeWidth="0.8"
-            fill={p.done ? p.color : "none"} opacity={p.done ? 0.12 : 0.1}
+          <circle cx={p.x + 10} cy="30" r="10" stroke={p.color} strokeWidth="1"
+            fill={p.done ? p.color : "none"} opacity={p.done ? 0.3 : 0.2}
             strokeDasharray={!p.done && !("active" in p && p.active) ? "2 2" : "none"} />
           {p.done && (
             <path d={`M${p.x + 5} 30 L${p.x + 9} 34 L${p.x + 16} 25`}
-              stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4" />
+              stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.7" />
           )}
-          <text x={p.x + 10} y="50" fontSize="4" fontWeight="500" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.22">{p.label}</text>
+          <text x={p.x + 10} y="50" fontSize="4" fontWeight="500" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.45">{p.label}</text>
         </g>
       ))}
 
       {/* Connectors */}
       {[0, 1, 2, 3].map((i) => (
         <line key={i} x1={phases[i].x + 20} y1="30" x2={phases[i + 1].x} y2="30"
-          stroke="url(#e2e-ln)" strokeWidth="1" opacity="0.08"
+          stroke="url(#e2e-ln)" strokeWidth="1.5" opacity="0.2"
           strokeDasharray={i >= 3 ? "2 2" : "none"} />
       ))}
 
       {/* Gantt label */}
-      <text x="14" y="70" fontSize="3.2" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.1" letterSpacing="0.5">TIMELINE</text>
+      <text x="14" y="70" fontSize="3.2" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.25" letterSpacing="0.5">TIMELINE</text>
 
       {/* Gantt bars */}
       {gantt.map((bar, i) => (
         <rect key={i} x={bar.x} y={bar.y} width={bar.w} height="5" rx="2.5"
-          fill={bar.color} opacity={0.07 + i * 0.015} />
+          fill={bar.color} opacity={0.2 + i * 0.04} />
       ))}
 
       {/* "One Partner" badge */}
       <g>
-        <rect x="186" y="60" width="62" height="18" rx="9" fill="white" opacity="0.04" />
-        <rect x="186" y="60" width="62" height="18" rx="9" stroke="white" strokeWidth="0.3" opacity="0.06" />
-        <circle cx="196" cy="69" r="3.5" fill="#14b8a6" opacity="0.2" />
-        <path d="M194 69 L195.5 70.5 L198 67.5" stroke="#14b8a6" strokeWidth="0.8" strokeLinecap="round" fill="none" opacity="0.4" />
-        <text x="203" y="71.5" fontSize="3.8" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.22">One Partner</text>
+        <rect x="186" y="60" width="62" height="18" rx="9" fill="white" opacity="0.08" />
+        <rect x="186" y="60" width="62" height="18" rx="9" stroke="white" strokeWidth="0.5" opacity="0.12" />
+        <circle cx="196" cy="69" r="3.5" fill="#14b8a6" opacity="0.4" />
+        <path d="M194 69 L195.5 70.5 L198 67.5" stroke="#14b8a6" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.7" />
+        <text x="203" y="71.5" fontSize="3.8" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.5">One Partner</text>
       </g>
 
       <defs>
@@ -139,68 +139,64 @@ function CertVisual() {
     <svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* ── Microsoft credential card ── */}
       <g>
-        <rect x="12" y="14" width="108" height="72" rx="8" fill="white" opacity="0.04" />
-        <rect x="12" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.4" opacity="0.06" />
-        {/* MS Logo */}
-        <rect x="24" y="26" width="6" height="6" fill="#F25022" opacity="0.45" rx="0.5" />
-        <rect x="31.5" y="26" width="6" height="6" fill="#7FBA00" opacity="0.45" rx="0.5" />
-        <rect x="24" y="33.5" width="6" height="6" fill="#00A4EF" opacity="0.45" rx="0.5" />
-        <rect x="31.5" y="33.5" width="6" height="6" fill="#FFB900" opacity="0.45" rx="0.5" />
-        <text x="44" y="32" fontSize="4.5" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.3">Dynamics 365</text>
-        <text x="44" y="40" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.18">Business Central</text>
-        <line x1="24" y1="50" x2="108" y2="50" stroke="white" strokeWidth="0.3" opacity="0.04" />
-        {/* Verified */}
-        <circle cx="32" cy="64" r="7" fill="#2563eb" opacity="0.08" />
-        <circle cx="32" cy="64" r="7" stroke="#2563eb" strokeWidth="0.6" opacity="0.15" />
-        <path d="M28 64 L31 67 L36 61" stroke="#2563eb" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4" />
-        <text x="44" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Certified</text>
-        <text x="44" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.15">Partner</text>
+        <rect x="12" y="14" width="108" height="72" rx="8" fill="white" opacity="0.07" />
+        <rect x="12" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.5" opacity="0.12" />
+        <rect x="24" y="26" width="6" height="6" fill="#F25022" opacity="0.7" rx="0.5" />
+        <rect x="31.5" y="26" width="6" height="6" fill="#7FBA00" opacity="0.7" rx="0.5" />
+        <rect x="24" y="33.5" width="6" height="6" fill="#00A4EF" opacity="0.7" rx="0.5" />
+        <rect x="31.5" y="33.5" width="6" height="6" fill="#FFB900" opacity="0.7" rx="0.5" />
+        <text x="44" y="32" fontSize="4.5" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.6">Dynamics 365</text>
+        <text x="44" y="40" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.4">Business Central</text>
+        <line x1="24" y1="50" x2="108" y2="50" stroke="white" strokeWidth="0.3" opacity="0.08" />
+        <circle cx="32" cy="64" r="7" fill="#2563eb" opacity="0.15" />
+        <circle cx="32" cy="64" r="7" stroke="#2563eb" strokeWidth="0.8" opacity="0.3" />
+        <path d="M28 64 L31 67 L36 61" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.7" />
+        <text x="44" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.5">Certified</text>
+        <text x="44" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.35">Partner</text>
       </g>
 
       {/* ── Salesforce credential card ── */}
       <g>
-        <rect x="140" y="14" width="108" height="72" rx="8" fill="white" opacity="0.04" />
-        <rect x="140" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.4" opacity="0.06" />
-        {/* SF Cloud */}
-        <path d="M159 28c.6-.6 1.4-1 2.3-1 1.2 0 2.1.6 2.7 1.5.5-.2 1-.3 1.5-.3 2 0 3 1.4 3 3s-1.4 3-3.1 3c-.2 0-.5 0-.7-.1-.5.8-1.3 1.3-2.3 1.3-.5 0-.9-.1-1.3-.3-.5.7-1.3 1.1-2.2 1.1-1 0-1.9-.5-2.4-1.3-.2 0-.4.1-.7.1-1.5 0-2.7-1.2-2.7-2.7 0-1.1.7-2 1.6-2.5 0-.2-.1-.5-.1-.7 0-.7.5-1.2 1.2-1.2.5 0 1 .3 1.3.7.4-.3.8-.5 1.3-.5z" fill="#00A1E0" opacity="0.45" />
-        <text x="175" y="32" fontSize="4.5" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.3">Salesforce</text>
-        <text x="175" y="40" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.18">CRM Platform</text>
-        <line x1="152" y1="50" x2="236" y2="50" stroke="white" strokeWidth="0.3" opacity="0.04" />
-        {/* Verified */}
-        <circle cx="160" cy="64" r="7" fill="#00A1E0" opacity="0.08" />
-        <circle cx="160" cy="64" r="7" stroke="#00A1E0" strokeWidth="0.6" opacity="0.15" />
-        <path d="M156 64 L159 67 L164 61" stroke="#00A1E0" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4" />
-        <text x="172" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Certified</text>
-        <text x="172" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.15">Partner</text>
+        <rect x="140" y="14" width="108" height="72" rx="8" fill="white" opacity="0.07" />
+        <rect x="140" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.5" opacity="0.12" />
+        <path d="M159 28c.6-.6 1.4-1 2.3-1 1.2 0 2.1.6 2.7 1.5.5-.2 1-.3 1.5-.3 2 0 3 1.4 3 3s-1.4 3-3.1 3c-.2 0-.5 0-.7-.1-.5.8-1.3 1.3-2.3 1.3-.5 0-.9-.1-1.3-.3-.5.7-1.3 1.1-2.2 1.1-1 0-1.9-.5-2.4-1.3-.2 0-.4.1-.7.1-1.5 0-2.7-1.2-2.7-2.7 0-1.1.7-2 1.6-2.5 0-.2-.1-.5-.1-.7 0-.7.5-1.2 1.2-1.2.5 0 1 .3 1.3.7.4-.3.8-.5 1.3-.5z" fill="#00A1E0" opacity="0.7" />
+        <text x="175" y="32" fontSize="4.5" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.6">Salesforce</text>
+        <text x="175" y="40" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.4">CRM Platform</text>
+        <line x1="152" y1="50" x2="236" y2="50" stroke="white" strokeWidth="0.3" opacity="0.08" />
+        <circle cx="160" cy="64" r="7" fill="#00A1E0" opacity="0.15" />
+        <circle cx="160" cy="64" r="7" stroke="#00A1E0" strokeWidth="0.8" opacity="0.3" />
+        <path d="M156 64 L159 67 L164 61" stroke="#00A1E0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.7" />
+        <text x="172" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.5">Certified</text>
+        <text x="172" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.35">Partner</text>
       </g>
 
       {/* ── Project count ── */}
       <g>
-        <rect x="12" y="96" width="68" height="34" rx="8" fill="white" opacity="0.035" />
-        <rect x="12" y="96" width="68" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
-        <text x="46" y="114" fontSize="14" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">50+</text>
-        <text x="46" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.15">Implementations</text>
+        <rect x="12" y="96" width="68" height="34" rx="8" fill="white" opacity="0.07" />
+        <rect x="12" y="96" width="68" height="34" rx="8" stroke="white" strokeWidth="0.5" opacity="0.1" />
+        <text x="46" y="114" fontSize="14" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.65">50+</text>
+        <text x="46" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">Implementations</text>
       </g>
 
       {/* ── Star rating ── */}
       <g>
-        <rect x="92" y="96" width="90" height="34" rx="8" fill="white" opacity="0.035" />
-        <rect x="92" y="96" width="90" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
+        <rect x="92" y="96" width="90" height="34" rx="8" fill="white" opacity="0.07" />
+        <rect x="92" y="96" width="90" height="34" rx="8" stroke="white" strokeWidth="0.5" opacity="0.1" />
         {[0, 1, 2, 3, 4].map((i) => (
           <path key={i}
             d={`M${106 + i * 12} 110 l1.6-3.2 3.5-.5-2.5-2.5.6-3.5-3.2 1.7-3.2-1.7.6 3.5-2.5 2.5 3.5.5z`}
-            fill="#14b8a6" opacity={0.15 + i * 0.04} />
+            fill="#14b8a6" opacity={0.35 + i * 0.08} />
         ))}
-        <text x="172" y="111" fontSize="7" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.35">4.9</text>
-        <text x="137" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.15">Client Satisfaction</text>
+        <text x="172" y="111" fontSize="7" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.65">4.9</text>
+        <text x="137" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">Client Satisfaction</text>
       </g>
 
       {/* ── Years badge ── */}
       <g>
-        <rect x="194" y="96" width="54" height="34" rx="8" fill="white" opacity="0.035" />
-        <rect x="194" y="96" width="54" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
-        <text x="221" y="115" fontSize="12" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">10+</text>
-        <text x="221" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.15">Years Exp.</text>
+        <rect x="194" y="96" width="54" height="34" rx="8" fill="white" opacity="0.07" />
+        <rect x="194" y="96" width="54" height="34" rx="8" stroke="white" strokeWidth="0.5" opacity="0.1" />
+        <text x="221" y="115" fontSize="12" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.65">10+</text>
+        <text x="221" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">Years Exp.</text>
       </g>
     </svg>
   );
@@ -212,32 +208,29 @@ function BudgetVisual() {
     <svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* ── Cost comparison bars ── */}
       <g>
-        {/* Enterprise bar */}
-        <rect x="22" y="22" width="28" height="85" rx="4" fill="white" opacity="0.03" />
-        <rect x="22" y="22" width="28" height="85" rx="4" stroke="white" strokeWidth="0.3" opacity="0.05" />
-        <text x="36" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.14">Enterprise</text>
-        <text x="36" y="18" fontSize="5" fontWeight="700" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.2">$$$</text>
+        <rect x="22" y="22" width="28" height="85" rx="4" fill="white" opacity="0.06" />
+        <rect x="22" y="22" width="28" height="85" rx="4" stroke="white" strokeWidth="0.5" opacity="0.1" />
+        <text x="36" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">Enterprise</text>
+        <text x="36" y="18" fontSize="5" fontWeight="700" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.45">$$$</text>
 
-        {/* Our bar */}
-        <rect x="58" y="52" width="28" height="55" rx="4" fill="url(#budget-fill)" opacity="0.1" />
-        <rect x="58" y="52" width="28" height="55" rx="4" stroke="url(#budget-fill)" strokeWidth="0.5" opacity="0.12" />
-        <text x="72" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.14">ERP Biz</text>
-        <text x="72" y="48" fontSize="5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">$</text>
+        <rect x="58" y="52" width="28" height="55" rx="4" fill="url(#budget-fill)" opacity="0.25" />
+        <rect x="58" y="52" width="28" height="55" rx="4" stroke="url(#budget-fill)" strokeWidth="0.8" opacity="0.3" />
+        <text x="72" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">ERP Biz</text>
+        <text x="72" y="48" fontSize="5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.7">$</text>
 
-        {/* Savings badge */}
         <g>
-          <rect x="38" y="30" width="30" height="14" rx="7" fill="#14b8a6" opacity="0.08" />
-          <rect x="38" y="30" width="30" height="14" rx="7" stroke="#14b8a6" strokeWidth="0.4" opacity="0.12" />
-          <text x="53" y="40" fontSize="4.5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">−40%</text>
+          <rect x="38" y="30" width="30" height="14" rx="7" fill="#14b8a6" opacity="0.15" />
+          <rect x="38" y="30" width="30" height="14" rx="7" stroke="#14b8a6" strokeWidth="0.6" opacity="0.25" />
+          <text x="53" y="40" fontSize="4.5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.7">−40%</text>
         </g>
       </g>
 
       {/* ── Quote breakdown ── */}
       <g>
-        <rect x="100" y="14" width="100" height="112" rx="8" fill="white" opacity="0.035" />
-        <rect x="100" y="14" width="100" height="112" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
-        <text x="150" y="31" fontSize="5" fontWeight="700" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.28">Transparent Quote</text>
-        <line x1="110" y1="36" x2="190" y2="36" stroke="white" strokeWidth="0.3" opacity="0.05" />
+        <rect x="100" y="14" width="100" height="112" rx="8" fill="white" opacity="0.07" />
+        <rect x="100" y="14" width="100" height="112" rx="8" stroke="white" strokeWidth="0.5" opacity="0.1" />
+        <text x="150" y="31" fontSize="5" fontWeight="700" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.55">Transparent Quote</text>
+        <line x1="110" y1="36" x2="190" y2="36" stroke="white" strokeWidth="0.3" opacity="0.1" />
 
         {[
           { label: "Implementation", amount: "$24,000", w: 60 },
@@ -246,34 +239,32 @@ function BudgetVisual() {
           { label: "Support (yr 1)", amount: "$6,000", w: 24 },
         ].map((item, i) => (
           <g key={item.label}>
-            <text x="110" y={50 + i * 17} fontSize="3.8" fill="white" fontFamily="Inter, sans-serif" opacity="0.2">{item.label}</text>
-            <text x="190" y={50 + i * 17} fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.32" textAnchor="end">{item.amount}</text>
-            <rect x="110" y={53 + i * 17} width={item.w} height="2.5" rx="1.25" fill="url(#budget-fill)" opacity={0.07 + i * 0.02} />
+            <text x="110" y={50 + i * 17} fontSize="3.8" fill="white" fontFamily="Inter, sans-serif" opacity="0.4">{item.label}</text>
+            <text x="190" y={50 + i * 17} fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.6" textAnchor="end">{item.amount}</text>
+            <rect x="110" y={53 + i * 17} width={item.w} height="2.5" rx="1.25" fill="url(#budget-fill)" opacity={0.2 + i * 0.05} />
           </g>
         ))}
 
-        {/* Total */}
         <g>
-          <line x1="110" y1="110" x2="190" y2="110" stroke="url(#budget-fill)" strokeWidth="0.8" opacity="0.15" />
-          <text x="110" y="122" fontSize="4" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Total</text>
-          <text x="190" y="122" fontSize="6.5" fontWeight="800" fill="#14b8a6" fontFamily="Inter, sans-serif" opacity="0.45" textAnchor="end">$47,300</text>
+          <line x1="110" y1="110" x2="190" y2="110" stroke="url(#budget-fill)" strokeWidth="1" opacity="0.3" />
+          <text x="110" y="122" fontSize="4" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.5">Total</text>
+          <text x="190" y="122" fontSize="6.5" fontWeight="800" fill="#14b8a6" fontFamily="Inter, sans-serif" opacity="0.8" textAnchor="end">$47,300</text>
         </g>
       </g>
 
       {/* ── No hidden fees badge ── */}
       <g>
-        <circle cx="224" cy="40" r="16" fill="#14b8a6" opacity="0.06" />
-        <circle cx="224" cy="40" r="16" stroke="#14b8a6" strokeWidth="0.6" opacity="0.12" />
-        <path d="M217 40 L222 45 L232 34" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.35" />
-        <text x="224" y="62" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.25">No Hidden</text>
-        <text x="224" y="68" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.25">Fees</text>
+        <circle cx="224" cy="40" r="16" fill="#14b8a6" opacity="0.12" />
+        <circle cx="224" cy="40" r="16" stroke="#14b8a6" strokeWidth="0.8" opacity="0.25" />
+        <path d="M217 40 L222 45 L232 34" stroke="#14b8a6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.6" />
+        <text x="224" y="62" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.5">No Hidden</text>
+        <text x="224" y="68" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.5">Fees</text>
       </g>
 
-      {/* Fixed price label */}
       <g>
-        <rect x="208" y="82" width="48" height="16" rx="8" fill="white" opacity="0.03" />
-        <rect x="208" y="82" width="48" height="16" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
-        <text x="232" y="93" fontSize="3.5" fontWeight="600" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.18">Fixed Price</text>
+        <rect x="208" y="82" width="48" height="16" rx="8" fill="white" opacity="0.06" />
+        <rect x="208" y="82" width="48" height="16" rx="8" stroke="white" strokeWidth="0.5" opacity="0.1" />
+        <text x="232" y="93" fontSize="3.5" fontWeight="600" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">Fixed Price</text>
       </g>
 
       <defs>
@@ -346,27 +337,28 @@ export default function ValueProps() {
               <FadeInChild
                 key={item.title}
                 index={index}
-                className="group card-hover rounded-[22px] bg-white/[0.03] border border-white/[0.06] overflow-hidden hover:bg-white/[0.05] transition-all duration-500"
               >
-                {/* Illustration — reduced height on mobile */}
-                <div className="card-shimmer relative h-[100px] sm:h-[160px] overflow-hidden" aria-hidden="true">
-                  <Visual />
-                </div>
-
-                {/* Content */}
-                <div className="card-content p-5 md:p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${item.gradient}`} />
-                    <span className="text-[0.6875rem] font-semibold text-white/60 tracking-tight">
-                      Differentiator
-                    </span>
+                <div className="group card-hover-dark">
+                  {/* Illustration */}
+                  <div className="card-shimmer-dark relative h-[140px] sm:h-[160px] overflow-hidden" aria-hidden="true">
+                    <Visual />
                   </div>
-                  <h3 className="text-[1.0625rem] font-semibold text-white leading-snug mb-2 group-hover:text-teal-400 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-[0.8125rem] text-apple-gray leading-relaxed">
-                    {item.description}
-                  </p>
+
+                  {/* Content */}
+                  <div className="card-content p-5 md:p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${item.gradient}`} />
+                      <span className="text-[0.6875rem] font-semibold text-white/60 tracking-tight">
+                        Differentiator
+                      </span>
+                    </div>
+                    <h3 className="text-[1.0625rem] font-semibold text-white leading-snug mb-2 group-hover:text-teal-400 transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-[0.8125rem] text-white/50 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </FadeInChild>
             );
