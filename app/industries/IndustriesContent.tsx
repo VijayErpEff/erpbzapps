@@ -113,9 +113,8 @@ export default function IndustriesContent() {
                 <motion.div
                   key={industry.title}
                   initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: index * 0.06, ease }}
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5, delay: index * 0.06, ease }}
                   className="group rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-default"
                 >
                   {/* Illustration area */}

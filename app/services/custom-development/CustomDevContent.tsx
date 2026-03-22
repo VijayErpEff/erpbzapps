@@ -18,22 +18,21 @@ function DiscoverySVG() {
         x="60" y="18" width="160" height="100" rx="6"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+         transition={{ duration: 1, ease }}
       />
       {/* Whiteboard stand */}
       <motion.line
         x1="140" y1="118" x2="140" y2="132"
         stroke="#d2d2d7" strokeWidth="1.5"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}
       />
       <motion.line
         x1="110" y1="132" x2="170" y2="132"
         stroke="#d2d2d7" strokeWidth="1.5" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}
       />
       {/* Sticky notes on whiteboard */}
       {[
@@ -49,9 +48,8 @@ function DiscoverySVG() {
           key={i} x={note.x} y={note.y} width="28" height="24" rx="3"
           fill={note.fill} fillOpacity={0.12} stroke={note.fill} strokeWidth="0.75"
           initial={{ opacity: 0, y: note.y + 10 }}
-          whileInView={{ opacity: 1, y: note.y }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: note.delay, ease }}
+          animate={{ opacity: 1, y: note.y }}
+           transition={{ duration: 0.5, delay: note.delay, ease }}
         />
       ))}
       {/* Lines on sticky notes */}
@@ -60,8 +58,8 @@ function DiscoverySVG() {
           key={`line-${i}`}
           x1={x + 5} y1={40} x2={x + 23} y2={40}
           stroke="#86868b" strokeWidth="0.75" strokeLinecap="round"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.8 + i * 0.1, ease }}
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.8 + i * 0.1, ease }}
         />
       ))}
       {/* People silhouettes */}
@@ -71,9 +69,8 @@ function DiscoverySVG() {
       ].map((p, i) => (
         <motion.g key={`person-${i}`}
           initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: p.delay, ease }}
+          animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5, delay: p.delay, ease }}
         >
           <circle cx={p.cx} cy={74} r="8" fill="#d2d2d7" />
           <path d={`M${p.cx - 12},100 Q${p.cx - 12},86 ${p.cx},86 Q${p.cx + 12},86 ${p.cx + 12},100`}
@@ -84,13 +81,13 @@ function DiscoverySVG() {
       <motion.path
         d="M92 96 L128 96" stroke="#2563eb" strokeWidth="1" strokeLinecap="round"
         markerEnd="url(#arrowBlue)"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 1.4, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 1.4, ease }}
       />
       <motion.path
         d="M152 96 L188 96" stroke="#14b8a6" strokeWidth="1" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 1.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 1.5, ease }}
       />
       <defs>
         <marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
@@ -109,43 +106,43 @@ function WebAppSVG() {
         x="40" y="12" width="200" height="120" rx="8"
         stroke="#d2d2d7" strokeWidth="1.5" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.8, ease }}
       />
       {/* Title bar */}
       <motion.rect
         x="40" y="12" width="200" height="22" rx="8"
         fill="#f5f5f7"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.3, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.4, delay: 0.3, ease }}
       />
       <motion.rect x="40" y="26" width="200" height="8" fill="#f5f5f7"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.35, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.35, ease }}
       />
       {/* Traffic lights */}
       {[{ cx: 52, fill: "#ff5f57" }, { cx: 63, fill: "#febc2e" }, { cx: 74, fill: "#28c840" }].map((dot, i) => (
         <motion.circle key={i} cx={dot.cx} cy="23" r="3" fill={dot.fill}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5 + i * 0.08, ease }}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.5 + i * 0.08, ease }}
         />
       ))}
       {/* URL bar */}
       <motion.rect x="88" y="18" width="100" height="10" rx="5" fill="#e5e5ea"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
       />
       {/* Sidebar nav */}
       <motion.rect x="44" y="40" width="44" height="88" rx="4" fill="#f5f5f7"
-        initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.7, ease }}
+        initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.7, ease }}
       />
       {/* Sidebar items */}
       {[48, 58, 68, 78].map((y, i) => (
         <motion.rect key={`nav-${i}`} x="50" y={y} width="32" height="4" rx="2"
           fill={i === 0 ? "#2563eb" : "#d2d2d7"}
-          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8 + i * 0.07, ease }}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.8 + i * 0.07, ease }}
         />
       ))}
       {/* Main content area - responsive grid blocks */}
@@ -161,9 +158,8 @@ function WebAppSVG() {
           fill={i < 2 ? "#2563eb" : "#14b8a6"} fillOpacity={i < 2 ? 0.08 : 0.06}
           stroke={i < 2 ? "#2563eb" : "#14b8a6"} strokeWidth="0.75"
           initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: block.delay, ease }}
+          animate={{ opacity: 1, scale: 1 }}
+           transition={{ duration: 0.4, delay: block.delay, ease }}
         />
       ))}
       {/* Content lines in blocks */}
@@ -176,15 +172,14 @@ function WebAppSVG() {
         <motion.rect key={`cline-${i}`}
           x={line.x} y={line.y} width={line.w} height="3" rx="1.5" fill="#86868b" fillOpacity={0.3}
           initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 1.1 + i * 0.08, ease }}
+          animate={{ pathLength: 1, opacity: 1 }}
+           transition={{ duration: 0.3, delay: 1.1 + i * 0.08, ease }}
         />
       ))}
       {/* Cursor */}
       <motion.path d="M180 72 L180 84 L185 80 L190 82" stroke="#2563eb" strokeWidth="1.5" fill="none"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.4, delay: 1.5, ease }}
       />
     </svg>
   );
@@ -198,38 +193,38 @@ function MobileAppSVG() {
         x="100" y="8" width="80" height="128" rx="14"
         stroke="#1d1d1f" strokeWidth="2" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.8, ease }}
       />
       {/* Notch */}
       <motion.rect x="124" y="12" width="32" height="6" rx="3" fill="#1d1d1f"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
       {/* Screen content */}
       <motion.rect x="108" y="24" width="64" height="28" rx="6" fill="#2563eb" fillOpacity={0.1}
-        initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       {/* Profile circle in hero area */}
       <motion.circle cx="122" cy="34" r="6" fill="#2563eb" fillOpacity={0.2}
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.7, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.7, ease }}
       />
       {/* Text lines next to profile */}
       <motion.rect x="132" y="30" width="32" height="3" rx="1.5" fill="#1d1d1f" fillOpacity={0.2}
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.75, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.75, ease }}
       />
       <motion.rect x="132" y="37" width="24" height="3" rx="1.5" fill="#86868b" fillOpacity={0.3}
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       {/* Card rows */}
       {[58, 78, 98].map((y, i) => (
         <motion.g key={`card-${i}`}
-          initial={{ opacity: 0, x: 6 }} whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.85 + i * 0.12, ease }}
+          initial={{ opacity: 0, x: 6 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.4, delay: 0.85 + i * 0.12, ease }}
         >
           <rect x="108" y={y} width="64" height="16" rx="4"
             fill={i % 2 === 0 ? "#f5f5f7" : "white"}
@@ -242,14 +237,14 @@ function MobileAppSVG() {
       ))}
       {/* Bottom nav bar */}
       <motion.rect x="108" y="118" width="64" height="12" rx="0" fill="#f5f5f7"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.3, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 1.3, ease }}
       />
       {[120, 134, 148, 162].map((cx, i) => (
         <motion.circle key={`navdot-${i}`} cx={cx} cy="124" r="2.5"
           fill={i === 0 ? "#2563eb" : "#d2d2d7"}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.2, delay: 1.4 + i * 0.06, ease }}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.2, delay: 1.4 + i * 0.06, ease }}
         />
       ))}
 
@@ -257,24 +252,24 @@ function MobileAppSVG() {
       <motion.rect
         x="50" y="22" width="56" height="100" rx="10"
         stroke="#d2d2d7" strokeWidth="1.5" fill="white"
-        initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 0.5, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2, ease }}
+        initial={{ opacity: 0, x: 20 }} animate={{ opacity: 0.5, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.2, ease }}
       />
       <motion.rect x="56" y="36" width="44" height="20" rx="4" fill="#14b8a6" fillOpacity={0.06}
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.5 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.5 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
 
       {/* Phone frame 3 (behind, right) */}
       <motion.rect
         x="174" y="22" width="56" height="100" rx="10"
         stroke="#d2d2d7" strokeWidth="1.5" fill="white"
-        initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 0.5, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.25, ease }}
+        initial={{ opacity: 0, x: -20 }} animate={{ opacity: 0.5, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.25, ease }}
       />
       <motion.rect x="180" y="36" width="44" height="20" rx="4" fill="#2563eb" fillOpacity={0.06}
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.5 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.55, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.5 }}
+ transition={{ duration: 0.3, delay: 0.55, ease }}
       />
     </svg>
   );
@@ -287,12 +282,12 @@ function ApiSVG() {
       <motion.rect x="20" y="30" width="72" height="80" rx="8"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.7, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.7, ease }}
       />
       <motion.text x="56" y="50" textAnchor="middle" fill="#2563eb" fontSize="8" fontWeight="600"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.5, ease }}
       >
         CLIENT
       </motion.text>
@@ -300,8 +295,8 @@ function ApiSVG() {
       {[60, 68, 76, 84].map((y, i) => (
         <motion.rect key={`req-${i}`} x="30" y={y} width={40 - i * 6} height="3" rx="1.5"
           fill="#2563eb" fillOpacity={0.12}
-          initial={{ opacity: 0, x: -5 }} whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6 + i * 0.08, ease }}
+          initial={{ opacity: 0, x: -5 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.3, delay: 0.6 + i * 0.08, ease }}
         />
       ))}
 
@@ -309,12 +304,12 @@ function ApiSVG() {
       <motion.rect x="110" y="20" width="60" height="100" rx="10"
         stroke="#14b8a6" strokeWidth="1.5" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.8, delay: 0.2, ease }}
       />
       <motion.text x="140" y="42" textAnchor="middle" fill="#14b8a6" fontSize="8" fontWeight="600"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.6, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.6, ease }}
       >
         API
       </motion.text>
@@ -322,9 +317,8 @@ function ApiSVG() {
       {["GET", "POST", "PUT"].map((method, i) => (
         <motion.g key={method}
           initial={{ opacity: 0, y: 4 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.8 + i * 0.12, ease }}
+          animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.3, delay: 0.8 + i * 0.12, ease }}
         >
           <rect x="116" y={54 + i * 18} width="22" height="10" rx="3"
             fill={i === 0 ? "#22c55e" : i === 1 ? "#2563eb" : "#f59e0b"} fillOpacity={0.15} />
@@ -341,60 +335,60 @@ function ApiSVG() {
       <motion.rect x="188" y="30" width="72" height="80" rx="8"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
         initial={{ pathLength: 0, opacity: 0 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.3, ease }}
+        animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.7, delay: 0.3, ease }}
       />
       <motion.text x="224" y="50" textAnchor="middle" fill="#2563eb" fontSize="8" fontWeight="600"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.7, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.7, ease }}
       >
         SERVER
       </motion.text>
       {/* Database icon */}
       <motion.ellipse cx="224" cy="72" rx="16" ry="6" stroke="#d2d2d7" strokeWidth="1"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.9, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.9, ease }}
       />
       <motion.path d="M208 72 V88 Q208 94 224 94 Q240 94 240 88 V72"
         stroke="#d2d2d7" strokeWidth="1" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 1.0, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 1.0, ease }}
       />
       <motion.ellipse cx="224" cy="80" rx="16" ry="4" stroke="#d2d2d7" strokeWidth="0.5" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.1, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 1.1, ease }}
       />
 
       {/* Request arrow (left to center) */}
       <motion.path d="M92 55 L110 55" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round"
         markerEnd="url(#arrowBrand)"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.0, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 1.0, ease }}
       />
       {/* Response arrow (center to left) */}
       <motion.path d="M110 70 L92 70" stroke="#14b8a6" strokeWidth="1" strokeDasharray="3 2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.2, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 1.2, ease }}
       />
       {/* Arrow center to right */}
       <motion.path d="M170 55 L188 55" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round"
         markerEnd="url(#arrowBrand)"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.1, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 1.1, ease }}
       />
       {/* Response right to center */}
       <motion.path d="M188 70 L170 70" stroke="#14b8a6" strokeWidth="1" strokeDasharray="3 2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.3, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 1.3, ease }}
       />
       {/* JSON badges */}
-      <motion.g initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.4, ease }}>
+      <motion.g initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: 1.4, ease }}>
         <rect x="93" y="44" width="16" height="8" rx="2" fill="#2563eb" fillOpacity={0.08} />
         <text x="101" y="50" textAnchor="middle" fill="#2563eb" fontSize="4.5" fontWeight="500">REQ</text>
       </motion.g>
-      <motion.g initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.5, ease }}>
+      <motion.g initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: 1.5, ease }}>
         <rect x="93" y="73" width="16" height="8" rx="2" fill="#14b8a6" fillOpacity={0.08} />
         <text x="101" y="79" textAnchor="middle" fill="#14b8a6" fontSize="4.5" fontWeight="500">RES</text>
       </motion.g>
@@ -413,30 +407,30 @@ function MaintenanceSVG() {
       {/* Git branch line */}
       <motion.path
         d="M40 70 L100 70" stroke="#d2d2d7" strokeWidth="2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, ease }}
       />
       <motion.path
         d="M100 70 L140 70" stroke="#2563eb" strokeWidth="2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.3, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.3, ease }}
       />
       <motion.path
         d="M140 70 L200 70" stroke="#2563eb" strokeWidth="2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}
       />
       <motion.path
         d="M200 70 L250 70" stroke="#14b8a6" strokeWidth="2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.8, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.8, ease }}
       />
       {/* Feature branch */}
       <motion.path
         d="M100 70 Q110 40 140 38 Q170 36 180 50 Q185 58 200 70"
         stroke="#14b8a6" strokeWidth="1.5" fill="none" strokeDasharray="4 3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.8, delay: 0.6, ease }}
       />
       {/* Commit dots */}
       {[
@@ -448,8 +442,8 @@ function MaintenanceSVG() {
       ].map((dot, i) => (
         <motion.circle key={`dot-${i}`} cx={dot.cx} cy="70" r="5"
           fill={dot.color} stroke="white" strokeWidth="2"
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: dot.delay, ease }}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: dot.delay, ease }}
         />
       ))}
       {/* Feature branch dots */}
@@ -459,8 +453,8 @@ function MaintenanceSVG() {
       ].map((dot, i) => (
         <motion.circle key={`feat-${i}`} cx={dot.cx} cy={dot.cy} r="4"
           fill="#14b8a6" stroke="white" strokeWidth="1.5"
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: dot.delay, ease }}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: dot.delay, ease }}
         />
       ))}
       {/* Version tags */}
@@ -470,8 +464,8 @@ function MaintenanceSVG() {
         { x: 230, y: 86, label: "v2.0", delay: 1.1 },
       ].map((tag) => (
         <motion.g key={tag.label}
-          initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: tag.delay, ease }}
+          initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: tag.delay, ease }}
         >
           <rect x={tag.x} y={tag.y} width="30" height="14" rx="4"
             fill="#2563eb" fillOpacity={0.08} stroke="#2563eb" strokeWidth="0.5" />
@@ -482,12 +476,12 @@ function MaintenanceSVG() {
       {/* CI/CD Pipeline arrows */}
       <motion.path d="M200 56 L200 44 L230 44 L230 56"
         stroke="#14b8a6" strokeWidth="1" fill="none" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 1.0, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 1.0, ease }}
       />
       {/* Deploy icon */}
-      <motion.g initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.2, ease }}
+      <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.4, delay: 1.2, ease }}
       >
         <rect x="204" y="28" width="22" height="14" rx="3" fill="#14b8a6" fillOpacity={0.1}
           stroke="#14b8a6" strokeWidth="0.75" />
@@ -500,16 +494,16 @@ function MaintenanceSVG() {
         <motion.path key={`check-${i}`}
           d={`M${cx - 3} 108 L${cx} 112 L${cx + 5} 104`}
           stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" fill="none"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.2 + i * 0.15, ease }}
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 1.2 + i * 0.15, ease }}
         />
       ))}
       {/* Test labels */}
       {[100, 140, 200].map((cx, i) => (
         <motion.text key={`test-${i}`} x={cx} y="124" textAnchor="middle"
           fill="#86868b" fontSize="5" fontWeight="400"
-          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ delay: 1.3 + i * 0.15, ease }}
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 1.3 + i * 0.15, ease }}
         >
           {i === 0 ? "test" : i === 1 ? "build" : "deploy"}
         </motion.text>
@@ -529,35 +523,35 @@ function PuzzleSVG() {
       <motion.path
         d="M30 30 H62 V40 Q68 38 68 44 Q68 50 62 48 V60 H30 V48 Q24 50 24 44 Q24 38 30 40 Z"
         stroke="#2563eb" strokeWidth="1.5" fill="#2563eb" fillOpacity={0.08}
-        initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, ease }}
+        initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }}
+ transition={{ duration: 0.8, ease }}
       />
       {/* Puzzle piece 2 */}
       <motion.path
         d="M68 30 H100 V40 Q106 38 106 44 Q106 50 100 48 V60 H68 V48 Q62 50 62 44 Q62 38 68 40 Z"
         stroke="#14b8a6" strokeWidth="1.5" fill="#14b8a6" fillOpacity={0.08}
         initial={{ pathLength: 0, opacity: 0, x: 10 }}
-        whileInView={{ pathLength: 1, opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3, ease }}
+        animate={{ pathLength: 1, opacity: 1, x: 0 }}
+ transition={{ duration: 0.8, delay: 0.3, ease }}
       />
       {/* Puzzle piece 3 */}
       <motion.path
         d="M108 30 H140 V40 Q146 38 146 44 Q146 50 140 48 V60 H108 V48 Q102 50 102 44 Q102 38 108 40 Z"
         stroke="#2563eb" strokeWidth="1.5" fill="#2563eb" fillOpacity={0.06}
         initial={{ pathLength: 0, opacity: 0, x: 20 }}
-        whileInView={{ pathLength: 1, opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.5, ease }}
+        animate={{ pathLength: 1, opacity: 1, x: 0 }}
+ transition={{ duration: 0.8, delay: 0.5, ease }}
       />
       {/* Connecting sparkles */}
       {[{ cx: 65, cy: 26, delay: 0.9 }, { cx: 105, cy: 26, delay: 1.1 }].map((s, i) => (
         <motion.circle key={i} cx={s.cx} cy={s.cy} r="2" fill="#2563eb" fillOpacity={0.4}
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: s.delay, ease }}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: s.delay, ease }}
         />
       ))}
       {/* "Custom fit" label */}
-      <motion.g initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.2, ease }}>
+      <motion.g initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 1.2, ease }}>
         <rect x="55" y="70" width="60" height="14" rx="4" fill="white" fillOpacity={0.06}
           stroke="white" strokeWidth="0.5" strokeOpacity={0.1} />
         <text x="85" y="80" textAnchor="middle" fill="white" fillOpacity={0.5} fontSize="6" fontWeight="500">
@@ -579,8 +573,8 @@ function TechStackSVG() {
         { y: 74, label: "Cloud", color: "#14b8a6", delay: 0.6 },
       ].map((layer) => (
         <motion.g key={layer.label}
-          initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.5, delay: layer.delay + 0.3, ease }}
+          initial={{ opacity: 0, x: -15 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: layer.delay + 0.3, ease }}
         >
           <rect x="40" y={layer.y} width="120" height="16" rx="4"
             fill={layer.color} fillOpacity={0.08}
@@ -597,8 +591,8 @@ function TechStackSVG() {
           d={`M100 ${y + 2} L100 ${y + 6}`}
           stroke="white" strokeWidth="0.75" strokeOpacity={0.2}
           markerEnd="url(#arrowWhite)"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5 + i * 0.2, ease }}
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.5 + i * 0.2, ease }}
         />
       ))}
       <defs>
@@ -616,13 +610,13 @@ function IntegrationSVG() {
       {/* Center hub */}
       <motion.circle cx="100" cy="50" r="16" stroke="#2563eb" strokeWidth="1.5"
         fill="#2563eb" fillOpacity={0.06}
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.5, ease }}
       />
       <motion.text x="100" y="53" textAnchor="middle" fill="white" fillOpacity={0.6}
         fontSize="6" fontWeight="600"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.4, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.4, ease }}
       >
         HUB
       </motion.text>
@@ -634,8 +628,8 @@ function IntegrationSVG() {
         { cx: 160, cy: 75, label: "DB", delay: 0.6 },
       ].map((node) => (
         <motion.g key={node.label}
-          initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: node.delay, ease }}
+          initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.4, delay: node.delay, ease }}
         >
           <circle cx={node.cx} cy={node.cy} r="12"
             stroke="#14b8a6" strokeWidth="1" fill="#14b8a6" fillOpacity={0.06} />
@@ -655,8 +649,8 @@ function IntegrationSVG() {
         <motion.line key={`line-${i}`}
           x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2}
           stroke="white" strokeWidth="0.75" strokeOpacity={0.15} strokeDasharray="3 2"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: line.delay, ease }}
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: line.delay, ease }}
         />
       ))}
       {/* Data flow dots */}
@@ -665,9 +659,8 @@ function IntegrationSVG() {
           cx={i < 2 ? 68 : 132} cy={i % 2 === 0 ? 40 : 62} r="1.5"
           fill="#14b8a6"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: [0, 1, 0] }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, delay, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ opacity: [0, 1, 0] }}
+           transition={{ duration: 1.5, delay, repeat: Infinity, ease: "easeInOut" }}
         />
       ))}
     </svg>
@@ -681,15 +674,15 @@ function AgileSVG() {
       <motion.path
         d="M60 50 Q60 20 100 20 Q140 20 140 50 Q140 80 100 80 Q60 80 60 50"
         stroke="#2563eb" strokeWidth="1.5" fill="none" strokeOpacity={0.3}
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, ease }}
       />
       {/* Inner cycle */}
       <motion.path
         d="M72 50 Q72 30 100 30 Q128 30 128 50 Q128 70 100 70 Q72 70 72 50"
         stroke="#14b8a6" strokeWidth="1" fill="none" strokeOpacity={0.2}
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.8, delay: 0.3, ease }}
       />
       {/* Phase nodes on cycle */}
       {[
@@ -699,8 +692,8 @@ function AgileSVG() {
         { cx: 60, cy: 50, label: "Ship", delay: 1.0 },
       ].map((node) => (
         <motion.g key={node.label}
-          initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: node.delay, ease }}
+          initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.4, delay: node.delay, ease }}
         >
           <circle cx={node.cx} cy={node.cy} r="10"
             fill={node.label === "Ship" ? "#14b8a6" : "#2563eb"} fillOpacity={0.08}
@@ -721,13 +714,13 @@ function AgileSVG() {
         <motion.path key={`arr-${i}`} d={arrow.d}
           stroke="white" strokeWidth="0.75" strokeOpacity={0.2}
           strokeLinecap="round" markerEnd="url(#arrowWhite2)"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: arrow.delay, ease }}
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: arrow.delay, ease }}
         />
       ))}
       {/* Sprint number */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 1.2, ease }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 1.2, ease }}>
         <text x="100" y="52" textAnchor="middle" fill="white" fillOpacity={0.3} fontSize="7" fontWeight="600">
           Sprint N
         </text>
@@ -735,8 +728,8 @@ function AgileSVG() {
       {/* Iteration dots */}
       {[155, 165, 175].map((x, i) => (
         <motion.g key={`iter-${i}`}
-          initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.2 + i * 0.1, ease }}
+          initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: 1.2 + i * 0.1, ease }}
         >
           <circle cx={x} cy={50} r="3" stroke="white" strokeWidth="0.5" strokeOpacity={0.15}
             fill="white" fillOpacity={0.03} />
@@ -873,27 +866,24 @@ export default function CustomDevContent() {
           <div className="text-center mb-12">
             <motion.p
               initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, ease }}
               className="text-brand-500 text-[0.6875rem] font-semibold tracking-wide uppercase mb-3"
             >
               Our process
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.1, ease }}
               className="text-display-sm text-apple-black mb-3"
             >
               From idea to production.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: 0.2, ease }}
               className="text-[0.8125rem] text-apple-gray max-w-xl mx-auto"
             >
               We build with transparency and precision -- you see progress every
@@ -908,9 +898,8 @@ export default function CustomDevContent() {
                 <motion.div
                   key={step.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
                     ease,
@@ -967,27 +956,24 @@ export default function CustomDevContent() {
           <div className="text-center mb-12">
             <motion.p
               initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, ease }}
               className="text-brand-400 text-[0.6875rem] font-semibold tracking-wide uppercase mb-3"
             >
               Why custom
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.1, ease }}
               className="text-display-sm text-white mb-3"
             >
               Software built around your business.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: 0.2, ease }}
               className="text-[0.8125rem] text-apple-gray max-w-xl mx-auto"
             >
               Not the other way around. Custom development means every feature
@@ -1002,9 +988,8 @@ export default function CustomDevContent() {
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
                     ease,

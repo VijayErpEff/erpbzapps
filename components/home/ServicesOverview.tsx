@@ -10,7 +10,7 @@ const ease = [0.21, 0.45, 0.27, 0.9] as const;
 function BCIllustration() {
   return (
     <motion.svg viewBox="0 0 320 160" fill="none" className="w-full h-full"
-      initial="hidden" whileInView="visible" viewport={{ once: true }}>
+>
       {/* Background grid (ledger feel) */}
       {[0, 1, 2, 3, 4, 5].map(i => (
         <line key={`h-${i}`} x1="20" y1={25 + i * 24} x2="300" y2={25 + i * 24}
@@ -22,8 +22,8 @@ function BCIllustration() {
       ))}
 
       {/* Mini dashboard card - Revenue */}
-      <motion.g initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2, ease }}>
+      <motion.g initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.2, ease }}>
         <rect x="24" y="22" width="128" height="64" rx="8" fill="white" />
         <rect x="24" y="22" width="128" height="64" rx="8" stroke="#e5e7eb" strokeWidth="0.5" />
         {/* Microsoft logo tiny */}
@@ -37,39 +37,39 @@ function BCIllustration() {
         {/* Sparkline */}
         <motion.path d="M32 72 Q42 68 55 70 T80 64 T105 62 T130 58 T142 55"
           stroke="url(#bc-spark)" strokeWidth="1.5" fill="none" strokeLinecap="round"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 1, delay: 0.6, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, delay: 0.6, ease }} />
         {/* Sparkline fill */}
         <motion.path d="M32 72 Q42 68 55 70 T80 64 T105 62 T130 58 T142 55 V78 H32 Z"
           fill="url(#bc-spark)" opacity="0.06"
-          initial={{ opacity: 0 }} whileInView={{ opacity: 0.06 }}
-          viewport={{ once: true }} transition={{ delay: 1.2 }} />
+          initial={{ opacity: 0 }} animate={{ opacity: 0.06 }}
+ transition={{ delay: 1.2 }} />
       </motion.g>
 
       {/* Mini dashboard card - Financials */}
-      <motion.g initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.35, ease }}>
+      <motion.g initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.35, ease }}>
         <rect x="168" y="22" width="128" height="64" rx="8" fill="white" />
         <rect x="168" y="22" width="128" height="64" rx="8" stroke="#e5e7eb" strokeWidth="0.5" />
         <text x="178" y="37" fontSize="5.5" fontWeight="600" fill="#1d1d1f" fontFamily="Inter, sans-serif" opacity="0.6">Supply Chain</text>
         {/* Horizontal bar chart */}
         <motion.rect x="178" y="46" width="70" height="6" rx="3" fill="#2563eb" opacity="0.7"
-          initial={{ width: 0 }} whileInView={{ width: 70 }}
-          viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5, ease }} />
+          initial={{ width: 0 }} animate={{ width: 70 }}
+ transition={{ duration: 0.6, delay: 0.5, ease }} />
         <text x="254" y="51" fontSize="4.5" fill="#86868b" fontFamily="Inter, sans-serif">Fulfilled</text>
         <motion.rect x="178" y="56" width="52" height="6" rx="3" fill="#14b8a6" opacity="0.6"
-          initial={{ width: 0 }} whileInView={{ width: 52 }}
-          viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6, ease }} />
+          initial={{ width: 0 }} animate={{ width: 52 }}
+ transition={{ duration: 0.6, delay: 0.6, ease }} />
         <text x="236" y="61" fontSize="4.5" fill="#86868b" fontFamily="Inter, sans-serif">In Transit</text>
         <motion.rect x="178" y="66" width="35" height="6" rx="3" fill="#FFB900" opacity="0.5"
-          initial={{ width: 0 }} whileInView={{ width: 35 }}
-          viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.7, ease }} />
+          initial={{ width: 0 }} animate={{ width: 35 }}
+ transition={{ duration: 0.6, delay: 0.7, ease }} />
         <text x="218" y="71" fontSize="4.5" fill="#86868b" fontFamily="Inter, sans-serif">Pending</text>
       </motion.g>
 
       {/* Bottom metrics row */}
-      <motion.g initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}>
+      <motion.g initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}>
         {/* KPI cards */}
         {[
           { x: 24, label: "Gross Margin", value: "42.3%", color: "#2563eb" },
@@ -83,8 +83,8 @@ function BCIllustration() {
             <rect x={kpi.x + 8} y="103" width="3" height="3" rx="1.5" fill={kpi.color} />
             <text x={kpi.x + 15} y="106" fontSize="4.5" fill="#86868b" fontFamily="Inter, sans-serif">{kpi.label}</text>
             <motion.text x={kpi.x + 8} y="126" fontSize="10" fontWeight="700" fill="#1d1d1f" fontFamily="Inter, sans-serif"
-              initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-              viewport={{ once: true }} transition={{ delay: 0.7 + i * 0.1 }}>
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.7 + i * 0.1 }}>
               {kpi.value}
             </motion.text>
           </g>
@@ -105,12 +105,11 @@ function BCIllustration() {
 function SFIllustration() {
   return (
     <motion.svg viewBox="0 0 320 160" fill="none" className="w-full h-full"
-      initial="hidden" whileInView="visible" viewport={{ once: true }}>
+>
       {/* Pipeline columns */}
       {["Lead", "Qualified", "Proposal", "Closed"].map((stage, i) => (
         <motion.g key={stage} initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 + i * 0.1, ease }}>
+          animate={{ opacity: 1, y: 0 }}           transition={{ duration: 0.4, delay: 0.2 + i * 0.1, ease }}>
           {/* Column background */}
           <rect x={20 + i * 76} y="18" width="68" height="130" rx="6" fill="#00A1E0" opacity={0.02 + i * 0.01} />
           {/* Column header */}
@@ -132,8 +131,7 @@ function SFIllustration() {
         { x: 254, y: 88, w: 56, h: 28, name: "Vertex AI", amount: "$78K", avatar: "#2563eb" },
       ].map((deal, i) => (
         <motion.g key={deal.name} initial={{ opacity: 0, y: 6 }}
-          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.4 + i * 0.06, ease }}>
+          animate={{ opacity: 1, y: 0 }}           transition={{ duration: 0.4, delay: 0.4 + i * 0.06, ease }}>
           <rect x={deal.x} y={deal.y} width={deal.w} height={deal.h} rx="5" fill="white" />
           <rect x={deal.x} y={deal.y} width={deal.w} height={deal.h} rx="5" stroke="#e5e7eb" strokeWidth="0.4" />
           {/* Avatar circle */}
@@ -147,8 +145,8 @@ function SFIllustration() {
       ))}
 
       {/* Salesforce cloud watermark */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 0.04 }}
-        viewport={{ once: true }} transition={{ delay: 0.8 }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 0.04 }}
+ transition={{ delay: 0.8 }}>
         <path d="M230 130c1-1.1 2.3-1.7 3.8-1.7 2 0 3.7 1 4.7 2.6.8-.4 1.7-.6 2.7-.6 3.4 0 5.3 2.8 5.3 5.5 0 3.1-2.5 5.5-5.6 5.5-.5 0-.9-.1-1.2-.1-.9 1.4-2.4 2.4-4.3 2.4-.8 0-1.6-.2-2.3-.6-.9 1.2-2.4 2.1-4.1 2.1-1.9 0-3.5-1-4.4-2.6-.4.1-.8.1-1.2.1-3.1 0-5.2-2.5-5.2-5.6 0-2.3 1.4-4.2 3.4-5.1-.1-.5-.2-1.1-.2-1.8 0-1.8 1.4-3.2 3.2-3.2 1.2 0 2.2.6 2.8 1.5.7-.6 1.6-1 2.6-1z"
           fill="#00A1E0" />
       </motion.g>
@@ -165,10 +163,10 @@ function SFIllustration() {
 function DevIllustration() {
   return (
     <motion.svg viewBox="0 0 320 160" fill="none" className="w-full h-full"
-      initial="hidden" whileInView="visible" viewport={{ once: true }}>
+>
       {/* Editor window */}
-      <motion.g initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1, ease }}>
+      <motion.g initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.1, ease }}>
         <rect x="20" y="14" width="200" height="132" rx="8" fill="white" />
         <rect x="20" y="14" width="200" height="132" rx="8" stroke="#e5e7eb" strokeWidth="0.5" />
         {/* Title bar */}
@@ -192,8 +190,8 @@ function DevIllustration() {
         ))}
 
         {/* Code lines with syntax coloring */}
-        <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.3, ease }}>
+        <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.4, delay: 0.3, ease }}>
           {/* import statement */}
           <text x="38" y="47" fontSize="4.5" fontFamily="monospace" fill="#9333ea" opacity="0.7">import</text>
           <text x="60" y="47" fontSize="4.5" fontFamily="monospace" fill="#1d1d1f" opacity="0.6">{"{ Dashboard }"}</text>
@@ -206,8 +204,8 @@ function DevIllustration() {
           <text x="118" y="58" fontSize="4.5" fontFamily="monospace" fill="#14b8a6">{`'@/hooks'`}</text>
         </motion.g>
 
-        <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5, ease }}>
+        <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.4, delay: 0.5, ease }}>
           {/* Empty line 3 */}
           {/* Function */}
           <text x="38" y="80" fontSize="4.5" fontFamily="monospace" fill="#2563eb" opacity="0.7">export default</text>
@@ -233,8 +231,8 @@ function DevIllustration() {
       </motion.g>
 
       {/* Terminal panel */}
-      <motion.g initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}>
+      <motion.g initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}>
         <rect x="232" y="14" width="68" height="132" rx="8" fill="#1d1d1f" />
         {/* Terminal header */}
         <text x="242" y="30" fontSize="4.5" fontWeight="600" fill="white" fontFamily="monospace" opacity="0.4">Terminal</text>
@@ -242,13 +240,13 @@ function DevIllustration() {
         <text x="240" y="48" fontSize="4" fill="#14b8a6" fontFamily="monospace" opacity="0.6">$</text>
         <text x="248" y="48" fontSize="4" fill="white" fontFamily="monospace" opacity="0.4">npm run dev</text>
         <motion.text x="240" y="60" fontSize="3.5" fill="#14b8a6" fontFamily="monospace" opacity="0.5"
-          initial={{ opacity: 0 }} whileInView={{ opacity: 0.5 }}
-          viewport={{ once: true }} transition={{ delay: 0.8 }}>
+          initial={{ opacity: 0 }} animate={{ opacity: 0.5 }}
+ transition={{ delay: 0.8 }}>
           ✓ Ready in 1.2s
         </motion.text>
         <motion.text x="240" y="72" fontSize="3.5" fill="#86868b" fontFamily="monospace" opacity="0.3"
-          initial={{ opacity: 0 }} whileInView={{ opacity: 0.3 }}
-          viewport={{ once: true }} transition={{ delay: 1 }}>
+          initial={{ opacity: 0 }} animate={{ opacity: 0.3 }}
+ transition={{ delay: 1 }}>
           localhost:3000
         </motion.text>
 
@@ -256,8 +254,8 @@ function DevIllustration() {
         {[0, 1, 2, 3].map(i => (
           <motion.rect key={i} x="240" y={84 + i * 10} width={40 - i * 6} height="3" rx="1.5"
             fill="#14b8a6" opacity={0.15 - i * 0.03}
-            initial={{ width: 0 }} whileInView={{ width: 40 - i * 6 }}
-            viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.2 + i * 0.1, ease }} />
+            initial={{ width: 0 }} animate={{ width: 40 - i * 6 }}
+ transition={{ duration: 0.4, delay: 1.2 + i * 0.1, ease }} />
         ))}
 
         {/* Blinking cursor */}
@@ -307,9 +305,8 @@ export default function ServicesOverview() {
       <div className="container-apple">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
+          animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, ease }}
           className="mb-8"
         >
           <p className="text-brand-500 text-caption font-semibold tracking-wide uppercase mb-3">
@@ -331,9 +328,8 @@ export default function ServicesOverview() {
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10px" }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease }}
+                animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5, delay: i * 0.08, ease }}
               >
                 <Link href={service.href} className="block group">
                   <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-pointer">

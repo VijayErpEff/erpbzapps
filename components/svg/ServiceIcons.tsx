@@ -20,8 +20,7 @@ export function ERPIcon({ className = "", size = 56 }: { className?: string; siz
     <motion.svg
       width={size} height={size} viewBox="0 0 56 56" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       {/* Microsoft logo mark */}
       <rect x="8" y="8" width="9" height="9" rx="1" fill="#F25022" />
       <rect x="19" y="8" width="9" height="9" rx="1" fill="#7FBA00" />
@@ -42,8 +41,7 @@ export function CRMIcon({ className = "", size = 56 }: { className?: string; siz
     <motion.svg
       width={size} height={size} viewBox="0 0 56 56" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       {/* SF cloud shape scaled */}
       <motion.path
         d="M17 12c1.2-1.3 3-2.1 4.9-2.1 2.5 0 4.5 1.3 5.7 3.2 1-.5 2.2-.7 3.4-.7 4.4 0 6.4 3.5 6.4 6.7 0 3.8-3.1 6.7-6.8 6.7-.6 0-1-.1-1.5-.2-1.1 1.7-3 2.9-5.2 2.9-1 0-2-.3-2.8-.7-1.1 1.5-2.9 2.6-5 2.6-2.3 0-4.2-1.2-5.3-3-.5.1-1 .1-1.5.1-3.7 0-6.3-3-6.3-6.8 0-2.8 1.7-5.1 4.1-6.1-.2-.7-.3-1.4-.3-2.2C7 9.8 8.8 8 11.1 8c1.4 0 2.6.7 3.3 1.8.9-.8 2.1-1.2 3.3-1.2z"
@@ -66,8 +64,7 @@ export function CodeIcon({ className = "", size = 56 }: { className?: string; si
     <motion.svg
       width={size} height={size} viewBox="0 0 56 56" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="code-g2" x1="0" y1="0" x2="56" y2="56">
           <stop offset="0%" stopColor="#2563eb" />
@@ -103,8 +100,7 @@ export function IntegrationIcon({ className = "", size = 56 }: { className?: str
     <motion.svg
       width={size} height={size} viewBox="0 0 56 56" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="int-g2" x1="0" y1="0" x2="56" y2="56">
           <stop offset="0%" stopColor="#2563eb" />
@@ -143,8 +139,7 @@ export function SupportIcon({ className = "", size = 56 }: { className?: string;
     <motion.svg
       width={size} height={size} viewBox="0 0 56 56" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="sup-g2" x1="0" y1="0" x2="56" y2="56">
           <stop offset="0%" stopColor="#2563eb" />

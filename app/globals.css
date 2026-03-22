@@ -85,6 +85,21 @@
   }
 }
 
+/* FadeIn stagger system */
+.stagger-hidden > .fade-in-child {
+  opacity: 0;
+  transform: translateY(var(--child-y, 30px));
+}
+
+.stagger-visible > .fade-in-child {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s cubic-bezier(0.21, 0.45, 0.27, 0.9),
+    transform 0.7s cubic-bezier(0.21, 0.45, 0.27, 0.9);
+  transition-delay: calc(var(--child-index, 0) * var(--stagger-delay, 0.1s));
+}
+
 /* Reduced motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
   *,

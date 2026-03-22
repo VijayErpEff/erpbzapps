@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Button from "./Button";
 
 type CTABannerProps = {
@@ -16,6 +16,31 @@ export default function CTABanner({
   buttonText,
   buttonHref,
 }: CTABannerProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const style: CSSProperties = {
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0)" : "translateY(30px)",
+    transition: "opacity 0.7s cubic-bezier(0.21,0.45,0.27,0.9), transform 0.7s cubic-bezier(0.21,0.45,0.27,0.9)",
+  };
+
   return (
     <section className="relative overflow-hidden bg-apple-black py-section">
       {/* Background mesh */}
@@ -24,11 +49,9 @@ export default function CTABanner({
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/8 rounded-full blur-[100px]" />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: [0.21, 0.45, 0.27, 0.9] }}
+      <div
+        ref={ref}
+        style={style}
         className="container-apple relative z-10 text-center"
       >
         <h2 className="text-display-sm text-white mb-5 text-balance">
@@ -42,7 +65,7 @@ export default function CTABanner({
         <Button href={buttonHref} variant="primary" size="lg">
           {buttonText}
         </Button>
-      </motion.div>
+      </div>
     </section>
   );
 }

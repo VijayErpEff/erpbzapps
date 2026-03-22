@@ -599,9 +599,8 @@ export default function SupportContent() {
           {/* Section header — inline, no SectionHeading */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-10"
           >
             <p className="text-brand-500 text-[0.6875rem] font-semibold tracking-widest uppercase mb-3">
@@ -623,9 +622,8 @@ export default function SupportContent() {
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{
                     duration: 0.6,
                     delay: index * 0.08,
                     ease,
@@ -678,9 +676,8 @@ export default function SupportContent() {
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-10"
           >
             <p className="text-brand-500 text-[0.6875rem] font-semibold tracking-widest uppercase mb-3">
@@ -699,9 +696,8 @@ export default function SupportContent() {
               <motion.div
                 key={plan.name}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
+                animate={{ opacity: 1, y: 0 }}
+                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
                   ease,

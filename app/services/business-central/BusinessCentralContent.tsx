@@ -74,9 +74,8 @@ function ImplementationSVG() {
       fill="none"
       className="w-full h-full"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-    >
+      animate="visible"
+     >
       {/* Dashboard frame */}
       <motion.rect
         x="30" y="10" width="220" height="100" rx="10"
@@ -195,9 +194,8 @@ function CustomizationSVG() {
       fill="none"
       className="w-full h-full"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-    >
+      animate="visible"
+     >
       {/* Code editor frame */}
       <motion.rect
         x="20" y="8" width="140" height="104" rx="8"
@@ -351,9 +349,8 @@ function MigrationSVG() {
       fill="none"
       className="w-full h-full"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-    >
+      animate="visible"
+     >
       {/* Old system (QuickBooks-style) */}
       <motion.rect
         x="16" y="20" width="84" height="80" rx="8"
@@ -504,9 +501,8 @@ function TrainingSVG() {
       fill="none"
       className="w-full h-full"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-    >
+      animate="visible"
+     >
       {/* Person 1 - completed */}
       <motion.circle cx="52" cy="38" r="12" fill="#7FBA00" fillOpacity="0.10" stroke="#7FBA00" strokeWidth="1.2"
         variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1 } }}
@@ -649,9 +645,8 @@ function ReportingSVG() {
       fill="none"
       className="w-full h-full"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
-    >
+      animate="visible"
+     >
       {/* Power BI frame */}
       <motion.rect
         x="16" y="8" width="248" height="104" rx="10"
@@ -835,7 +830,7 @@ function ReportingSVG() {
 
 function UnifiedSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Four connected modules */}
       <motion.rect x="6" y="6" width="28" height="20" rx="4" fill="#2563eb" fillOpacity="0.12" stroke="#2563eb" strokeWidth="0.8"
         variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.1, ease }} />
@@ -864,7 +859,7 @@ function UnifiedSVG() {
 
 function CloudSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       <motion.path
         d="M20 40 Q10 40 10 32 Q10 24 18 24 Q20 16 30 16 Q38 16 40 22 Q42 18 48 18 Q56 18 56 26 Q62 26 62 32 Q62 40 54 40 Z"
         stroke="#00A4EF" strokeWidth="1.5" fill="#00A4EF" fillOpacity="0.06"
@@ -887,7 +882,7 @@ function CloudSVG() {
 
 function IntegrationSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Microsoft 365 icon */}
       <motion.rect x="8" y="14" width="24" height="24" rx="5" fill="#F25022" fillOpacity="0.08" stroke="#F25022" strokeWidth="0.8"
         variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.1, ease }} />
@@ -911,7 +906,7 @@ function IntegrationSVG() {
 
 function ScaleSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Growth bars */}
       <motion.rect x="12" y="42" width="8" height="12" rx="2" fill="#2563eb" fillOpacity="0.3"
         variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.1, ease }} />
@@ -999,9 +994,8 @@ export default function BusinessCentralContent() {
           {/* Section heading — inline, no SectionHeading import */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-12 md:mb-14"
           >
             <p className="text-caption font-semibold text-brand-500 uppercase tracking-widest mb-3">
@@ -1023,9 +1017,8 @@ export default function BusinessCentralContent() {
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{
                     duration: 0.6,
                     delay: index * 0.08,
                     ease,
@@ -1081,9 +1074,8 @@ export default function BusinessCentralContent() {
           {/* Section heading — inline dark */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-12 md:mb-14"
           >
             <p className="text-caption font-semibold text-brand-400 uppercase tracking-widest mb-3">
@@ -1105,9 +1097,8 @@ export default function BusinessCentralContent() {
                 <motion.div
                   key={benefit.text}
                   initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
                     ease,

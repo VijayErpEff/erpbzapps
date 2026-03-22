@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 
 type CardProps = {
@@ -20,12 +20,35 @@ export default function Card({
   className = "",
   index = 0,
 }: CardProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const style: CSSProperties = {
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0)" : "translateY(30px)",
+    transition: `opacity 0.6s cubic-bezier(0.21,0.45,0.27,0.9) ${index * 0.1}s, transform 0.6s cubic-bezier(0.21,0.45,0.27,0.9) ${index * 0.1}s`,
+  };
+
   const content = (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 0.45, 0.27, 0.9] }}
+    <div
+      ref={ref}
+      style={style}
       className={`card-apple p-8 md:p-10 group cursor-pointer ${className}`}
     >
       {icon && (
@@ -38,14 +61,14 @@ export default function Card({
       </h3>
       <p className="text-body text-apple-gray leading-relaxed">{description}</p>
       {href && (
-        <div className="mt-6 text-brand-500 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
+        <div className="mt-6 text-brand-500 text-sm font-medium flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-x-0 md:group-hover:translate-x-1">
           Learn more
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 
   if (href) {

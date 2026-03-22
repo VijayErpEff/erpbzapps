@@ -21,35 +21,35 @@ function ImplementationSVG() {
       <motion.line
         x1="20" y1="30" x2="260" y2="30"
         stroke="#00A1E0" strokeWidth="0.5" opacity="0.15"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, ease }}
       />
       <motion.line
         x1="20" y1="60" x2="260" y2="60"
         stroke="#00A1E0" strokeWidth="0.5" opacity="0.15"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, delay: 0.1, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, delay: 0.1, ease }}
       />
       <motion.line
         x1="20" y1="90" x2="260" y2="90"
         stroke="#00A1E0" strokeWidth="0.5" opacity="0.15"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, delay: 0.2, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, delay: 0.2, ease }}
       />
 
       {/* CRM Config Screen - Main panel */}
       <motion.rect
         x="30" y="15" width="130" height="90" rx="8"
         fill="white" stroke="#00A1E0" strokeWidth="1.5"
-        initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, ease }}
+        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.6, ease }}
       />
       {/* Panel header bar */}
       <motion.rect
         x="30" y="15" width="130" height="18" rx="8"
         fill="#00A1E0" opacity="0.12"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.12 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.12 }}
+ transition={{ duration: 0.5, delay: 0.2, ease }}
       />
       {/* Header dots */}
       <circle cx="42" cy="24" r="2.5" fill="#00A1E0" opacity="0.5" />
@@ -60,40 +60,40 @@ function ImplementationSVG() {
       <motion.rect
         x="40" y="40" width="55" height="6" rx="3"
         fill="#00A1E0" opacity="0.25"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}
       />
       <motion.rect
         x="40" y="52" width="70" height="6" rx="3"
         fill="#00A1E0" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}
       />
       <motion.rect
         x="40" y="64" width="45" height="6" rx="3"
         fill="#14b8a6" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}
       />
       <motion.rect
         x="40" y="76" width="60" height="6" rx="3"
         fill="#00A1E0" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.5, delay: 0.6, ease }}
       />
       {/* Toggle switches */}
       <motion.rect
         x="120" y="40" width="24" height="10" rx="5"
         fill="#14b8a6" opacity="0.35"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.35 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.35 }}
+ transition={{ duration: 0.4, delay: 0.5, ease }}
       />
       <circle cx="140" cy="45" r="4" fill="#14b8a6" opacity="0.6" />
       <motion.rect
         x="120" y="56" width="24" height="10" rx="5"
         fill="#00A1E0" opacity="0.25"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.25 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.25 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       <circle cx="140" cy="61" r="4" fill="#00A1E0" opacity="0.5" />
 
@@ -101,68 +101,68 @@ function ImplementationSVG() {
       <motion.rect
         x="175" y="20" width="85" height="38" rx="7"
         fill="white" stroke="#00A1E0" strokeWidth="1"
-        initial={{ opacity: 0, x: 15 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3, ease }}
+        initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.3, ease }}
       />
       {/* Cloud icon */}
       <motion.path
         d="M198 33c0-3 2.5-5.5 5.5-5.5 2 0 3.7 1 4.6 2.6.7-.3 1.5-.5 2.3-.5 3 0 4.5 2.4 4.5 4.6 0 2.5-2 4.5-4.5 4.5h-9c-2 0-3.4-1.8-3.4-3.5 0-1.2.7-2.2 1.5-2.7z"
         fill="#00A1E0" opacity="0.3"
-        initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 0.3, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}
+        initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 0.3, scale: 1 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}
       />
       <motion.rect
         x="185" y="44" width="40" height="4" rx="2"
         fill="#00A1E0" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       <motion.rect
         x="185" y="50" width="28" height="3" rx="1.5"
         fill="#86868b" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.7, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.4, delay: 0.7, ease }}
       />
 
       {/* Side panel - Service Cloud */}
       <motion.rect
         x="175" y="65" width="85" height="38" rx="7"
         fill="white" stroke="#14b8a6" strokeWidth="1"
-        initial={{ opacity: 0, x: 15 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5, ease }}
+        initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.5, ease }}
       />
       {/* Service icon (headset) */}
       <motion.path
         d="M205 76a7 7 0 0 1 14 0v4a7 7 0 0 1-14 0zM203 80v2a3 3 0 0 0 3 3M221 80v2a3 3 0 0 1-3 3"
         stroke="#14b8a6" strokeWidth="1.5" fill="none" opacity="0.4"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.8, delay: 0.6, ease }}
       />
       <motion.rect
         x="185" y="89" width="35" height="4" rx="2"
         fill="#14b8a6" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.8, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.4, delay: 0.8, ease }}
       />
       <motion.rect
         x="185" y="95" width="25" height="3" rx="1.5"
         fill="#86868b" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.9, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.4, delay: 0.9, ease }}
       />
 
       {/* Connecting dotted lines */}
       <motion.line
         x1="160" y1="50" x2="175" y2="39"
         stroke="#00A1E0" strokeWidth="1" strokeDasharray="3 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}
       />
       <motion.line
         x1="160" y1="70" x2="175" y2="84"
         stroke="#14b8a6" strokeWidth="1" strokeDasharray="3 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.6, ease }}
       />
     </svg>
   );
@@ -175,15 +175,15 @@ function CustomizationSVG() {
       <motion.rect
         x="25" y="10" width="140" height="100" rx="8"
         fill="white" stroke="#2563eb" strokeWidth="1.5"
-        initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, ease }}
+        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.6, ease }}
       />
       {/* Editor header */}
       <motion.rect
         x="25" y="10" width="140" height="16" rx="8"
         fill="#2563eb" opacity="0.08"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.08 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.08 }}
+ transition={{ duration: 0.4, delay: 0.1, ease }}
       />
       <circle cx="37" cy="18" r="2" fill="#ef4444" opacity="0.5" />
       <circle cx="45" cy="18" r="2" fill="#eab308" opacity="0.5" />
@@ -191,99 +191,99 @@ function CustomizationSVG() {
 
       {/* Code lines - Apex */}
       <motion.rect x="35" y="32" width="16" height="4" rx="2" fill="#2563eb" opacity="0.4"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.2, ease }}
       />
       <motion.rect x="55" y="32" width="40" height="4" rx="2" fill="#00A1E0" opacity="0.25"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.25, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.25, ease }}
       />
       <motion.rect x="100" y="32" width="20" height="4" rx="2" fill="#14b8a6" opacity="0.3"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.3, ease }}
       />
 
       <motion.rect x="45" y="42" width="25" height="4" rx="2" fill="#14b8a6" opacity="0.3"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.35, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.35, ease }}
       />
       <motion.rect x="75" y="42" width="55" height="4" rx="2" fill="#86868b" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.4, ease }}
       />
 
       <motion.rect x="45" y="52" width="30" height="4" rx="2" fill="#00A1E0" opacity="0.3"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.45, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.45, ease }}
       />
       <motion.rect x="80" y="52" width="35" height="4" rx="2" fill="#2563eb" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
 
       <motion.rect x="45" y="62" width="50" height="4" rx="2" fill="#86868b" opacity="0.12"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.55, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.55, ease }}
       />
       <motion.rect x="35" y="72" width="20" height="4" rx="2" fill="#2563eb" opacity="0.4"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
       />
 
       <motion.rect x="45" y="82" width="35" height="4" rx="2" fill="#14b8a6" opacity="0.25"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.65, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.65, ease }}
       />
       <motion.rect x="85" y="82" width="40" height="4" rx="2" fill="#00A1E0" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.7, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.7, ease }}
       />
 
       <motion.rect x="35" y="92" width="18" height="4" rx="2" fill="#2563eb" opacity="0.35"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.75, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.75, ease }}
       />
 
       {/* Lightning Component Builder */}
       <motion.rect
         x="180" y="12" width="80" height="96" rx="8"
         fill="white" stroke="#00A1E0" strokeWidth="1.2"
-        initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3, ease }}
+        initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.3, ease }}
       />
       {/* Component header */}
       <motion.rect
         x="180" y="12" width="80" height="14" rx="8"
         fill="#00A1E0" opacity="0.1"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.4, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.1 }}
+ transition={{ duration: 0.4, delay: 0.4, ease }}
       />
       {/* Lightning bolt icon */}
       <motion.path
         d="M215 16 L212 22 L216 22 L213 28"
         stroke="#00A1E0" strokeWidth="1.5" fill="none"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.5, ease }}
       />
 
       {/* Component blocks */}
       <motion.rect x="188" y="32" width="64" height="18" rx="5" fill="#00A1E0" opacity="0.08" stroke="#00A1E0" strokeWidth="0.5"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.5, ease }}
       />
       <rect x="194" y="37" width="30" height="3" rx="1.5" fill="#00A1E0" opacity="0.3" />
       <rect x="194" y="43" width="20" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
 
       <motion.rect x="188" y="55" width="64" height="18" rx="5" fill="#14b8a6" opacity="0.08" stroke="#14b8a6" strokeWidth="0.5"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       <rect x="194" y="60" width="35" height="3" rx="1.5" fill="#14b8a6" opacity="0.3" />
       <rect x="194" y="66" width="22" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
 
       <motion.rect x="188" y="78" width="64" height="18" rx="5" fill="#2563eb" opacity="0.08" stroke="#2563eb" strokeWidth="0.5"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.7, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.7, ease }}
       />
       <rect x="194" y="83" width="28" height="3" rx="1.5" fill="#2563eb" opacity="0.3" />
       <rect x="194" y="89" width="18" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
@@ -292,14 +292,14 @@ function CustomizationSVG() {
       <motion.path
         d="M165 60 L175 60"
         stroke="#00A1E0" strokeWidth="1.5" strokeDasharray="3 2" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.4, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.4, ease }}
       />
       <motion.polygon
         points="175,57 180,60 175,63"
         fill="#00A1E0" opacity="0.3"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.3 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.3 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
     </svg>
   );
@@ -312,8 +312,8 @@ function IntegrationSVG() {
       <motion.path
         d="M120 45c0-5 4-9.5 9.5-9.5 3.5 0 6.5 1.8 8 4.5 1.3-.6 2.7-.9 4.2-.9 5.5 0 8 4.4 8 8.4 0 4.7-3.8 8.5-8.5 8.5-.7 0-1.3-.1-1.9-.2-1.3 2.2-3.8 3.6-6.5 3.6-1.3 0-2.5-.3-3.6-.9-1.4 1.9-3.6 3.2-6.2 3.2-2.8 0-5.3-1.5-6.6-3.8-.6.1-1.2.2-1.8.2-4.3 0-7.8-3.8-7.8-8.5 0-3.5 2.1-6.4 5.1-7.7-.3-.9-.4-1.8-.4-2.8 0-4.5 3.3-8.1 7.3-4.2z"
         fill="#00A1E0"
-        initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.7, ease }}
+        initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.7, ease }}
       />
       {/* SF text inside cloud */}
       <text x="128" y="52" fontSize="6" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" textAnchor="middle">SF</text>
@@ -323,8 +323,8 @@ function IntegrationSVG() {
       <motion.rect
         x="20" y="10" width="60" height="35" rx="7"
         fill="white" stroke="#2563eb" strokeWidth="1.2"
-        initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}
+        initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}
       />
       <rect x="28" y="18" width="22" height="4" rx="2" fill="#2563eb" opacity="0.35" />
       <rect x="28" y="26" width="35" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
@@ -334,8 +334,8 @@ function IntegrationSVG() {
       <motion.rect
         x="200" y="10" width="60" height="35" rx="7"
         fill="white" stroke="#14b8a6" strokeWidth="1.2"
-        initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}
+        initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}
       />
       <rect x="208" y="18" width="28" height="4" rx="2" fill="#14b8a6" opacity="0.35" />
       <rect x="208" y="26" width="38" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
@@ -345,8 +345,8 @@ function IntegrationSVG() {
       <motion.rect
         x="20" y="75" width="60" height="35" rx="7"
         fill="white" stroke="#00A1E0" strokeWidth="1.2"
-        initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}
+        initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}
       />
       <rect x="28" y="83" width="30" height="4" rx="2" fill="#00A1E0" opacity="0.35" />
       <rect x="28" y="91" width="40" height="3" rx="1.5" fill="#86868b" opacity="0.15" />
@@ -356,43 +356,43 @@ function IntegrationSVG() {
       <motion.rect
         x="200" y="75" width="60" height="35" rx="7"
         fill="white" stroke="#2563eb" strokeWidth="1.2"
-        initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6, ease }}
+        initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.6, ease }}
       />
       {/* Mini bar chart */}
       <motion.rect x="210" y="96" width="6" height="10" rx="1" fill="#2563eb" opacity="0.3"
-        initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.8, ease }}
+        initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.4, delay: 0.8, ease }}
         style={{ originY: 1, transformBox: "fill-box" }}
       />
       <motion.rect x="220" y="90" width="6" height="16" rx="1" fill="#2563eb" opacity="0.4"
-        initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.85, ease }}
+        initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.4, delay: 0.85, ease }}
         style={{ originY: 1, transformBox: "fill-box" }}
       />
       <motion.rect x="230" y="84" width="6" height="22" rx="1" fill="#2563eb" opacity="0.5"
-        initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.9, ease }}
+        initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.4, delay: 0.9, ease }}
         style={{ originY: 1, transformBox: "fill-box" }}
       />
       <rect x="208" y="82" width="30" height="3" rx="1.5" fill="#2563eb" opacity="0.2" />
 
       {/* Connecting lines to central cloud */}
       <motion.line x1="80" y1="27" x2="113" y2="44" stroke="#2563eb" strokeWidth="1.2" strokeDasharray="4 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.5, ease }}
       />
       <motion.line x1="200" y1="27" x2="148" y2="44" stroke="#14b8a6" strokeWidth="1.2" strokeDasharray="4 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.6, ease }}
       />
       <motion.line x1="80" y1="92" x2="113" y2="58" stroke="#00A1E0" strokeWidth="1.2" strokeDasharray="4 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.7, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.7, ease }}
       />
       <motion.line x1="200" y1="92" x2="148" y2="58" stroke="#2563eb" strokeWidth="1.2" strokeDasharray="4 3" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.8, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.8, ease }}
       />
 
       {/* Pulse dots on lines */}
@@ -423,81 +423,81 @@ function DataMigrationSVG() {
       <motion.rect
         x="15" y="20" width="70" height="80" rx="7"
         fill="white" stroke="#86868b" strokeWidth="1" strokeDasharray="3 2"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.5, ease }}
       />
       {/* Messy scattered data rows */}
       <motion.rect x="22" y="30" width="40" height="4" rx="2" fill="#ef4444" opacity="0.2"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.15, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.2 }}
+ transition={{ duration: 0.3, delay: 0.15, ease }}
       />
       <motion.rect x="25" y="38" width="50" height="4" rx="2" fill="#86868b" opacity="0.15"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.15 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.15 }}
+ transition={{ duration: 0.3, delay: 0.2, ease }}
       />
       <motion.rect x="20" y="46" width="55" height="4" rx="2" fill="#eab308" opacity="0.2"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.25, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.2 }}
+ transition={{ duration: 0.3, delay: 0.25, ease }}
       />
       <motion.rect x="28" y="54" width="30" height="4" rx="2" fill="#86868b" opacity="0.12"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.12 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.12 }}
+ transition={{ duration: 0.3, delay: 0.3, ease }}
       />
       <motion.rect x="22" y="62" width="48" height="4" rx="2" fill="#ef4444" opacity="0.15"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.15 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.35, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.15 }}
+ transition={{ duration: 0.3, delay: 0.35, ease }}
       />
       <motion.rect x="30" y="70" width="35" height="4" rx="2" fill="#86868b" opacity="0.1"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.1 }}
+ transition={{ duration: 0.3, delay: 0.4, ease }}
       />
       <motion.rect x="24" y="78" width="42" height="4" rx="2" fill="#eab308" opacity="0.18"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.18 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.45, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.18 }}
+ transition={{ duration: 0.3, delay: 0.45, ease }}
       />
       <motion.rect x="26" y="86" width="38" height="4" rx="2" fill="#86868b" opacity="0.1"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.1 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
 
       {/* Pipeline / transformation funnel */}
       <motion.path
         d="M95 30 L115 30 L125 45 L125 75 L115 90 L95 90 L95 30Z"
         fill="#00A1E0" opacity="0.08" stroke="#00A1E0" strokeWidth="1.2"
-        initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}
+        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}
       />
       {/* Filter/funnel lines inside */}
       <motion.line x1="100" y1="42" x2="120" y2="42" stroke="#00A1E0" strokeWidth="0.8" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
       <motion.line x1="100" y1="52" x2="122" y2="52" stroke="#00A1E0" strokeWidth="0.8" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.55, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.55, ease }}
       />
       <motion.line x1="100" y1="62" x2="122" y2="62" stroke="#00A1E0" strokeWidth="0.8" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
       />
       <motion.line x1="100" y1="72" x2="120" y2="72" stroke="#00A1E0" strokeWidth="0.8" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.65, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.65, ease }}
       />
       {/* Checkmark inside funnel */}
       <motion.path
         d="M105 57 L110 62 L118 52"
         stroke="#14b8a6" strokeWidth="2" fill="none" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.7, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.7, ease }}
       />
 
       {/* Arrow flow */}
       <motion.path
         d="M130 60 L140 60"
         stroke="#00A1E0" strokeWidth="1.5" opacity="0.4"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
       />
       <polygon points="140,57 145,60 140,63" fill="#00A1E0" opacity="0.4" />
 
@@ -505,31 +505,31 @@ function DataMigrationSVG() {
       <motion.rect
         x="148" y="35" width="45" height="50" rx="6"
         fill="#14b8a6" opacity="0.06" stroke="#14b8a6" strokeWidth="1"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.5, delay: 0.5, ease }}
       />
       {/* Merge icon */}
       <motion.path
         d="M162 45 L162 55 M158 48 L162 45 L166 48 M155 65 L162 58 L169 65"
         stroke="#14b8a6" strokeWidth="1.5" fill="none" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.7, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.7, ease }}
       />
       <motion.rect x="154" y="72" width="25" height="3" rx="1.5" fill="#14b8a6" opacity="0.25"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <motion.rect x="156" y="78" width="18" height="3" rx="1.5" fill="#86868b" opacity="0.12"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.85, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.85, ease }}
       />
 
       {/* Arrow to clean data */}
       <motion.path
         d="M198 60 L208 60"
         stroke="#14b8a6" strokeWidth="1.5" opacity="0.4"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <polygon points="208,57 213,60 208,63" fill="#14b8a6" opacity="0.4" />
 
@@ -537,40 +537,40 @@ function DataMigrationSVG() {
       <motion.rect
         x="215" y="20" width="55" height="80" rx="7"
         fill="white" stroke="#00A1E0" strokeWidth="1.5"
-        initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.7, ease }}
+        initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.6, delay: 0.7, ease }}
       />
       {/* Clean organized rows */}
       <motion.rect x="222" y="30" width="40" height="5" rx="2.5" fill="#00A1E0" opacity="0.3"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <motion.rect x="222" y="40" width="40" height="5" rx="2.5" fill="#00A1E0" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.85, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.85, ease }}
       />
       <motion.rect x="222" y="50" width="40" height="5" rx="2.5" fill="#00A1E0" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.9, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.9, ease }}
       />
       <motion.rect x="222" y="60" width="40" height="5" rx="2.5" fill="#00A1E0" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.95, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.95, ease }}
       />
       <motion.rect x="222" y="70" width="40" height="5" rx="2.5" fill="#14b8a6" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 1, ease }}
       />
       <motion.rect x="222" y="80" width="40" height="5" rx="2.5" fill="#14b8a6" opacity="0.2"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 1.05, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 1.05, ease }}
       />
       {/* SF cloud badge on target */}
       <motion.path
         d="M238 90c0-2 1.5-3.5 3.5-3.5 1.2 0 2.3.6 2.8 1.6.5-.2 1-.3 1.5-.3 2 0 2.8 1.6 2.8 2.8 0 1.6-1.3 2.9-2.9 2.9h-5.4c-1.5 0-2.3-1.2-2.3-2.3z"
         fill="#00A1E0" opacity="0.4"
-        initial={{ opacity: 0, scale: 0.7 }} whileInView={{ opacity: 0.4, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.1, ease }}
+        initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 0.4, scale: 1 }}
+ transition={{ duration: 0.4, delay: 1.1, ease }}
       />
     </svg>
   );
@@ -583,15 +583,15 @@ function AdminSupportSVG() {
       <motion.rect
         x="20" y="10" width="240" height="100" rx="10"
         fill="white" stroke="#00A1E0" strokeWidth="1.2"
-        initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, ease }}
+        initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.6, ease }}
       />
       {/* Dashboard header */}
       <motion.rect
         x="20" y="10" width="240" height="18" rx="10"
         fill="#00A1E0" opacity="0.07"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.07 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.07 }}
+ transition={{ duration: 0.4, delay: 0.1, ease }}
       />
       <circle cx="34" cy="19" r="2.5" fill="#00A1E0" opacity="0.4" />
       <rect x="42" y="17" width="50" height="4" rx="2" fill="#00A1E0" opacity="0.15" />
@@ -600,16 +600,16 @@ function AdminSupportSVG() {
       <motion.circle
         cx="65" cy="58" r="20"
         stroke="#e5e7eb" strokeWidth="4" fill="none"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.2, ease }}
       />
       <motion.circle
         cx="65" cy="58" r="20"
         stroke="#14b8a6" strokeWidth="4" fill="none"
         strokeDasharray="110 126" strokeLinecap="round"
         transform="rotate(-90 65 58)"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, delay: 0.4, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, delay: 0.4, ease }}
       />
       <text x="65" y="56" fontSize="9" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif">87</text>
       <text x="65" y="65" fontSize="5" fill="#86868b" textAnchor="middle" fontFamily="Inter, sans-serif">Health</text>
@@ -617,75 +617,75 @@ function AdminSupportSVG() {
       {/* Metric cards row */}
       {/* Active Users */}
       <motion.rect x="100" y="34" width="68" height="30" rx="6" fill="#00A1E0" opacity="0.06"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.4, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.4, ease }}
       />
       <text x="108" y="47" fontSize="5" fill="#86868b" fontFamily="Inter, sans-serif">Active Users</text>
       <text x="108" y="58" fontSize="11" fontWeight="700" fill="#00A1E0" fontFamily="Inter, sans-serif">248</text>
       <motion.path d="M145 56 L148 52 L152 54 L156 48 L160 50" stroke="#14b8a6" strokeWidth="1.2" fill="none" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.5, delay: 0.6, ease }}
       />
 
       {/* API Calls */}
       <motion.rect x="175" y="34" width="68" height="30" rx="6" fill="#14b8a6" opacity="0.06"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.5, ease }}
       />
       <text x="183" y="47" fontSize="5" fill="#86868b" fontFamily="Inter, sans-serif">API Calls</text>
       <text x="183" y="58" fontSize="11" fontWeight="700" fill="#14b8a6" fontFamily="Inter, sans-serif">12.4k</text>
 
       {/* User management row */}
       <motion.rect x="100" y="72" width="143" height="28" rx="6" fill="#f5f5f7" opacity="0.8"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.8 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.8 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       {/* User avatars */}
       <motion.circle cx="114" cy="86" r="7" fill="#00A1E0" opacity="0.2"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.7, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.7, ease }}
       />
       <circle cx="114" cy="84" r="2.5" fill="#00A1E0" opacity="0.4" />
       <path d="M110 90 Q114 88 118 90" fill="#00A1E0" opacity="0.3" />
 
       <motion.circle cx="132" cy="86" r="7" fill="#14b8a6" opacity="0.2"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.75, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.75, ease }}
       />
       <circle cx="132" cy="84" r="2.5" fill="#14b8a6" opacity="0.4" />
       <path d="M128 90 Q132 88 136 90" fill="#14b8a6" opacity="0.3" />
 
       <motion.circle cx="150" cy="86" r="7" fill="#2563eb" opacity="0.2"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <circle cx="150" cy="84" r="2.5" fill="#2563eb" opacity="0.4" />
       <path d="M146 90 Q150 88 154 90" fill="#2563eb" opacity="0.3" />
 
       {/* Status bars */}
       <motion.rect x="168" y="79" width="60" height="4" rx="2" fill="#e5e7eb"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <motion.rect x="168" y="79" width="48" height="4" rx="2" fill="#14b8a6" opacity="0.5"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.9, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.6, delay: 0.9, ease }}
         style={{ originX: 0, transformBox: "fill-box" }}
       />
       <motion.rect x="168" y="88" width="60" height="4" rx="2" fill="#e5e7eb"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.85, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.85, ease }}
       />
       <motion.rect x="168" y="88" width="38" height="4" rx="2" fill="#00A1E0" opacity="0.5"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.95, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.6, delay: 0.95, ease }}
         style={{ originX: 0, transformBox: "fill-box" }}
       />
 
       {/* Sidebar health metrics */}
       <motion.rect x="30" y="82" width="55" height="20" rx="5" fill="#14b8a6" opacity="0.06"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.8, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.3, delay: 0.8, ease }}
       />
       <circle cx="38" cy="92" r="3" fill="#14b8a6" opacity="0.4" />
       <rect x="44" y="89" width="28" height="3" rx="1.5" fill="#14b8a6" opacity="0.2" />
@@ -703,33 +703,33 @@ function Customer360SVG() {
     <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Central user avatar */}
       <motion.circle cx="40" cy="24" r="10" fill="#00A1E0" opacity="0.15"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.5, ease }}
       />
       <circle cx="40" cy="21" r="3.5" fill="#00A1E0" opacity="0.4" />
       <path d="M34 30 Q40 27 46 30" fill="#00A1E0" opacity="0.3" />
 
       {/* Orbiting touchpoints */}
       <motion.circle cx="40" cy="24" r="22" stroke="#00A1E0" strokeWidth="0.5" strokeDasharray="2 3" opacity="0.2"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.2 }}
+ transition={{ duration: 0.6, delay: 0.3, ease }}
       />
       {/* Data points on orbit */}
       <motion.circle cx="18" cy="22" r="4" fill="#14b8a6" opacity="0.25"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.4, ease }}
       />
       <motion.circle cx="62" cy="22" r="4" fill="#2563eb" opacity="0.25"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.5, ease }}
       />
       <motion.circle cx="26" cy="42" r="4" fill="#00A1E0" opacity="0.25"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
       />
       <motion.circle cx="54" cy="42" r="4" fill="#14b8a6" opacity="0.25"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.7, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.7, ease }}
       />
 
       {/* 360 text */}
@@ -764,14 +764,14 @@ function AutomationSVG() {
       <motion.path
         d="M18 45 L28 45 L33 40"
         stroke="#00A1E0" strokeWidth="1" fill="none" opacity="0.3" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.3, ease }}
       />
       <motion.path
         d="M48 40 L53 45 L65 45"
         stroke="#14b8a6" strokeWidth="1" fill="none" opacity="0.3" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.6, delay: 0.5, ease }}
       />
 
       {/* Lightning bolts */}
@@ -790,15 +790,15 @@ function MobileSVG() {
       <motion.rect
         x="28" y="5" width="24" height="50" rx="5"
         stroke="#00A1E0" strokeWidth="1.2" fill="white" opacity="0.1"
-        initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, ease }}
+        initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, ease }}
       />
       {/* Screen area */}
       <motion.rect
         x="30" y="12" width="20" height="36" rx="2"
         fill="#00A1E0" opacity="0.08"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.08 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.2, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.08 }}
+ transition={{ duration: 0.4, delay: 0.2, ease }}
       />
       {/* Notch */}
       <rect x="36" y="7" width="8" height="3" rx="1.5" fill="#00A1E0" opacity="0.15" />
@@ -807,30 +807,30 @@ function MobileSVG() {
 
       {/* App content on screen */}
       <motion.rect x="33" y="16" width="14" height="3" rx="1.5" fill="#00A1E0" opacity="0.3"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.3, ease }}
       />
       <motion.rect x="33" y="22" width="10" height="2" rx="1" fill="#86868b" opacity="0.15"
-        initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.35, ease }}
+        initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
+ transition={{ duration: 0.3, delay: 0.35, ease }}
       />
       <motion.rect x="33" y="28" width="14" height="6" rx="2" fill="#14b8a6" opacity="0.12"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.12 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.12 }}
+ transition={{ duration: 0.3, delay: 0.4, ease }}
       />
       <motion.rect x="33" y="37" width="14" height="6" rx="2" fill="#00A1E0" opacity="0.12"
-        initial={{ opacity: 0 }} whileInView={{ opacity: 0.12 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.45, ease }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.12 }}
+ transition={{ duration: 0.3, delay: 0.45, ease }}
       />
 
       {/* WiFi signal */}
       <motion.path d="M60 16 Q64 10 68 16" stroke="#14b8a6" strokeWidth="1" fill="none" opacity="0.3"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.5, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.5, ease }}
       />
       <motion.path d="M58 20 Q64 12 70 20" stroke="#14b8a6" strokeWidth="1" fill="none" opacity="0.2"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }}
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }}
       />
       <circle cx="64" cy="20" r="1.5" fill="#14b8a6" opacity="0.4" />
 
@@ -838,8 +838,8 @@ function MobileSVG() {
       <motion.path
         d="M16 30 C16 24 22 22 22 28 C22 32 19 36 19 36 C19 36 16 32 16 30Z"
         fill="#00A1E0" opacity="0.2" stroke="#00A1E0" strokeWidth="0.8"
-        initial={{ opacity: 0, y: 3 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.4, ease }}
+        initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.4, ease }}
       />
       <circle cx="19" cy="29" r="2" fill="#00A1E0" opacity="0.3" />
     </svg>
@@ -851,29 +851,29 @@ function AppExchangeSVG() {
     <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Grid of app blocks */}
       <motion.rect x="10" y="8" width="16" height="16" rx="4" fill="#00A1E0" opacity="0.15" stroke="#00A1E0" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.1, ease }}
       />
       <motion.rect x="32" y="8" width="16" height="16" rx="4" fill="#14b8a6" opacity="0.15" stroke="#14b8a6" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.2, ease }}
       />
       <motion.rect x="54" y="8" width="16" height="16" rx="4" fill="#2563eb" opacity="0.15" stroke="#2563eb" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.3, ease }}
       />
 
       <motion.rect x="10" y="30" width="16" height="16" rx="4" fill="#2563eb" opacity="0.12" stroke="#2563eb" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.35, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.35, ease }}
       />
       <motion.rect x="32" y="30" width="16" height="16" rx="4" fill="#00A1E0" opacity="0.2" stroke="#00A1E0" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.4, ease }}
       />
       <motion.rect x="54" y="30" width="16" height="16" rx="4" fill="#14b8a6" opacity="0.12" stroke="#14b8a6" strokeWidth="0.5"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.45, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.45, ease }}
       />
 
       {/* Icons inside blocks */}
@@ -888,8 +888,8 @@ function AppExchangeSVG() {
 
       {/* Plus icon for expandability */}
       <motion.path d="M40 52 L40 56 M38 54 L42 54" stroke="#00A1E0" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.6, ease }}
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ duration: 0.3, delay: 0.6, ease }}
         style={{ transformOrigin: "40px 54px" }}
       />
     </svg>
@@ -1015,9 +1015,8 @@ export default function SalesforceContent() {
           {/* Inline section heading */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-12"
           >
             <p className="text-[0.8125rem] font-semibold text-sf-blue tracking-wide uppercase mb-3">
@@ -1037,9 +1036,8 @@ export default function SalesforceContent() {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
+                animate={{ opacity: 1, y: 0 }}
+                 transition={{
                   duration: 0.6,
                   delay: index * 0.08,
                   ease,
@@ -1090,9 +1088,8 @@ export default function SalesforceContent() {
           {/* Inline section heading — dark variant */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease }}
+            animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.7, ease }}
             className="text-center mb-12"
           >
             <p className="text-[0.8125rem] font-semibold text-sf-blue tracking-wide uppercase mb-3">
@@ -1112,9 +1109,8 @@ export default function SalesforceContent() {
               <motion.div
                 key={benefit.title}
                 initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
+                animate={{ opacity: 1, y: 0 }}
+                 transition={{
                   duration: 0.6,
                   delay: index * 0.1,
                   ease,

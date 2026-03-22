@@ -18,33 +18,33 @@ function SMBVisual() {
       {bars.map((h, i) => (
         <motion.rect key={i} x={16 + i * 13} y={115 - h} width="8" height={h} rx="2"
           fill="url(#smb-bar)" opacity={0.06 + i * 0.015}
-          initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.25 + i * 0.07, ease }}
+          initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.4, delay: 0.25 + i * 0.07, ease }}
           style={{ originY: 1 }} />
       ))}
       {/* Trend line */}
       <motion.path d="M20 100 C35 85, 42 90, 50 82 S65 65, 75 70 S90 52, 105 44"
         stroke="#14b8a6" strokeWidth="1.5" fill="none" opacity="0.25" strokeLinecap="round"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 1, delay: 0.5, ease }} />
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 1, delay: 0.5, ease }} />
       <motion.circle cx="105" cy="44" r="2.5" fill="#14b8a6" opacity="0.35"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-        viewport={{ once: true }} transition={{ delay: 1.3 }} />
+        initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ delay: 1.3 }} />
       {/* Axis */}
       <text x="16" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.12">Q1</text>
       <text x="95" y="126" fontSize="3.2" fill="white" fontFamily="Inter, sans-serif" opacity="0.12">Q7</text>
 
       {/* ── Growth ring ── */}
-      <motion.g initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4, ease }}>
+      <motion.g initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.6, delay: 0.4, ease }}>
         <circle cx="148" cy="62" r="28" stroke="white" strokeWidth="1" opacity="0.04" />
         <motion.circle cx="148" cy="62" r="28" stroke="url(#smb-ring)" strokeWidth="3.5"
           fill="none" opacity="0.22" strokeLinecap="round"
           strokeDasharray={`${Math.round(2 * Math.PI * 28 * 0.78)} ${Math.round(2 * Math.PI * 28 * 0.22)}`}
           transform="rotate(-90 148 62)"
           initial={{ strokeDashoffset: Math.round(2 * Math.PI * 28) }}
-          whileInView={{ strokeDashoffset: 0 }}
-          viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.5, ease }} />
+          animate={{ strokeDashoffset: 0 }}
+ transition={{ duration: 1.2, delay: 0.5, ease }} />
         <text x="148" y="58" fontSize="15" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">3×</text>
         <text x="148" y="70" fontSize="4.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.18">Growth</text>
       </motion.g>
@@ -59,8 +59,7 @@ function SMBVisual() {
         { y: 90, label: "Efficiency", value: "94%", iconD: "M211 97 L214 100 L220 92" },
       ].map((kpi, i) => (
         <motion.g key={kpi.label} initial={{ opacity: 0, x: 6 }}
-          whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.65 + i * 0.12, ease }}>
+          animate={{ opacity: 1, x: 0 }}           transition={{ duration: 0.4, delay: 0.65 + i * 0.12, ease }}>
           <rect x="198" y={kpi.y} width="54" height="28" rx="6" fill="white" opacity="0.035" />
           <rect x="198" y={kpi.y} width="54" height="28" rx="6" stroke="white" strokeWidth="0.3" opacity="0.05" />
           <path d={kpi.iconD} stroke="#14b8a6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3" />
@@ -101,22 +100,21 @@ function E2EVisual() {
     <motion.svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* Timeline backbone */}
       <motion.line x1="32" y1="30" x2="232" y2="30" stroke="white" strokeWidth="0.5" opacity="0.06"
-        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1, ease }} />
+        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.8, delay: 0.1, ease }} />
 
       {/* Phase nodes */}
       {phases.map((p, i) => (
         <motion.g key={p.label} initial={{ opacity: 0, y: 6 }}
-          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          transition={{ duration: 0.35, delay: 0.15 + i * 0.1, ease }}>
+          animate={{ opacity: 1, y: 0 }}           transition={{ duration: 0.35, delay: 0.15 + i * 0.1, ease }}>
           <circle cx={p.x + 10} cy="30" r="10" stroke={p.color} strokeWidth="0.8"
             fill={p.done ? p.color : "none"} opacity={p.done ? 0.12 : 0.1}
             strokeDasharray={!p.done && !("active" in p && p.active) ? "2 2" : "none"} />
           {p.done && (
             <motion.path d={`M${p.x + 5} 30 L${p.x + 9} 34 L${p.x + 16} 25`}
               stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4"
-              initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3 + i * 0.1, ease }} />
+              initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.3 + i * 0.1, ease }} />
           )}
           {"active" in p && p.active && (
             <motion.circle cx={p.x + 10} cy="30" r="3" fill={p.color} opacity="0.4"
@@ -132,8 +130,8 @@ function E2EVisual() {
         <motion.line key={i} x1={phases[i].x + 20} y1="30" x2={phases[i + 1].x} y2="30"
           stroke="url(#e2e-ln)" strokeWidth="1" opacity="0.08"
           strokeDasharray={i >= 3 ? "2 2" : "none"}
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.2 + i * 0.1, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.3, delay: 0.2 + i * 0.1, ease }} />
       ))}
 
       {/* Gantt label */}
@@ -143,13 +141,13 @@ function E2EVisual() {
       {gantt.map((bar, i) => (
         <motion.rect key={i} x={bar.x} y={bar.y} width={bar.w} height="5" rx="2.5"
           fill={bar.color} opacity={0.07 + i * 0.015}
-          initial={{ width: 0 }} whileInView={{ width: bar.w }}
-          viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease }} />
+          initial={{ width: 0 }} animate={{ width: bar.w }}
+ transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease }} />
       ))}
 
       {/* "One Partner" badge */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 1.1 }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 1.1 }}>
         <rect x="186" y="60" width="62" height="18" rx="9" fill="white" opacity="0.04" />
         <rect x="186" y="60" width="62" height="18" rx="9" stroke="white" strokeWidth="0.3" opacity="0.06" />
         <circle cx="196" cy="69" r="3.5" fill="#14b8a6" opacity="0.2" />
@@ -176,8 +174,8 @@ function CertVisual() {
   return (
     <motion.svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* ── Microsoft credential card ── */}
-      <motion.g initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2, ease }}>
+      <motion.g initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.2, ease }}>
         <rect x="12" y="14" width="108" height="72" rx="8" fill="white" opacity="0.04" />
         <rect x="12" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.4" opacity="0.06" />
         {/* MS Logo */}
@@ -192,15 +190,15 @@ function CertVisual() {
         <circle cx="32" cy="64" r="7" fill="#2563eb" opacity="0.08" />
         <circle cx="32" cy="64" r="7" stroke="#2563eb" strokeWidth="0.6" opacity="0.15" />
         <motion.path d="M28 64 L31 67 L36 61" stroke="#2563eb" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.6, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.6, ease }} />
         <text x="44" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Certified</text>
         <text x="44" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.15">Partner</text>
       </motion.g>
 
       {/* ── Salesforce credential card ── */}
-      <motion.g initial={{ opacity: 0, x: 8 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.35, ease }}>
+      <motion.g initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.35, ease }}>
         <rect x="140" y="14" width="108" height="72" rx="8" fill="white" opacity="0.04" />
         <rect x="140" y="14" width="108" height="72" rx="8" stroke="white" strokeWidth="0.4" opacity="0.06" />
         {/* SF Cloud */}
@@ -212,15 +210,15 @@ function CertVisual() {
         <circle cx="160" cy="64" r="7" fill="#00A1E0" opacity="0.08" />
         <circle cx="160" cy="64" r="7" stroke="#00A1E0" strokeWidth="0.6" opacity="0.15" />
         <motion.path d="M156 64 L159 67 L164 61" stroke="#00A1E0" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.4"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.75, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 0.75, ease }} />
         <text x="172" y="63" fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Certified</text>
         <text x="172" y="71" fontSize="3.5" fill="white" fontFamily="Inter, sans-serif" opacity="0.15">Partner</text>
       </motion.g>
 
       {/* ── Project count ── */}
-      <motion.g initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6, ease }}>
+      <motion.g initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.6, ease }}>
         <rect x="12" y="96" width="68" height="34" rx="8" fill="white" opacity="0.035" />
         <rect x="12" y="96" width="68" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
         <text x="46" y="114" fontSize="14" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">50+</text>
@@ -228,24 +226,24 @@ function CertVisual() {
       </motion.g>
 
       {/* ── Star rating ── */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.85 }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 0.85 }}>
         <rect x="92" y="96" width="90" height="34" rx="8" fill="white" opacity="0.035" />
         <rect x="92" y="96" width="90" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
         {[0, 1, 2, 3, 4].map((i) => (
           <motion.path key={i}
             d={`M${106 + i * 12} 110 l1.6-3.2 3.5-.5-2.5-2.5.6-3.5-3.2 1.7-3.2-1.7.6 3.5-2.5 2.5 3.5.5z`}
             fill="#14b8a6" opacity={0.15 + i * 0.04}
-            initial={{ scale: 0 }} whileInView={{ scale: 1 }}
-            viewport={{ once: true }} transition={{ delay: 0.95 + i * 0.08 }} />
+            initial={{ scale: 0 }} animate={{ scale: 1 }}
+ transition={{ delay: 0.95 + i * 0.08 }} />
         ))}
         <text x="172" y="111" fontSize="7" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.35">4.9</text>
         <text x="137" y="125" fontSize="3.5" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.15">Client Satisfaction</text>
       </motion.g>
 
       {/* ── Years badge ── */}
-      <motion.g initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ delay: 0.9 }}>
+      <motion.g initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ delay: 0.9 }}>
         <rect x="194" y="96" width="54" height="34" rx="8" fill="white" opacity="0.035" />
         <rect x="194" y="96" width="54" height="34" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
         <text x="221" y="115" fontSize="12" fontWeight="800" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">10+</text>
@@ -265,12 +263,12 @@ function BudgetVisual() {
   return (
     <motion.svg viewBox="0 0 260 140" fill="none" className="w-full h-full">
       {/* ── Cost comparison bars ── */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2, ease }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ duration: 0.5, delay: 0.2, ease }}>
         {/* Enterprise bar */}
         <motion.rect x="22" y="22" width="28" height="85" rx="4" fill="white" opacity="0.03"
-          initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}
+          initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}
           style={{ originY: 1 }} />
         <rect x="22" y="22" width="28" height="85" rx="4" stroke="white" strokeWidth="0.3" opacity="0.05" />
         <text x="36" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.14">Enterprise</text>
@@ -278,16 +276,16 @@ function BudgetVisual() {
 
         {/* Our bar */}
         <motion.rect x="58" y="52" width="28" height="55" rx="4" fill="url(#budget-fill)" opacity="0.1"
-          initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.45, ease }}
+          initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.5, delay: 0.45, ease }}
           style={{ originY: 1 }} />
         <rect x="58" y="52" width="28" height="55" rx="4" stroke="url(#budget-fill)" strokeWidth="0.5" opacity="0.12" />
         <text x="72" y="115" fontSize="3.2" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.14">ERP Biz</text>
         <text x="72" y="48" fontSize="5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">$</text>
 
         {/* Savings badge */}
-        <motion.g initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }} transition={{ delay: 0.8 }}>
+        <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ delay: 0.8 }}>
           <rect x="38" y="30" width="30" height="14" rx="7" fill="#14b8a6" opacity="0.08" />
           <rect x="38" y="30" width="30" height="14" rx="7" stroke="#14b8a6" strokeWidth="0.4" opacity="0.12" />
           <text x="53" y="40" fontSize="4.5" fontWeight="700" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">−40%</text>
@@ -295,8 +293,8 @@ function BudgetVisual() {
       </motion.g>
 
       {/* ── Quote breakdown ── */}
-      <motion.g initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}>
+      <motion.g initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}>
         <rect x="100" y="14" width="100" height="112" rx="8" fill="white" opacity="0.035" />
         <rect x="100" y="14" width="100" height="112" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
         <text x="150" y="31" fontSize="5" fontWeight="700" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.28">Transparent Quote</text>
@@ -309,19 +307,19 @@ function BudgetVisual() {
           { label: "Support (yr 1)", amount: "$6,000", w: 24 },
         ].map((item, i) => (
           <motion.g key={item.label}
-            initial={{ opacity: 0, x: -4 }} whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.55 + i * 0.1, ease }}>
+            initial={{ opacity: 0, x: -4 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.3, delay: 0.55 + i * 0.1, ease }}>
             <text x="110" y={50 + i * 17} fontSize="3.8" fill="white" fontFamily="Inter, sans-serif" opacity="0.2">{item.label}</text>
             <text x="190" y={50 + i * 17} fontSize="4" fontWeight="600" fill="white" fontFamily="Inter, sans-serif" opacity="0.32" textAnchor="end">{item.amount}</text>
             <motion.rect x="110" y={53 + i * 17} width={item.w} height="2.5" rx="1.25" fill="url(#budget-fill)" opacity={0.07 + i * 0.02}
-              initial={{ width: 0 }} whileInView={{ width: item.w }}
-              viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.65 + i * 0.1, ease }} />
+              initial={{ width: 0 }} animate={{ width: item.w }}
+ transition={{ duration: 0.4, delay: 0.65 + i * 0.1, ease }} />
           </motion.g>
         ))}
 
         {/* Total */}
-        <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ delay: 1 }}>
+        <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 1 }}>
           <line x1="110" y1="110" x2="190" y2="110" stroke="url(#budget-fill)" strokeWidth="0.8" opacity="0.15" />
           <text x="110" y="122" fontSize="4" fontWeight="700" fill="white" fontFamily="Inter, sans-serif" opacity="0.25">Total</text>
           <text x="190" y="122" fontSize="6.5" fontWeight="800" fill="#14b8a6" fontFamily="Inter, sans-serif" opacity="0.45" textAnchor="end">$47,300</text>
@@ -329,20 +327,20 @@ function BudgetVisual() {
       </motion.g>
 
       {/* ── No hidden fees badge ── */}
-      <motion.g initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.9, ease }}>
+      <motion.g initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.4, delay: 0.9, ease }}>
         <circle cx="224" cy="40" r="16" fill="#14b8a6" opacity="0.06" />
         <circle cx="224" cy="40" r="16" stroke="#14b8a6" strokeWidth="0.6" opacity="0.12" />
         <motion.path d="M217 40 L222 45 L232 34" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.35"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 1.1, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+ transition={{ duration: 0.4, delay: 1.1, ease }} />
         <text x="224" y="62" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.25">No Hidden</text>
         <text x="224" y="68" fontSize="3.8" fontWeight="600" fill="#14b8a6" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.25">Fees</text>
       </motion.g>
 
       {/* Fixed price label */}
-      <motion.g initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} transition={{ delay: 1.2 }}>
+      <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+ transition={{ delay: 1.2 }}>
         <rect x="208" y="82" width="48" height="16" rx="8" fill="white" opacity="0.03" />
         <rect x="208" y="82" width="48" height="16" rx="8" stroke="white" strokeWidth="0.3" opacity="0.05" />
         <text x="232" y="93" fontSize="3.5" fontWeight="600" fill="white" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.18">Fixed Price</text>
@@ -405,9 +403,8 @@ export default function ValueProps() {
       <div className="container-apple relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
+          animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, ease }}
           className="mb-10"
         >
           <p className="text-brand-400 text-caption font-semibold tracking-wide uppercase mb-3">
@@ -429,9 +426,8 @@ export default function ValueProps() {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease }}
+                animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.5, delay: index * 0.08, ease }}
                 className="group rounded-[22px] bg-white/[0.03] border border-white/[0.06] overflow-hidden hover:bg-white/[0.05] transition-all duration-500"
               >
                 {/* Illustration — reduced height on mobile */}

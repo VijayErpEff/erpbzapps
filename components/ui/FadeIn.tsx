@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
 
 type FadeInProps = {
   children: ReactNode;
@@ -12,26 +11,44 @@ type FadeInProps = {
   once?: boolean;
 };
 
-const ease = [0.21, 0.45, 0.27, 0.9] as [number, number, number, number];
-
 export default function FadeIn({
   children,
   delay = 0,
   duration = 0.7,
   y = 30,
   className = "",
-  once = true,
 }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const style: CSSProperties = {
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0)" : `translateY(${y}px)`,
+    transition: `opacity ${duration}s cubic-bezier(0.21,0.45,0.27,0.9) ${delay}s, transform ${duration}s cubic-bezier(0.21,0.45,0.27,0.9) ${delay}s`,
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: "-20px" }}
-      transition={{ duration, delay, ease }}
-      className={className}
-    >
+    <div ref={ref} style={style} className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -44,19 +61,35 @@ export function FadeInStagger({
   staggerDelay?: number;
   className?: string;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-20px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: staggerDelay } },
-      }}
-      className={className}
+    <div
+      ref={ref}
+      className={`${className} ${isVisible ? "stagger-visible" : "stagger-hidden"}`}
+      style={{ "--stagger-delay": `${staggerDelay}s` } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -64,24 +97,22 @@ export function FadeInChild({
   children,
   className = "",
   y = 30,
+  index = 0,
 }: {
   children: ReactNode;
   className?: string;
   y?: number;
+  index?: number;
 }) {
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.7, ease },
-        },
-      }}
-      className={className}
+    <div
+      className={`fade-in-child ${className}`}
+      style={{
+        "--child-y": `${y}px`,
+        "--child-index": index,
+      } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

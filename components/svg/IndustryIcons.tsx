@@ -22,8 +22,7 @@ export function ManufacturingIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="mfg-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#2563eb" />
@@ -75,8 +74,7 @@ export function ProfServicesIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="ps-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#14b8a6" />
@@ -114,8 +112,7 @@ export function RetailIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="ret-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#2563eb" />
@@ -155,8 +152,7 @@ export function WholesaleIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="ws-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#14b8a6" />
@@ -202,8 +198,7 @@ export function HealthcareIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="hc-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#2563eb" />
@@ -249,8 +244,7 @@ export function NonprofitIcon({ className = "" }: { className?: string }) {
     <motion.svg
       width="100%" height="100%" viewBox="0 0 200 140" fill="none"
       className={className}
-      initial="hidden" whileInView="visible" viewport={{ once: true }}
-    >
+>
       <defs>
         <linearGradient id="np-g" x1="0" y1="0" x2="200" y2="140">
           <stop offset="0%" stopColor="#14b8a6" />

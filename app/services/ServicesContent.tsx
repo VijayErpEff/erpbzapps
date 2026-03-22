@@ -12,8 +12,8 @@ function ERPVisual() {
   return (
     <motion.svg viewBox="0 0 280 130" fill="none" className="w-full h-full">
       {/* Dashboard cards */}
-      <motion.g initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2, ease }}>
+      <motion.g initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.2, ease }}>
         <rect x="20" y="12" width="110" height="50" rx="6" fill="white" />
         <rect x="20" y="12" width="110" height="50" rx="6" stroke="#e5e7eb" strokeWidth="0.5" />
         <rect x="28" y="20" width="5" height="5" fill="#F25022" rx="0.5" />
@@ -24,16 +24,16 @@ function ERPVisual() {
         <text x="28" y="46" fontSize="12" fontWeight="700" fill="#1d1d1f" fontFamily="Inter, sans-serif">$1.2M</text>
         <text x="78" y="46" fontSize="5" fill="#14b8a6" fontFamily="Inter, sans-serif">+18%</text>
         <motion.path d="M28 54 Q45 48 65 50 T100 44 T122 40" stroke="url(#erp-s)" strokeWidth="1.5" fill="none" strokeLinecap="round"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.5, ease }} />
+          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 0.5, ease }} />
       </motion.g>
-      <motion.g initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}>
+      <motion.g initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}>
         <rect x="145" y="12" width="110" height="50" rx="6" fill="white" />
         <rect x="145" y="12" width="110" height="50" rx="6" stroke="#e5e7eb" strokeWidth="0.5" />
         <text x="155" y="28" fontSize="5" fontWeight="600" fill="#1d1d1f" fontFamily="Inter, sans-serif" opacity="0.5">Supply Chain</text>
         {[0, 1, 2].map(i => (
           <motion.rect key={i} x="155" y={35 + i * 8} width={70 - i * 18} height="4" rx="2" fill="#2563eb" opacity={0.3 - i * 0.08}
-            initial={{ width: 0 }} whileInView={{ width: 70 - i * 18 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease }} />
+            initial={{ width: 0 }} animate={{ width: 70 - i * 18 }} transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease }} />
         ))}
       </motion.g>
       {/* Bottom KPI row */}
@@ -43,8 +43,8 @@ function ERPVisual() {
         { x: 160, label: "Inventory", val: "$340K", c: "#7FBA00" },
         { x: 230, label: "Cash", val: "+$89K", c: "#00A4EF" },
       ].map((k, i) => (
-        <motion.g key={k.label} initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.4 + i * 0.08, ease }}>
+        <motion.g key={k.label} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: 0.4 + i * 0.08, ease }}>
           <rect x={k.x} y="72" width="55" height="38" rx="5" fill="white" />
           <rect x={k.x} y="72" width="55" height="38" rx="5" stroke="#e5e7eb" strokeWidth="0.5" />
           <circle cx={k.x + 10} cy={82} r="2" fill={k.c} opacity="0.3" />
@@ -64,8 +64,8 @@ function CRMVisual() {
   return (
     <motion.svg viewBox="0 0 280 130" fill="none" className="w-full h-full">
       {["Lead", "Qualified", "Proposal", "Won"].map((s, i) => (
-        <motion.g key={s} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.15 + i * 0.1, ease }}>
+        <motion.g key={s} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.15 + i * 0.1, ease }}>
           <rect x={15 + i * 67} y="10" width="58" height="110" rx="6" fill="#00A1E0" opacity={0.02 + i * 0.01} />
           <rect x={15 + i * 67} y="10" width="58" height="20" rx="6" fill="#00A1E0" opacity="0.06" />
           <text x={44 + i * 67} y="24" fontSize="5" fontWeight="600" fill="#00A1E0" textAnchor="middle" fontFamily="Inter, sans-serif" opacity={0.3 + i * 0.1}>{s}</text>
@@ -81,8 +81,8 @@ function CRMVisual() {
         { x: 222, y: 38, name: "Pinnacle", amt: "$185K", c: "#14b8a6" },
         { x: 222, y: 68, name: "Vertex", amt: "$78K", c: "#2563eb" },
       ].map((d, i) => (
-        <motion.g key={d.name} initial={{ opacity: 0, y: 4 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.3 + i * 0.05, ease }}>
+        <motion.g key={d.name} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.3, delay: 0.3 + i * 0.05, ease }}>
           <rect x={d.x} y={d.y} width="46" height="24" rx="4" fill="white" />
           <rect x={d.x} y={d.y} width="46" height="24" rx="4" stroke="#e5e7eb" strokeWidth="0.4" />
           <circle cx={d.x + 8} cy={d.y + 9} r="3" fill={d.c} opacity="0.15" />
@@ -98,8 +98,8 @@ function CRMVisual() {
 function CodeVisual() {
   return (
     <motion.svg viewBox="0 0 280 130" fill="none" className="w-full h-full">
-      <motion.g initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1, ease }}>
+      <motion.g initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.1, ease }}>
         <rect x="20" y="10" width="180" height="110" rx="8" fill="white" />
         <rect x="20" y="10" width="180" height="110" rx="8" stroke="#e5e7eb" strokeWidth="0.5" />
         <rect x="20" y="10" width="180" height="18" rx="8" fill="#fafafa" />
@@ -122,18 +122,18 @@ function CodeVisual() {
           animate={{ opacity: [1, 0, 1] }} transition={{ duration: 1, repeat: Infinity }} />
       </motion.g>
       {/* Terminal */}
-      <motion.g initial={{ opacity: 0, x: 8 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3, ease }}>
+      <motion.g initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.3, ease }}>
         <rect x="210" y="10" width="55" height="110" rx="8" fill="#1d1d1f" />
         <text x="218" y="26" fontSize="4" fontWeight="600" fill="white" fontFamily="monospace" opacity="0.3">Terminal</text>
         <text x="216" y="42" fontSize="3.5" fill="#14b8a6" fontFamily="monospace" opacity="0.5">$ npm run dev</text>
         <motion.text x="216" y="54" fontSize="3" fill="#14b8a6" fontFamily="monospace" opacity="0.4"
-          initial={{ opacity: 0 }} whileInView={{ opacity: 0.4 }} viewport={{ once: true }} transition={{ delay: 0.6 }}>
+          initial={{ opacity: 0 }} animate={{ opacity: 0.4 }} transition={{ delay: 0.6 }}>
           ✓ Ready
         </motion.text>
         {[0, 1, 2].map(i => (
           <motion.rect key={i} x="216" y={64 + i * 10} width={30 - i * 6} height="3" rx="1.5" fill="#14b8a6" opacity={0.12 - i * 0.03}
-            initial={{ width: 0 }} whileInView={{ width: 30 - i * 6 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.7 + i * 0.1, ease }} />
+            initial={{ width: 0 }} animate={{ width: 30 - i * 6 }} transition={{ duration: 0.4, delay: 0.7 + i * 0.1, ease }} />
         ))}
       </motion.g>
     </motion.svg>
@@ -146,9 +146,9 @@ function IntegrationVisual() {
     <motion.svg viewBox="0 0 280 130" fill="none" className="w-full h-full">
       {/* Center hub */}
       <motion.circle cx="140" cy="65" r="16" fill="url(#int-s)" opacity="0.12"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3, ease }} />
+        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3, ease }} />
       <motion.circle cx="140" cy="65" r="8" fill="url(#int-s)" opacity="0.25"
-        initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, ease }} />
+        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.4, ease }} />
       <circle cx="140" cy="65" r="4" fill="white" />
       {/* Outer nodes */}
       {[
@@ -159,13 +159,13 @@ function IntegrationVisual() {
         { cx: 140, cy: 15, label: "API", c: "#7FBA00" },
         { cx: 140, cy: 115, label: "Data", c: "#F25022" },
       ].map((n, i) => (
-        <motion.g key={n.label} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.3 + i * 0.08, ease }}>
+        <motion.g key={n.label} initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }}
+ transition={{ duration: 0.4, delay: 0.3 + i * 0.08, ease }}>
           <circle cx={n.cx} cy={n.cy} r="10" fill={n.c} opacity="0.08" />
           <circle cx={n.cx} cy={n.cy} r="5" fill={n.c} opacity="0.2" />
           <text x={n.cx} y={n.cy + 18} fontSize="4.5" fontWeight="500" fill={n.c} textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.35">{n.label}</text>
           <motion.line x1={n.cx} y1={n.cy} x2="140" y2="65" stroke={n.c} strokeWidth="1" strokeDasharray="3 3" opacity="0.1"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 + i * 0.05, ease }} />
+            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.5, delay: 0.5 + i * 0.05, ease }} />
         </motion.g>
       ))}
       {/* Flowing dot */}
@@ -195,29 +195,29 @@ function SupportVisual() {
         { x: 20, y: 72, label: "Uptime", val: "24/7", c: "#00A4EF" },
         { x: 115, y: 72, label: "Rating", val: "4.9★", c: "#FFB900" },
       ].map((c, i) => (
-        <motion.g key={c.label} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.2 + i * 0.08, ease }}>
+        <motion.g key={c.label} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: 0.2 + i * 0.08, ease }}>
           <rect x={c.x} y={c.y} width="80" height="46" rx="6" fill="white" />
           <rect x={c.x} y={c.y} width="80" height="46" rx="6" stroke="#e5e7eb" strokeWidth="0.5" />
           <circle cx={c.x + 12} cy={c.y + 14} r="3" fill={c.c} opacity="0.2" />
           <text x={c.x + 20} y={c.y + 16} fontSize="4.5" fill="#86868b" fontFamily="Inter, sans-serif">{c.label}</text>
           <motion.text x={c.x + 12} y={c.y + 36} fontSize="11" fontWeight="700" fill="#1d1d1f" fontFamily="Inter, sans-serif"
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 + i * 0.1 }}>
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 + i * 0.1 }}>
             {c.val}
           </motion.text>
         </motion.g>
       ))}
       {/* Activity panel */}
-      <motion.g initial={{ opacity: 0, x: 6 }} whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4, ease }}>
+      <motion.g initial={{ opacity: 0, x: 6 }} animate={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.5, delay: 0.4, ease }}>
         <rect x="210" y="15" width="50" height="103" rx="6" fill="white" />
         <rect x="210" y="15" width="50" height="103" rx="6" stroke="#e5e7eb" strokeWidth="0.5" />
         <text x="235" y="30" fontSize="4.5" fontWeight="600" fill="#1d1d1f" textAnchor="middle" fontFamily="Inter, sans-serif" opacity="0.4">Activity</text>
         {[0, 1, 2, 3, 4, 5, 6].map(i => (
           <motion.rect key={i} x={218 + i * 4} y={105 - (Math.sin(i * 0.8) * 18 + 25)}
             width="2.5" height={Math.sin(i * 0.8) * 18 + 25} rx="1.25" fill="url(#sup-s)" opacity={0.12 + i * 0.02}
-            initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }}
-            viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.5 + i * 0.05, ease }} style={{ originY: 1 }} />
+            initial={{ scaleY: 0 }} animate={{ scaleY: 1 }}
+ transition={{ duration: 0.3, delay: 0.5 + i * 0.05, ease }} style={{ originY: 1 }} />
         ))}
       </motion.g>
       <motion.circle cx="32" cy="29" r="3" fill="#14b8a6" opacity="0.2"
@@ -318,9 +318,8 @@ export default function ServicesContent() {
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-10px" }}
-                  transition={{ duration: 0.5, delay: i * 0.06, ease }}
+                  animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5, delay: i * 0.06, ease }}
                 >
                   <Link href={service.href} className="block group">
                     <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden h-full">

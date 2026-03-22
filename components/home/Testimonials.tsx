@@ -44,9 +44,8 @@ export default function Testimonials() {
       <div className="container-apple">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease }}
+          animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, ease }}
           className="mb-10"
         >
           <p className="text-brand-500 text-caption font-semibold tracking-wide uppercase mb-3">
@@ -67,9 +66,8 @@ export default function Testimonials() {
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease }}
+              animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: i * 0.08, ease }}
               className="rounded-[22px] bg-white border border-black/[0.04] shadow-card p-6 md:p-8 flex flex-col"
             >
               {/* Accent bar */}

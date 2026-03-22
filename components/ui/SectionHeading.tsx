@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 type SectionHeadingProps = {
   eyebrow?: string;
@@ -19,12 +19,35 @@ export default function SectionHeading({
   dark = false,
   className = "",
 }: SectionHeadingProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const style: CSSProperties = {
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0)" : "translateY(30px)",
+    transition: "opacity 0.7s cubic-bezier(0.21,0.45,0.27,0.9), transform 0.7s cubic-bezier(0.21,0.45,0.27,0.9)",
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.21, 0.45, 0.27, 0.9] }}
+    <div
+      ref={ref}
+      style={style}
       className={`mb-16 md:mb-20 ${centered ? "text-center" : ""} ${className}`}
     >
       {eyebrow && (
@@ -48,6 +71,6 @@ export default function SectionHeading({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </div>
   );
 }
