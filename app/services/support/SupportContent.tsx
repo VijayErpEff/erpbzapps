@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn, { FadeInStagger, FadeInChild } from "@/components/ui/FadeIn";
 import CTABanner from "@/components/ui/CTABanner";
 import Button from "@/components/ui/Button";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
 
 /* ─── Service Card Data ────────────────────────────────────── */
 
@@ -141,16 +139,13 @@ function HelpdeskSVG() {
       <rect x="184" y="92" width="56" height="14" rx="5" fill="#14b8a6" fillOpacity="0.1" />
       <rect x="188" y="97" width="40" height="3" rx="1.5" fill="#14b8a6" fillOpacity="0.5" />
 
-      {/* Floating resolved badge */}
-      <motion.g
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      >
+      {/* Static resolved badge */}
+      <g>
         <rect x="204" y="26" width="42" height="16" rx="4" fill="#dcfce7" />
         <text x="212" y="37" fontSize="7" fontWeight="600" fill="#16a34a">
           Resolved
         </text>
-      </motion.g>
+      </g>
     </svg>
   );
 }
@@ -190,15 +185,12 @@ function MonitoringSVG() {
       <line x1="50" y1="111" x2="162" y2="111" stroke="#86868b" strokeOpacity="0.08" strokeWidth="0.5" />
 
       {/* Uptime line chart */}
-      <motion.path
+      <path
         d="M50 60 L66 59 L82 58 L98 60 L108 59 L118 58 L130 59 L142 58 L154 57 L162 58"
         stroke="#2563eb"
         strokeWidth="2"
         strokeLinecap="round"
         fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
       />
       {/* Area fill under line */}
       <path
@@ -226,15 +218,8 @@ function MonitoringSVG() {
       <rect x="230" y="102" width="14" height="8" rx="2" fill="#dcfce7" />
       <text x="233" y="109" fontSize="5" fontWeight="600" fill="#16a34a">OK</text>
 
-      {/* Pulsing live indicator */}
-      <motion.circle
-        cx="236"
-        cy="32"
-        r="3"
-        fill="#22c55e"
-        animate={{ opacity: [0.4, 1, 0.4], scale: [0.9, 1.1, 0.9] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Static live indicator */}
+      <circle cx="236" cy="32" r="3" fill="#22c55e" />
     </svg>
   );
 }
@@ -256,7 +241,7 @@ function HealthCheckSVG() {
 
       {/* Score circle */}
       <circle cx="210" cy="36" r="18" stroke="#f5f5f7" strokeWidth="4" fill="none" />
-      <motion.circle
+      <circle
         cx="210"
         cy="36"
         r="18"
@@ -265,9 +250,7 @@ function HealthCheckSVG() {
         fill="none"
         strokeLinecap="round"
         strokeDasharray="113"
-        initial={{ strokeDashoffset: 113 }}
-        animate={{ strokeDashoffset: 4.5 }}
-        transition={{ duration: 1.8, ease: "easeOut" }}
+        strokeDashoffset="4.5"
         style={{ transform: "rotate(-90deg)", transformOrigin: "210px 36px" }}
       />
       <text x="200" y="39" fontSize="11" fontWeight="700" fill="#1d1d1f" fillOpacity="0.8">96</text>
@@ -311,7 +294,7 @@ function HealthCheckSVG() {
           {/* Progress bar bg */}
           <rect x="160" y={item.y} width="66" height="5" rx="2.5" fill="#f5f5f7" />
           {/* Progress bar fill */}
-          <motion.rect
+          <rect
             x="160"
             y={item.y}
             width={item.status === "pass" ? "66" : "50"}
@@ -319,9 +302,6 @@ function HealthCheckSVG() {
             rx="2.5"
             fill={item.status === "pass" ? "#2563eb" : "#f59e0b"}
             fillOpacity="0.35"
-            initial={{ width: 0 }}
-            animate={{ width: item.status === "pass" ? 66 : 50 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
           />
         </g>
       ))}
@@ -395,15 +375,13 @@ function TrainingSVG() {
       </text>
       {/* Full progress bar */}
       <rect x="112" y="98" width="140" height="5" rx="2.5" fill="#f5f5f7" />
-      <motion.rect
+      <rect
         x="112"
         y="98"
+        width="102"
         height="5"
         rx="2.5"
         fill="url(#progressGrad)"
-        initial={{ width: 0 }}
-        animate={{ width: 102 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
       />
       <defs>
         <linearGradient id="progressGrad" x1="112" y1="100" x2="252" y2="100" gradientUnits="userSpaceOnUse">
@@ -476,15 +454,13 @@ function EnhancementsSVG() {
       ))}
 
       {/* Completed progress on timeline */}
-      <motion.rect
+      <rect
         x="32"
         y="52"
+        width="140"
         height="2"
         rx="1"
         fill="url(#timelineGrad)"
-        initial={{ width: 0 }}
-        animate={{ width: 140 }}
-        transition={{ duration: 1.8, ease: "easeOut" }}
       />
       <defs>
         <linearGradient id="timelineGrad" x1="32" y1="53" x2="172" y2="53" gradientUnits="userSpaceOnUse">
@@ -510,18 +486,6 @@ function EnhancementsSVG() {
       <rect x="148" y="96" width="60" height="2.5" rx="1.25" fill="#86868b" fillOpacity="0.3" />
       <rect x="148" y="104" width="38" height="9" rx="3" fill="#f59e0b" fillOpacity="0.08" />
       <text x="153" y="111" fontSize="5" fontWeight="500" fill="#f59e0b" fillOpacity="0.6">Optimize</text>
-
-      {/* Pulsing "current" indicator */}
-      <motion.circle
-        cx="172"
-        cy="53"
-        r="8"
-        fill="none"
-        stroke="#2563eb"
-        strokeWidth="1"
-        animate={{ opacity: [0.6, 0, 0.6], scale: [1, 1.6, 1] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-      />
     </svg>
   );
 }
@@ -597,12 +561,7 @@ export default function SupportContent() {
       <section className="py-section bg-white">
         <div className="container-apple">
           {/* Section header — inline, no SectionHeading */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-10"
-          >
+          <FadeIn className="text-center mb-10">
             <p className="text-brand-500 text-[0.6875rem] font-semibold tracking-widest uppercase mb-3">
               What&apos;s included
             </p>
@@ -613,21 +572,15 @@ export default function SupportContent() {
               Everything you need to keep your systems running at peak
               performance.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {services.map((item, index) => {
               const Illustration = illustrationMap[item.illustration];
               return (
-                <motion.div
+                <FadeInChild
                   key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.08,
-                    ease,
-                  }}
+                  index={index}
                   className="group rounded-[22px] bg-white shadow-card hover:shadow-card-hover border border-black/[0.04] transition-all duration-500 overflow-hidden"
                 >
                   {/* Illustration area */}
@@ -657,10 +610,10 @@ export default function SupportContent() {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </FadeInChild>
               );
             })}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 
@@ -674,12 +627,7 @@ export default function SupportContent() {
 
         <div className="container-apple relative z-10">
           {/* Section header */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-10"
-          >
+          <FadeIn className="text-center mb-10">
             <p className="text-brand-500 text-[0.6875rem] font-semibold tracking-widest uppercase mb-3">
               Support plans
             </p>
@@ -689,19 +637,13 @@ export default function SupportContent() {
             <p className="text-body text-apple-gray max-w-xl mx-auto">
               Flexible plans designed to fit your business needs and budget.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
-              <motion.div
+              <FadeInChild
                 key={plan.name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease,
-                }}
+                index={index}
                 className={`rounded-[22px] p-6 md:p-7 transition-all duration-500 ${
                   plan.highlighted
                     ? "bg-gradient-brand ring-1 ring-white/20 text-white scale-[1.02]"
@@ -752,9 +694,9 @@ export default function SupportContent() {
                 >
                   Contact us for pricing
                 </p>
-              </motion.div>
+              </FadeInChild>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 

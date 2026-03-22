@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/ui/FadeIn";
 import ContactForm from "@/components/contact/ContactForm";
 import {
   CONTACT_EMAIL,
@@ -9,49 +9,39 @@ import {
   BUSINESS_HOURS,
 } from "@/lib/constants";
 
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
-
 /** Contact info SVG icons */
 function EmailIcon() {
   return (
-    <motion.svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
       <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" />
-      <motion.path d="M2 7L12 13L22 7" stroke="currentColor"
-        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
- transition={{ duration: 0.5, delay: 0.3, ease }} />
-    </motion.svg>
+      <path d="M2 7L12 13L22 7" stroke="currentColor" />
+    </svg>
   );
 }
 
 function PhoneIcon() {
   return (
-    <motion.svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
-      <motion.path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor"
-        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
- transition={{ duration: 0.5, delay: 0.3, ease }} />
-    </motion.svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" />
+    </svg>
   );
 }
 
 function LocationIcon() {
   return (
-    <motion.svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
-      <motion.path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor"
-        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
- transition={{ duration: 0.5, delay: 0.3, ease }} />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" />
       <circle cx="12" cy="10" r="3" stroke="currentColor" />
-    </motion.svg>
+    </svg>
   );
 }
 
 function ClockIcon() {
   return (
-    <motion.svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-500">
       <circle cx="12" cy="12" r="10" stroke="currentColor" />
-      <motion.path d="M12 6V12L16 14" stroke="currentColor"
-        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
- transition={{ duration: 0.4, delay: 0.3, ease }} />
-    </motion.svg>
+      <path d="M12 6V12L16 14" stroke="currentColor" />
+    </svg>
   );
 }
 
@@ -92,22 +82,12 @@ export default function ContactContent() {
         <div className="container-apple">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 lg:gap-6">
             {/* Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, ease }}
-              className="lg:col-span-3"
-            >
+            <FadeIn className="lg:col-span-3">
               <ContactForm />
-            </motion.div>
+            </FadeIn>
 
             {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.15, ease }}
-              className="lg:col-span-2 space-y-4"
-            >
+            <FadeIn delay={0.15} className="lg:col-span-2 space-y-4">
               {/* Contact details card */}
               <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-card p-6">
                 <h3 className="text-[1.0625rem] font-semibold text-apple-black mb-5">
@@ -159,18 +139,13 @@ export default function ContactContent() {
 
                   {/* Visual element */}
                   <div className="mt-4 flex items-center gap-3">
-                    <motion.svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                       <circle cx="20" cy="20" r="18" stroke="url(#consult-gr)" strokeWidth="1.5" fill="none" opacity="0.2" />
-                      <motion.path d="M14 20 L18 24 L26 16" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                        initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
- transition={{ duration: 0.5, delay: 0.5, ease }} />
-                      <motion.circle cx="20" cy="20" r="18" stroke="url(#consult-gr)" strokeWidth="1" fill="none"
-                        animate={{ r: [18, 20], opacity: [0.15, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }} />
+                      <path d="M14 20 L18 24 L26 16" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       <defs>
                         <linearGradient id="consult-gr" x1="2" y1="2" x2="38" y2="38"><stop offset="0%" stopColor="#2563eb" /><stop offset="100%" stopColor="#14b8a6" /></linearGradient>
                       </defs>
-                    </motion.svg>
+                    </svg>
                     <div>
                       <p className="text-[0.75rem] font-semibold text-white/70">30 minutes</p>
                       <p className="text-[0.625rem] text-white/40">No obligation</p>
@@ -178,7 +153,7 @@ export default function ContactContent() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>

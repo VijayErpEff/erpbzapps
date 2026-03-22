@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   ManufacturingIcon,
   ProfServicesIcon,
@@ -10,8 +9,7 @@ import {
   NonprofitIcon,
 } from "@/components/svg/IndustryIcons";
 import CTABanner from "@/components/ui/CTABanner";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
+import { FadeInStagger, FadeInChild } from "@/components/ui/FadeIn";
 
 const industries = [
   {
@@ -106,15 +104,13 @@ export default function IndustriesContent() {
       {/* Industries grid — Kivyo-inspired cards */}
       <section className="pb-section pt-4">
         <div className="container-apple">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <motion.div
+                <FadeInChild
                   key={industry.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.5, delay: index * 0.06, ease }}
+                  index={index}
                   className="group rounded-[22px] bg-white border border-black/[0.04] shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden cursor-default"
                 >
                   {/* Illustration area */}
@@ -144,10 +140,10 @@ export default function IndustriesContent() {
                       {industry.description}
                     </p>
                   </div>
-                </motion.div>
+                </FadeInChild>
               );
             })}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 

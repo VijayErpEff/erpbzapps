@@ -1,6 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  createElement,
+  type ReactNode,
+  type CSSProperties,
+  type ElementType,
+} from "react";
+import { EASING, DURATION_DEFAULT, TRANSLATE_Y, STAGGER_INTERVAL } from "@/lib/animation";
 
 type FadeInProps = {
   children: ReactNode;
@@ -8,17 +17,18 @@ type FadeInProps = {
   duration?: number;
   y?: number;
   className?: string;
-  once?: boolean;
+  as?: ElementType;
 };
 
 export default function FadeIn({
   children,
   delay = 0,
-  duration = 0.7,
-  y = 30,
+  duration = DURATION_DEFAULT,
+  y = TRANSLATE_Y,
   className = "",
+  as = "div",
 }: FadeInProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -42,26 +52,24 @@ export default function FadeIn({
   const style: CSSProperties = {
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? "translateY(0)" : `translateY(${y}px)`,
-    transition: `opacity ${duration}s cubic-bezier(0.21,0.45,0.27,0.9) ${delay}s, transform ${duration}s cubic-bezier(0.21,0.45,0.27,0.9) ${delay}s`,
+    transition: `opacity ${duration}s ${EASING} ${delay}s, transform ${duration}s ${EASING} ${delay}s`,
   };
 
-  return (
-    <div ref={ref} style={style} className={className}>
-      {children}
-    </div>
-  );
+  return createElement(as, { ref, style, className }, children);
 }
 
 export function FadeInStagger({
   children,
-  staggerDelay = 0.1,
+  staggerDelay = STAGGER_INTERVAL,
   className = "",
+  as = "div",
 }: {
   children: ReactNode;
   staggerDelay?: number;
   className?: string;
+  as?: ElementType;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -82,21 +90,21 @@ export function FadeInStagger({
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div
-      ref={ref}
-      className={`${className} ${isVisible ? "stagger-visible" : "stagger-hidden"}`}
-      style={{ "--stagger-delay": `${staggerDelay}s` } as CSSProperties}
-    >
-      {children}
-    </div>
+  return createElement(
+    as,
+    {
+      ref,
+      className: `${className} ${isVisible ? "stagger-visible" : "stagger-hidden"}`,
+      style: { "--stagger-delay": `${staggerDelay}s` } as CSSProperties,
+    },
+    children
   );
 }
 
 export function FadeInChild({
   children,
   className = "",
-  y = 30,
+  y = TRANSLATE_Y,
   index = 0,
 }: {
   children: ReactNode;

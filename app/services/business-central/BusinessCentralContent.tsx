@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn, { FadeInStagger, FadeInChild } from "@/components/ui/FadeIn";
 import CTABanner from "@/components/ui/CTABanner";
 import Button from "@/components/ui/Button";
 import { MicrosoftLogo } from "@/components/svg/PartnerLogos";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
 
 /* ------------------------------------------------------------------ */
 /*  Offering cards data                                                */
@@ -69,758 +67,365 @@ const benefits = [
 
 function ImplementationSVG() {
   return (
-    <motion.svg
+    <svg
       viewBox="0 0 280 120"
       fill="none"
       className="w-full h-full"
-      initial="hidden"
-      animate="visible"
      >
       {/* Dashboard frame */}
-      <motion.rect
+      <rect
         x="30" y="10" width="220" height="100" rx="10"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 1, ease }}
       />
       {/* Top bar */}
-      <motion.rect
+      <rect
         x="30" y="10" width="220" height="22" rx="10"
         fill="#2563eb" fillOpacity="0.06"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.6, delay: 0.3, ease }}
       />
       {/* Window dots */}
-      <motion.circle cx="44" cy="21" r="3" fill="#F25022"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-      />
-      <motion.circle cx="54" cy="21" r="3" fill="#FFB900"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.6 }}
-      />
-      <motion.circle cx="64" cy="21" r="3" fill="#7FBA00"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.7 }}
-      />
+      <circle cx="44" cy="21" r="3" fill="#F25022" />
+      <circle cx="54" cy="21" r="3" fill="#FFB900" />
+      <circle cx="64" cy="21" r="3" fill="#7FBA00" />
       {/* Sidebar nav */}
-      <motion.rect
+      <rect
         x="36" y="38" width="50" height="6" rx="3"
         fill="#2563eb" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.4, ease }}
       />
-      <motion.rect
+      <rect
         x="36" y="50" width="42" height="6" rx="3"
         fill="#2563eb" fillOpacity="0.10"
-        variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.5, ease }}
       />
-      <motion.rect
+      <rect
         x="36" y="62" width="46" height="6" rx="3"
         fill="#2563eb" fillOpacity="0.10"
-        variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.6, ease }}
       />
-      <motion.rect
+      <rect
         x="36" y="74" width="38" height="6" rx="3"
         fill="#2563eb" fillOpacity="0.10"
-        variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.7, ease }}
       />
       {/* Main content: gear icon */}
-      <motion.path
+      <path
         d="M152 60 l4-2 l2-4 l2 0 l2 4 l4 2 l0 4 l-4 2 l-2 4 l-2 0 l-2-4 l-4-2z"
         stroke="#2563eb" strokeWidth="1.5" fill="#2563eb" fillOpacity="0.08"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, delay: 0.6, ease }}
       />
-      <motion.circle
+      <circle
         cx="158" cy="62" r="4"
         stroke="#2563eb" strokeWidth="1.5" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }}
-        transition={{ duration: 0.6, delay: 0.9, ease }}
       />
       {/* Config panel lines */}
-      <motion.rect
+      <rect
         x="180" y="44" width="56" height="7" rx="3.5"
         fill="#14b8a6" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0, x: 10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.7, ease }}
       />
-      <motion.rect
+      <rect
         x="180" y="56" width="48" height="7" rx="3.5"
         fill="#2563eb" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0, x: 10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.8, ease }}
       />
-      <motion.rect
+      <rect
         x="180" y="68" width="52" height="7" rx="3.5"
         fill="#7FBA00" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0, x: 10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 0.9, ease }}
       />
-      <motion.rect
+      <rect
         x="180" y="80" width="44" height="7" rx="3.5"
         fill="#FFB900" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0, x: 10 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.5, delay: 1.0, ease }}
       />
       {/* Toggle switches */}
-      <motion.rect x="224" y="45" width="16" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.5"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      />
-      <motion.circle cx="237" cy="47.5" r="3.5" fill="#14b8a6"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.05 }}
-      />
-      <motion.rect x="224" y="57" width="16" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.5"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-      />
-      <motion.circle cx="237" cy="59.5" r="3.5" fill="#2563eb"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.15 }}
-      />
-    </motion.svg>
+      <rect x="224" y="45" width="16" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.5" />
+      <circle cx="237" cy="47.5" r="3.5" fill="#14b8a6" />
+      <rect x="224" y="57" width="16" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.5" />
+      <circle cx="237" cy="59.5" r="3.5" fill="#2563eb" />
+    </svg>
   );
 }
 
 function CustomizationSVG() {
   return (
-    <motion.svg
+    <svg
       viewBox="0 0 280 120"
       fill="none"
       className="w-full h-full"
-      initial="hidden"
-      animate="visible"
      >
       {/* Code editor frame */}
-      <motion.rect
+      <rect
         x="20" y="8" width="140" height="104" rx="8"
         stroke="#14b8a6" strokeWidth="1.5" fill="white"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, ease }}
       />
       {/* Editor top bar */}
-      <motion.rect
+      <rect
         x="20" y="8" width="140" height="18" rx="8"
         fill="#14b8a6" fillOpacity="0.06"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.3, ease }}
       />
-      <motion.text x="40" y="20" fontSize="7" fill="#14b8a6" fontWeight="600" fontFamily="monospace"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.5 }}
-      >
+      <text x="40" y="20" fontSize="7" fill="#14b8a6" fontWeight="600" fontFamily="monospace">
         Extension.al
-      </motion.text>
+      </text>
       {/* AL code lines */}
-      <motion.rect x="28" y="32" width="36" height="4" rx="2" fill="#2563eb" fillOpacity="0.25"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.5, ease }}
-      />
-      <motion.rect x="68" y="32" width="52" height="4" rx="2" fill="#14b8a6" fillOpacity="0.20"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.55, ease }}
-      />
-      <motion.rect x="36" y="40" width="28" height="4" rx="2" fill="#F25022" fillOpacity="0.20"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.6, ease }}
-      />
-      <motion.rect x="68" y="40" width="72" height="4" rx="2" fill="#86868b" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.65, ease }}
-      />
-      <motion.rect x="36" y="48" width="24" height="4" rx="2" fill="#7FBA00" fillOpacity="0.25"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.7, ease }}
-      />
-      <motion.rect x="64" y="48" width="44" height="4" rx="2" fill="#86868b" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.75, ease }}
-      />
-      <motion.rect x="36" y="56" width="32" height="4" rx="2" fill="#2563eb" fillOpacity="0.25"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.8, ease }}
-      />
-      <motion.rect x="72" y="56" width="58" height="4" rx="2" fill="#14b8a6" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.85, ease }}
-      />
-      <motion.rect x="36" y="64" width="20" height="4" rx="2" fill="#FFB900" fillOpacity="0.25"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.9, ease }}
-      />
-      <motion.rect x="60" y="64" width="48" height="4" rx="2" fill="#86868b" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 0.95, ease }}
-      />
-      <motion.rect x="28" y="72" width="30" height="4" rx="2" fill="#2563eb" fillOpacity="0.25"
-        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.0, ease }}
-      />
-      {/* Cursor blink */}
-      <motion.rect x="62" y="71" width="2" height="7" rx="1" fill="#2563eb"
-        animate={{ opacity: [1, 0, 1] }}
-        transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
-      />
+      <rect x="28" y="32" width="36" height="4" rx="2" fill="#2563eb" fillOpacity="0.25" />
+      <rect x="68" y="32" width="52" height="4" rx="2" fill="#14b8a6" fillOpacity="0.20" />
+      <rect x="36" y="40" width="28" height="4" rx="2" fill="#F25022" fillOpacity="0.20" />
+      <rect x="68" y="40" width="72" height="4" rx="2" fill="#86868b" fillOpacity="0.15" />
+      <rect x="36" y="48" width="24" height="4" rx="2" fill="#7FBA00" fillOpacity="0.25" />
+      <rect x="64" y="48" width="44" height="4" rx="2" fill="#86868b" fillOpacity="0.15" />
+      <rect x="36" y="56" width="32" height="4" rx="2" fill="#2563eb" fillOpacity="0.25" />
+      <rect x="72" y="56" width="58" height="4" rx="2" fill="#14b8a6" fillOpacity="0.15" />
+      <rect x="36" y="64" width="20" height="4" rx="2" fill="#FFB900" fillOpacity="0.25" />
+      <rect x="60" y="64" width="48" height="4" rx="2" fill="#86868b" fillOpacity="0.12" />
+      <rect x="28" y="72" width="30" height="4" rx="2" fill="#2563eb" fillOpacity="0.25" />
 
       {/* Power Platform block */}
-      <motion.rect
+      <rect
         x="176" y="14" width="88" height="92" rx="8"
         stroke="#FFB900" strokeWidth="1.5" fill="white"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, delay: 0.3, ease }}
       />
-      <motion.text x="186" y="30" fontSize="6.5" fill="#FFB900" fontWeight="600" fontFamily="Inter, sans-serif"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.6 }}
-      >
+      <text x="186" y="30" fontSize="6.5" fill="#FFB900" fontWeight="600" fontFamily="Inter, sans-serif">
         Power Platform
-      </motion.text>
+      </text>
       {/* Power Apps icon block */}
-      <motion.rect x="184" y="38" width="32" height="24" rx="5" fill="#742774" fillOpacity="0.08" stroke="#742774" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.7, ease }}
-      />
-      <motion.text x="192" y="54" fontSize="5.5" fill="#742774" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.9 }}
-      >
+      <rect x="184" y="38" width="32" height="24" rx="5" fill="#742774" fillOpacity="0.08" stroke="#742774" strokeWidth="0.8" />
+      <text x="192" y="54" fontSize="5.5" fill="#742774" fontWeight="600">
         Apps
-      </motion.text>
+      </text>
       {/* Power Automate icon block */}
-      <motion.rect x="222" y="38" width="34" height="24" rx="5" fill="#0066FF" fillOpacity="0.08" stroke="#0066FF" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.8, ease }}
-      />
-      <motion.text x="225" y="54" fontSize="5" fill="#0066FF" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      >
+      <rect x="222" y="38" width="34" height="24" rx="5" fill="#0066FF" fillOpacity="0.08" stroke="#0066FF" strokeWidth="0.8" />
+      <text x="225" y="54" fontSize="5" fill="#0066FF" fontWeight="600">
         Automate
-      </motion.text>
+      </text>
       {/* Power BI icon block */}
-      <motion.rect x="184" y="68" width="32" height="24" rx="5" fill="#F2C811" fillOpacity="0.10" stroke="#F2C811" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.9, ease }}
-      />
-      <motion.text x="196" y="84" fontSize="5.5" fill="#D4A80A" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-      >
+      <rect x="184" y="68" width="32" height="24" rx="5" fill="#F2C811" fillOpacity="0.10" stroke="#F2C811" strokeWidth="0.8" />
+      <text x="196" y="84" fontSize="5.5" fill="#D4A80A" fontWeight="600">
         BI
-      </motion.text>
+      </text>
       {/* Copilot block */}
-      <motion.rect x="222" y="68" width="34" height="24" rx="5" fill="#14b8a6" fillOpacity="0.08" stroke="#14b8a6" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 1.0, ease }}
-      />
-      <motion.text x="225" y="84" fontSize="5" fill="#14b8a6" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.2 }}
-      >
+      <rect x="222" y="68" width="34" height="24" rx="5" fill="#14b8a6" fillOpacity="0.08" stroke="#14b8a6" strokeWidth="0.8" />
+      <text x="225" y="84" fontSize="5" fill="#14b8a6" fontWeight="600">
         Copilot
-      </motion.text>
+      </text>
 
       {/* Connection arrow */}
-      <motion.path
+      <path
         d="M162 60 L174 60"
         stroke="#86868b" strokeWidth="1.2" strokeDasharray="3 3"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 0.5 } }}
-        transition={{ duration: 0.6, delay: 0.8, ease }}
+        opacity="0.5"
       />
-      <motion.path
+      <path
         d="M171 56 L176 60 L171 64"
         stroke="#86868b" strokeWidth="1.2" fill="none"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 0.5 } }}
-        transition={{ duration: 0.4, delay: 1.0, ease }}
+        opacity="0.5"
       />
-    </motion.svg>
+    </svg>
   );
 }
 
 function MigrationSVG() {
   return (
-    <motion.svg
+    <svg
       viewBox="0 0 280 120"
       fill="none"
       className="w-full h-full"
-      initial="hidden"
-      animate="visible"
      >
       {/* Old system (QuickBooks-style) */}
-      <motion.rect
+      <rect
         x="16" y="20" width="84" height="80" rx="8"
         stroke="#86868b" strokeWidth="1.5" fill="white" strokeDasharray="4 3"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, ease }}
       />
-      <motion.text x="30" y="38" fontSize="7" fill="#86868b" fontWeight="600" fontFamily="Inter, sans-serif"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 0.7 } }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
+      <text x="30" y="38" fontSize="7" fill="#86868b" fontWeight="600" fontFamily="Inter, sans-serif" opacity="0.7">
         Legacy ERP
-      </motion.text>
+      </text>
       {/* Old data rows */}
-      <motion.rect x="24" y="46" width="64" height="5" rx="2.5" fill="#86868b" fillOpacity="0.12"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.4 }}
-      />
-      <motion.rect x="24" y="55" width="56" height="5" rx="2.5" fill="#86868b" fillOpacity="0.10"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.5 }}
-      />
-      <motion.rect x="24" y="64" width="60" height="5" rx="2.5" fill="#86868b" fillOpacity="0.10"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.6 }}
-      />
-      <motion.rect x="24" y="73" width="48" height="5" rx="2.5" fill="#86868b" fillOpacity="0.08"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.7 }}
-      />
-      <motion.rect x="24" y="82" width="52" height="5" rx="2.5" fill="#86868b" fillOpacity="0.08"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.75 }}
-      />
+      <rect x="24" y="46" width="64" height="5" rx="2.5" fill="#86868b" fillOpacity="0.12" />
+      <rect x="24" y="55" width="56" height="5" rx="2.5" fill="#86868b" fillOpacity="0.10" />
+      <rect x="24" y="64" width="60" height="5" rx="2.5" fill="#86868b" fillOpacity="0.10" />
+      <rect x="24" y="73" width="48" height="5" rx="2.5" fill="#86868b" fillOpacity="0.08" />
+      <rect x="24" y="82" width="52" height="5" rx="2.5" fill="#86868b" fillOpacity="0.08" />
 
-      {/* Flow arrows — animated data packets */}
-      <motion.path
+      {/* Flow arrows */}
+      <path
         d="M108 60 L172 60"
         stroke="#2563eb" strokeWidth="1.5" strokeDasharray="6 4"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, delay: 0.6, ease }}
-      />
-      {/* Animated data dots traveling along the arrow */}
-      <motion.circle cx="120" cy="60" r="3" fill="#2563eb"
-        animate={{ cx: [112, 168], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1.0 }}
-      />
-      <motion.circle cx="120" cy="60" r="2.5" fill="#14b8a6"
-        animate={{ cx: [112, 168], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1.5 }}
-      />
-      <motion.circle cx="120" cy="60" r="2" fill="#FFB900"
-        animate={{ cx: [112, 168], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 2.0 }}
       />
       {/* Arrow head */}
-      <motion.path
+      <path
         d="M168 55 L175 60 L168 65"
         stroke="#2563eb" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 1.0, ease }}
       />
       {/* Migration label */}
-      <motion.text x="122" y="52" fontSize="5.5" fill="#2563eb" fontWeight="600" fontFamily="Inter, sans-serif"
-        variants={{ hidden: { opacity: 0, y: 4 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.4, delay: 0.9 }}
-      >
+      <text x="122" y="52" fontSize="5.5" fill="#2563eb" fontWeight="600" fontFamily="Inter, sans-serif">
         Zero data loss
-      </motion.text>
+      </text>
 
       {/* New system (Business Central) */}
-      <motion.rect
+      <rect
         x="180" y="20" width="84" height="80" rx="8"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, delay: 0.3, ease }}
       />
       {/* BC header with MS colors */}
-      <motion.rect x="180" y="20" width="84" height="18" rx="8" fill="#2563eb" fillOpacity="0.06"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-      />
+      <rect x="180" y="20" width="84" height="18" rx="8" fill="#2563eb" fillOpacity="0.06" />
       {/* MS squares in header */}
-      <motion.rect x="188" y="24" width="4.5" height="4.5" rx="0.8" fill="#F25022"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.8 }}
-      />
-      <motion.rect x="193.5" y="24" width="4.5" height="4.5" rx="0.8" fill="#7FBA00"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.85 }}
-      />
-      <motion.rect x="188" y="29.5" width="4.5" height="4.5" rx="0.8" fill="#00A4EF"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.9 }}
-      />
-      <motion.rect x="193.5" y="29.5" width="4.5" height="4.5" rx="0.8" fill="#FFB900"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.95 }}
-      />
-      <motion.text x="204" y="32" fontSize="6" fill="#2563eb" fontWeight="600" fontFamily="Inter, sans-serif"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 1.0 }}
-      >
+      <rect x="188" y="24" width="4.5" height="4.5" rx="0.8" fill="#F25022" />
+      <rect x="193.5" y="24" width="4.5" height="4.5" rx="0.8" fill="#7FBA00" />
+      <rect x="188" y="29.5" width="4.5" height="4.5" rx="0.8" fill="#00A4EF" />
+      <rect x="193.5" y="29.5" width="4.5" height="4.5" rx="0.8" fill="#FFB900" />
+      <text x="204" y="32" fontSize="6" fill="#2563eb" fontWeight="600" fontFamily="Inter, sans-serif">
         Business Central
-      </motion.text>
+      </text>
       {/* New organized data */}
-      <motion.rect x="188" y="46" width="64" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: 8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.1, ease }}
-      />
-      <motion.rect x="188" y="55" width="56" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: 8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.2, ease }}
-      />
-      <motion.rect x="188" y="64" width="60" height="5" rx="2.5" fill="#7FBA00" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: 8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.3, ease }}
-      />
-      <motion.rect x="188" y="73" width="48" height="5" rx="2.5" fill="#FFB900" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: 8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.4, ease }}
-      />
-      <motion.rect x="188" y="82" width="52" height="5" rx="2.5" fill="#00A4EF" fillOpacity="0.15"
-        variants={{ hidden: { opacity: 0, x: 8 }, visible: { opacity: 1, x: 0 } }}
-        transition={{ duration: 0.4, delay: 1.5, ease }}
-      />
+      <rect x="188" y="46" width="64" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.15" />
+      <rect x="188" y="55" width="56" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.15" />
+      <rect x="188" y="64" width="60" height="5" rx="2.5" fill="#7FBA00" fillOpacity="0.15" />
+      <rect x="188" y="73" width="48" height="5" rx="2.5" fill="#FFB900" fillOpacity="0.15" />
+      <rect x="188" y="82" width="52" height="5" rx="2.5" fill="#00A4EF" fillOpacity="0.15" />
       {/* Check marks */}
-      <motion.path d="M254 47 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.3 }}
-      />
-      <motion.path d="M254 56 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.4 }}
-      />
-      <motion.path d="M254 65 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.5 }}
-      />
-    </motion.svg>
+      <path d="M254 47 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M254 56 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M254 65 l2 2 l4-4" stroke="#7FBA00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
 function TrainingSVG() {
   return (
-    <motion.svg
+    <svg
       viewBox="0 0 280 120"
       fill="none"
       className="w-full h-full"
-      initial="hidden"
-      animate="visible"
      >
       {/* Person 1 - completed */}
-      <motion.circle cx="52" cy="38" r="12" fill="#7FBA00" fillOpacity="0.10" stroke="#7FBA00" strokeWidth="1.2"
-        variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.2, ease }}
-      />
-      <motion.circle cx="52" cy="34" r="4" fill="#7FBA00" fillOpacity="0.4"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.4 }}
-      />
-      <motion.path d="M44 46 Q48 52 52 48 Q56 52 60 46" stroke="#7FBA00" strokeWidth="1.2" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      />
+      <circle cx="52" cy="38" r="12" fill="#7FBA00" fillOpacity="0.10" stroke="#7FBA00" strokeWidth="1.2" />
+      <circle cx="52" cy="34" r="4" fill="#7FBA00" fillOpacity="0.4" />
+      <path d="M44 46 Q48 52 52 48 Q56 52 60 46" stroke="#7FBA00" strokeWidth="1.2" fill="none" />
       {/* Progress bar 1 - full */}
-      <motion.rect x="28" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-      />
-      <motion.rect x="28" y="58" width="48" height="5" rx="2.5" fill="#7FBA00" fillOpacity="0.6"
-        variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-        style={{ originX: 0 }}
-        transition={{ duration: 0.8, delay: 0.7, ease }}
-      />
-      <motion.text x="36" y="74" fontSize="5.5" fill="#7FBA00" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      >
+      <rect x="28" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb" />
+      <rect x="28" y="58" width="48" height="5" rx="2.5" fill="#7FBA00" fillOpacity="0.6" />
+      <text x="36" y="74" fontSize="5.5" fill="#7FBA00" fontWeight="600">
         100% done
-      </motion.text>
+      </text>
 
       {/* Person 2 - in progress */}
-      <motion.circle cx="140" cy="38" r="12" fill="#2563eb" fillOpacity="0.10" stroke="#2563eb" strokeWidth="1.2"
-        variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.35, ease }}
-      />
-      <motion.circle cx="140" cy="34" r="4" fill="#2563eb" fillOpacity="0.4"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.55 }}
-      />
-      <motion.path d="M132 46 Q136 52 140 48 Q144 52 148 46" stroke="#2563eb" strokeWidth="1.2" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-      />
+      <circle cx="140" cy="38" r="12" fill="#2563eb" fillOpacity="0.10" stroke="#2563eb" strokeWidth="1.2" />
+      <circle cx="140" cy="34" r="4" fill="#2563eb" fillOpacity="0.4" />
+      <path d="M132 46 Q136 52 140 48 Q144 52 148 46" stroke="#2563eb" strokeWidth="1.2" fill="none" />
       {/* Progress bar 2 - 70% */}
-      <motion.rect x="116" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.6 }}
-      />
-      <motion.rect x="116" y="58" width="34" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.6"
-        variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-        style={{ originX: 0 }}
-        transition={{ duration: 0.8, delay: 0.8, ease }}
-      />
-      <motion.text x="126" y="74" fontSize="5.5" fill="#2563eb" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-      >
+      <rect x="116" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb" />
+      <rect x="116" y="58" width="34" height="5" rx="2.5" fill="#2563eb" fillOpacity="0.6" />
+      <text x="126" y="74" fontSize="5.5" fill="#2563eb" fontWeight="600">
         70% done
-      </motion.text>
+      </text>
 
       {/* Person 3 - starting */}
-      <motion.circle cx="228" cy="38" r="12" fill="#14b8a6" fillOpacity="0.10" stroke="#14b8a6" strokeWidth="1.2"
-        variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.5, ease }}
-      />
-      <motion.circle cx="228" cy="34" r="4" fill="#14b8a6" fillOpacity="0.4"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 0.7 }}
-      />
-      <motion.path d="M220 46 Q224 52 228 48 Q232 52 236 46" stroke="#14b8a6" strokeWidth="1.2" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }}
-        transition={{ duration: 0.5, delay: 0.75 }}
-      />
+      <circle cx="228" cy="38" r="12" fill="#14b8a6" fillOpacity="0.10" stroke="#14b8a6" strokeWidth="1.2" />
+      <circle cx="228" cy="34" r="4" fill="#14b8a6" fillOpacity="0.4" />
+      <path d="M220 46 Q224 52 228 48 Q232 52 236 46" stroke="#14b8a6" strokeWidth="1.2" fill="none" />
       {/* Progress bar 3 - 30% */}
-      <motion.rect x="204" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.7 }}
-      />
-      <motion.rect x="204" y="58" width="14" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.6"
-        variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-        style={{ originX: 0 }}
-        transition={{ duration: 0.8, delay: 0.9, ease }}
-      />
-      <motion.text x="214" y="74" fontSize="5.5" fill="#14b8a6" fontWeight="600"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.2 }}
-      >
+      <rect x="204" y="58" width="48" height="5" rx="2.5" fill="#e5e7eb" />
+      <rect x="204" y="58" width="14" height="5" rx="2.5" fill="#14b8a6" fillOpacity="0.6" />
+      <text x="214" y="74" fontSize="5.5" fill="#14b8a6" fontWeight="600">
         30% done
-      </motion.text>
+      </text>
 
       {/* Learning modules at bottom */}
-      <motion.rect x="28" y="84" width="56" height="24" rx="5" fill="#2563eb" fillOpacity="0.04" stroke="#2563eb" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.8, ease }}
-      />
-      <motion.text x="34" y="97" fontSize="5" fill="#2563eb" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      >
+      <rect x="28" y="84" width="56" height="24" rx="5" fill="#2563eb" fillOpacity="0.04" stroke="#2563eb" strokeWidth="0.8" />
+      <text x="34" y="97" fontSize="5" fill="#2563eb" fontWeight="500">
         Financials 101
-      </motion.text>
-      <motion.rect x="92" y="84" width="56" height="24" rx="5" fill="#14b8a6" fillOpacity="0.04" stroke="#14b8a6" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.9, ease }}
-      />
-      <motion.text x="98" y="97" fontSize="5" fill="#14b8a6" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-      >
+      </text>
+      <rect x="92" y="84" width="56" height="24" rx="5" fill="#14b8a6" fillOpacity="0.04" stroke="#14b8a6" strokeWidth="0.8" />
+      <text x="98" y="97" fontSize="5" fill="#14b8a6" fontWeight="500">
         Inventory Mgmt
-      </motion.text>
-      <motion.rect x="156" y="84" width="56" height="24" rx="5" fill="#FFB900" fillOpacity="0.04" stroke="#FFB900" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 1.0, ease }}
-      />
-      <motion.text x="162" y="97" fontSize="5" fill="#D4A80A" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.2 }}
-      >
+      </text>
+      <rect x="156" y="84" width="56" height="24" rx="5" fill="#FFB900" fillOpacity="0.04" stroke="#FFB900" strokeWidth="0.8" />
+      <text x="162" y="97" fontSize="5" fill="#D4A80A" fontWeight="500">
         Sales Orders
-      </motion.text>
-      <motion.rect x="220" y="84" width="44" height="24" rx="5" fill="#F25022" fillOpacity="0.04" stroke="#F25022" strokeWidth="0.8"
-        variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 1.1, ease }}
-      />
-      <motion.text x="226" y="97" fontSize="5" fill="#F25022" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.3 }}
-      >
+      </text>
+      <rect x="220" y="84" width="44" height="24" rx="5" fill="#F25022" fillOpacity="0.04" stroke="#F25022" strokeWidth="0.8" />
+      <text x="226" y="97" fontSize="5" fill="#F25022" fontWeight="500">
         Reporting
-      </motion.text>
-    </motion.svg>
+      </text>
+    </svg>
   );
 }
 
 function ReportingSVG() {
   return (
-    <motion.svg
+    <svg
       viewBox="0 0 280 120"
       fill="none"
       className="w-full h-full"
-      initial="hidden"
-      animate="visible"
      >
       {/* Power BI frame */}
-      <motion.rect
+      <rect
         x="16" y="8" width="248" height="104" rx="10"
         stroke="#2563eb" strokeWidth="1.5" fill="white"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 0.8, ease }}
       />
       {/* Dashboard top bar */}
-      <motion.rect x="16" y="8" width="248" height="18" rx="10" fill="#F2C811" fillOpacity="0.08"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      />
-      <motion.text x="30" y="20" fontSize="6.5" fill="#D4A80A" fontWeight="700" fontFamily="Inter, sans-serif"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.5 }}
-      >
+      <rect x="16" y="8" width="248" height="18" rx="10" fill="#F2C811" fillOpacity="0.08" />
+      <text x="30" y="20" fontSize="6.5" fill="#D4A80A" fontWeight="700" fontFamily="Inter, sans-serif">
         Power BI Dashboard
-      </motion.text>
+      </text>
       {/* KPI cards row */}
-      <motion.rect x="24" y="32" width="52" height="26" rx="5" fill="#2563eb" fillOpacity="0.05" stroke="#2563eb" strokeWidth="0.6"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.5, ease }}
-      />
-      <motion.text x="30" y="42" fontSize="4.5" fill="#86868b" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.7 }}
-      >
+      <rect x="24" y="32" width="52" height="26" rx="5" fill="#2563eb" fillOpacity="0.05" stroke="#2563eb" strokeWidth="0.6" />
+      <text x="30" y="42" fontSize="4.5" fill="#86868b" fontWeight="500">
         Revenue
-      </motion.text>
-      <motion.text x="30" y="52" fontSize="8" fill="#2563eb" fontWeight="700"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.8 }}
-      >
+      </text>
+      <text x="30" y="52" fontSize="8" fill="#2563eb" fontWeight="700">
         $2.4M
-      </motion.text>
+      </text>
 
-      <motion.rect x="82" y="32" width="52" height="26" rx="5" fill="#7FBA00" fillOpacity="0.05" stroke="#7FBA00" strokeWidth="0.6"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.6, ease }}
-      />
-      <motion.text x="88" y="42" fontSize="4.5" fill="#86868b" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.8 }}
-      >
+      <rect x="82" y="32" width="52" height="26" rx="5" fill="#7FBA00" fillOpacity="0.05" stroke="#7FBA00" strokeWidth="0.6" />
+      <text x="88" y="42" fontSize="4.5" fill="#86868b" fontWeight="500">
         Margin
-      </motion.text>
-      <motion.text x="88" y="52" fontSize="8" fill="#7FBA00" fontWeight="700"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.9 }}
-      >
+      </text>
+      <text x="88" y="52" fontSize="8" fill="#7FBA00" fontWeight="700">
         34.2%
-      </motion.text>
+      </text>
 
-      <motion.rect x="140" y="32" width="52" height="26" rx="5" fill="#14b8a6" fillOpacity="0.05" stroke="#14b8a6" strokeWidth="0.6"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.7, ease }}
-      />
-      <motion.text x="146" y="42" fontSize="4.5" fill="#86868b" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 0.9 }}
-      >
+      <rect x="140" y="32" width="52" height="26" rx="5" fill="#14b8a6" fillOpacity="0.05" stroke="#14b8a6" strokeWidth="0.6" />
+      <text x="146" y="42" fontSize="4.5" fill="#86868b" fontWeight="500">
         Orders
-      </motion.text>
-      <motion.text x="146" y="52" fontSize="8" fill="#14b8a6" fontWeight="700"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      >
+      </text>
+      <text x="146" y="52" fontSize="8" fill="#14b8a6" fontWeight="700">
         1,847
-      </motion.text>
+      </text>
 
-      <motion.rect x="198" y="32" width="58" height="26" rx="5" fill="#F25022" fillOpacity="0.05" stroke="#F25022" strokeWidth="0.6"
-        variants={{ hidden: { opacity: 0, y: 6 }, visible: { opacity: 1, y: 0 } }}
-        transition={{ duration: 0.5, delay: 0.8, ease }}
-      />
-      <motion.text x="204" y="42" fontSize="4.5" fill="#86868b" fontWeight="500"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.0 }}
-      >
+      <rect x="198" y="32" width="58" height="26" rx="5" fill="#F25022" fillOpacity="0.05" stroke="#F25022" strokeWidth="0.6" />
+      <text x="204" y="42" fontSize="4.5" fill="#86868b" fontWeight="500">
         Fulfillment
-      </motion.text>
-      <motion.text x="204" y="52" fontSize="8" fill="#F25022" fontWeight="700"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.3, delay: 1.1 }}
-      >
+      </text>
+      <text x="204" y="52" fontSize="8" fill="#F25022" fontWeight="700">
         97.8%
-      </motion.text>
+      </text>
 
       {/* Bar chart area */}
-      <motion.rect x="24" y="64" width="110" height="42" rx="5" fill="#f5f5f7" fillOpacity="0.5"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.7 }}
-      />
+      <rect x="24" y="64" width="110" height="42" rx="5" fill="#f5f5f7" fillOpacity="0.5" />
       {/* Chart bars */}
-      <motion.rect x="32" y="88" width="8" height="14" rx="1.5" fill="#2563eb" fillOpacity="0.6"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 0.9, ease }}
-      />
-      <motion.rect x="44" y="82" width="8" height="20" rx="1.5" fill="#2563eb" fillOpacity="0.7"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 0.95, ease }}
-      />
-      <motion.rect x="56" y="78" width="8" height="24" rx="1.5" fill="#14b8a6" fillOpacity="0.7"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.0, ease }}
-      />
-      <motion.rect x="68" y="84" width="8" height="18" rx="1.5" fill="#14b8a6" fillOpacity="0.6"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.05, ease }}
-      />
-      <motion.rect x="80" y="74" width="8" height="28" rx="1.5" fill="#7FBA00" fillOpacity="0.7"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.1, ease }}
-      />
-      <motion.rect x="92" y="70" width="8" height="32" rx="1.5" fill="#7FBA00" fillOpacity="0.8"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.15, ease }}
-      />
-      <motion.rect x="104" y="68" width="8" height="34" rx="1.5" fill="#2563eb"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.2, ease }}
-      />
-      <motion.rect x="116" y="72" width="8" height="30" rx="1.5" fill="#2563eb" fillOpacity="0.8"
-        variants={{ hidden: { scaleY: 0, opacity: 0 }, visible: { scaleY: 1, opacity: 1 } }}
-        style={{ originY: 1 }}
-        transition={{ duration: 0.5, delay: 1.25, ease }}
-      />
+      <rect x="32" y="88" width="8" height="14" rx="1.5" fill="#2563eb" fillOpacity="0.6" />
+      <rect x="44" y="82" width="8" height="20" rx="1.5" fill="#2563eb" fillOpacity="0.7" />
+      <rect x="56" y="78" width="8" height="24" rx="1.5" fill="#14b8a6" fillOpacity="0.7" />
+      <rect x="68" y="84" width="8" height="18" rx="1.5" fill="#14b8a6" fillOpacity="0.6" />
+      <rect x="80" y="74" width="8" height="28" rx="1.5" fill="#7FBA00" fillOpacity="0.7" />
+      <rect x="92" y="70" width="8" height="32" rx="1.5" fill="#7FBA00" fillOpacity="0.8" />
+      <rect x="104" y="68" width="8" height="34" rx="1.5" fill="#2563eb" />
+      <rect x="116" y="72" width="8" height="30" rx="1.5" fill="#2563eb" fillOpacity="0.8" />
 
       {/* Line chart area */}
-      <motion.rect x="142" y="64" width="114" height="42" rx="5" fill="#f5f5f7" fillOpacity="0.5"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.4, delay: 0.8 }}
-      />
+      <rect x="142" y="64" width="114" height="42" rx="5" fill="#f5f5f7" fillOpacity="0.5" />
       {/* Trend line */}
-      <motion.path
+      <path
         d="M150 96 L162 90 L174 92 L186 84 L198 80 L210 76 L222 74 L234 70 L246 68"
         stroke="#2563eb" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 1.2, delay: 1.0, ease }}
       />
       {/* Area fill under line */}
-      <motion.path
+      <path
         d="M150 96 L162 90 L174 92 L186 84 L198 80 L210 76 L222 74 L234 70 L246 68 L246 102 L150 102 Z"
         fill="#2563eb" fillOpacity="0.06"
-        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        transition={{ duration: 0.6, delay: 1.5 }}
       />
       {/* Second trend line */}
-      <motion.path
+      <path
         d="M150 98 L162 95 L174 96 L186 92 L198 88 L210 86 L222 84 L234 82 L246 78"
         stroke="#14b8a6" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 3"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 1.0, delay: 1.3, ease }}
       />
       {/* Data points */}
-      <motion.circle cx="186" cy="84" r="2.5" fill="#2563eb"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 1.6 }}
-      />
-      <motion.circle cx="222" cy="74" r="2.5" fill="#2563eb"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 1.7 }}
-      />
-      <motion.circle cx="246" cy="68" r="2.5" fill="#2563eb"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }}
-        transition={{ duration: 0.3, delay: 1.8 }}
-      />
-    </motion.svg>
+      <circle cx="186" cy="84" r="2.5" fill="#2563eb" />
+      <circle cx="222" cy="74" r="2.5" fill="#2563eb" />
+      <circle cx="246" cy="68" r="2.5" fill="#2563eb" />
+    </svg>
   );
 }
 
@@ -830,100 +435,74 @@ function ReportingSVG() {
 
 function UnifiedSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
+    <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Four connected modules */}
-      <motion.rect x="6" y="6" width="28" height="20" rx="4" fill="#2563eb" fillOpacity="0.12" stroke="#2563eb" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.1, ease }} />
-      <motion.text x="12" y="19" fontSize="5" fill="#2563eb" fontWeight="600" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.3 }}>FIN</motion.text>
-      <motion.rect x="46" y="6" width="28" height="20" rx="4" fill="#14b8a6" fillOpacity="0.12" stroke="#14b8a6" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.2, ease }} />
-      <motion.text x="52" y="19" fontSize="5" fill="#14b8a6" fontWeight="600" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.4 }}>INV</motion.text>
-      <motion.rect x="6" y="34" width="28" height="20" rx="4" fill="#FFB900" fillOpacity="0.12" stroke="#FFB900" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.3, ease }} />
-      <motion.text x="10" y="47" fontSize="5" fill="#D4A80A" fontWeight="600" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.5 }}>SALES</motion.text>
-      <motion.rect x="46" y="34" width="28" height="20" rx="4" fill="#F25022" fillOpacity="0.12" stroke="#F25022" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.4, ease }} />
-      <motion.text x="52" y="47" fontSize="5" fill="#F25022" fontWeight="600" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.6 }}>OPS</motion.text>
+      <rect x="6" y="6" width="28" height="20" rx="4" fill="#2563eb" fillOpacity="0.12" stroke="#2563eb" strokeWidth="0.8" />
+      <text x="12" y="19" fontSize="5" fill="#2563eb" fontWeight="600">FIN</text>
+      <rect x="46" y="6" width="28" height="20" rx="4" fill="#14b8a6" fillOpacity="0.12" stroke="#14b8a6" strokeWidth="0.8" />
+      <text x="52" y="19" fontSize="5" fill="#14b8a6" fontWeight="600">INV</text>
+      <rect x="6" y="34" width="28" height="20" rx="4" fill="#FFB900" fillOpacity="0.12" stroke="#FFB900" strokeWidth="0.8" />
+      <text x="10" y="47" fontSize="5" fill="#D4A80A" fontWeight="600">SALES</text>
+      <rect x="46" y="34" width="28" height="20" rx="4" fill="#F25022" fillOpacity="0.12" stroke="#F25022" strokeWidth="0.8" />
+      <text x="52" y="47" fontSize="5" fill="#F25022" fontWeight="600">OPS</text>
       {/* Connection lines */}
-      <motion.line x1="34" y1="16" x2="46" y2="16" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.5 }} />
-      <motion.line x1="34" y1="44" x2="46" y2="44" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.6 }} />
-      <motion.line x1="20" y1="26" x2="20" y2="34" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.7 }} />
-      <motion.line x1="60" y1="26" x2="60" y2="34" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.8 }} />
-    </motion.svg>
+      <line x1="34" y1="16" x2="46" y2="16" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+      <line x1="34" y1="44" x2="46" y2="44" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+      <line x1="20" y1="26" x2="20" y2="34" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+      <line x1="60" y1="26" x2="60" y2="34" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+    </svg>
   );
 }
 
 function CloudSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
-      <motion.path
+    <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
+      <path
         d="M20 40 Q10 40 10 32 Q10 24 18 24 Q20 16 30 16 Q38 16 40 22 Q42 18 48 18 Q56 18 56 26 Q62 26 62 32 Q62 40 54 40 Z"
         stroke="#00A4EF" strokeWidth="1.5" fill="#00A4EF" fillOpacity="0.06"
-        variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-        transition={{ duration: 1.0, ease }}
       />
       {/* Upload arrow */}
-      <motion.path d="M36 44 L36 50" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.8 }} />
-      <motion.path d="M32 48 L36 44 L40 48" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.9 }} />
+      <path d="M36 44 L36 50" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M32 48 L36 44 L40 48" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       {/* Sync circle */}
-      <motion.path d="M30 32 A6 6 0 1 1 42 32" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.6, delay: 0.6 }} />
-      <motion.path d="M40 29 L42 32 L39 33" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.3, delay: 1.0 }} />
-    </motion.svg>
+      <path d="M30 32 A6 6 0 1 1 42 32" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+      <path d="M40 29 L42 32 L39 33" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+    </svg>
   );
 }
 
 function IntegrationSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
+    <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Microsoft 365 icon */}
-      <motion.rect x="8" y="14" width="24" height="24" rx="5" fill="#F25022" fillOpacity="0.08" stroke="#F25022" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.1, ease }} />
-      <motion.text x="14" y="29" fontSize="5" fill="#F25022" fontWeight="700" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.3 }}>365</motion.text>
+      <rect x="8" y="14" width="24" height="24" rx="5" fill="#F25022" fillOpacity="0.08" stroke="#F25022" strokeWidth="0.8" />
+      <text x="14" y="29" fontSize="5" fill="#F25022" fontWeight="700">365</text>
       {/* Teams icon */}
-      <motion.rect x="48" y="14" width="24" height="24" rx="5" fill="#5B5FC7" fillOpacity="0.10" stroke="#5B5FC7" strokeWidth="0.8"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.2, ease }} />
-      <motion.text x="55" y="29" fontSize="4.5" fill="#5B5FC7" fontWeight="700" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.4 }}>Teams</motion.text>
+      <rect x="48" y="14" width="24" height="24" rx="5" fill="#5B5FC7" fillOpacity="0.10" stroke="#5B5FC7" strokeWidth="0.8" />
+      <text x="55" y="29" fontSize="4.5" fill="#5B5FC7" fontWeight="700">Teams</text>
       {/* Center hub */}
-      <motion.circle cx="40" cy="46" r="8" fill="#2563eb" fillOpacity="0.08" stroke="#2563eb" strokeWidth="1"
-        variants={{ hidden: { scale: 0 }, visible: { scale: 1 } }} transition={{ duration: 0.4, delay: 0.3, ease }} />
-      <motion.text x="35.5" y="48.5" fontSize="4" fill="#2563eb" fontWeight="700" variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3, delay: 0.5 }}>BC</motion.text>
+      <circle cx="40" cy="46" r="8" fill="#2563eb" fillOpacity="0.08" stroke="#2563eb" strokeWidth="1" />
+      <text x="35.5" y="48.5" fontSize="4" fill="#2563eb" fontWeight="700">BC</text>
       {/* Connection lines */}
-      <motion.line x1="24" y1="38" x2="35" y2="42" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.5 }} />
-      <motion.line x1="56" y1="38" x2="45" y2="42" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.4, delay: 0.6 }} />
-    </motion.svg>
+      <line x1="24" y1="38" x2="35" y2="42" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+      <line x1="56" y1="38" x2="45" y2="42" stroke="#86868b" strokeWidth="0.8" strokeDasharray="2 2" />
+    </svg>
   );
 }
 
 function ScaleSVG() {
   return (
-    <motion.svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
+    <svg viewBox="0 0 80 60" fill="none" className="w-full h-full">
       {/* Growth bars */}
-      <motion.rect x="12" y="42" width="8" height="12" rx="2" fill="#2563eb" fillOpacity="0.3"
-        variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.1, ease }} />
-      <motion.rect x="24" y="34" width="8" height="20" rx="2" fill="#2563eb" fillOpacity="0.4"
-        variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.2, ease }} />
-      <motion.rect x="36" y="26" width="8" height="28" rx="2" fill="#14b8a6" fillOpacity="0.5"
-        variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.3, ease }} />
-      <motion.rect x="48" y="18" width="8" height="36" rx="2" fill="#14b8a6" fillOpacity="0.6"
-        variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.4, ease }} />
-      <motion.rect x="60" y="10" width="8" height="44" rx="2" fill="#7FBA00" fillOpacity="0.7"
-        variants={{ hidden: { scaleY: 0 }, visible: { scaleY: 1 } }} style={{ originY: 1 }} transition={{ duration: 0.4, delay: 0.5, ease }} />
+      <rect x="12" y="42" width="8" height="12" rx="2" fill="#2563eb" fillOpacity="0.3" />
+      <rect x="24" y="34" width="8" height="20" rx="2" fill="#2563eb" fillOpacity="0.4" />
+      <rect x="36" y="26" width="8" height="28" rx="2" fill="#14b8a6" fillOpacity="0.5" />
+      <rect x="48" y="18" width="8" height="36" rx="2" fill="#14b8a6" fillOpacity="0.6" />
+      <rect x="60" y="10" width="8" height="44" rx="2" fill="#7FBA00" fillOpacity="0.7" />
       {/* Trend arrow */}
-      <motion.path d="M14 40 L64 12" stroke="#2563eb" strokeWidth="1.2" strokeDasharray="3 3" fill="none"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.6, delay: 0.6 }} />
-      <motion.path d="M60 10 L66 10 L66 16" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round"
-        variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }} transition={{ duration: 0.3, delay: 1.0 }} />
-    </motion.svg>
+      <path d="M14 40 L64 12" stroke="#2563eb" strokeWidth="1.2" strokeDasharray="3 3" fill="none" />
+      <path d="M60 10 L66 10 L66 16" stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+    </svg>
   );
 }
 
@@ -992,12 +571,7 @@ export default function BusinessCentralContent() {
       <section className="py-section bg-white">
         <div className="container-apple">
           {/* Section heading — inline, no SectionHeading import */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-12 md:mb-14"
-          >
+          <FadeIn className="text-center mb-12 md:mb-14">
             <p className="text-caption font-semibold text-brand-500 uppercase tracking-widest mb-3">
               What we offer
             </p>
@@ -1008,21 +582,15 @@ export default function BusinessCentralContent() {
               From implementation to optimization — everything you need to run
               your business on a modern ERP platform.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {offerings.map((item, index) => {
               const Illustration = offeringSVGs[index];
               return (
-                <motion.div
+                <FadeInChild
                   key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.08,
-                    ease,
-                  }}
+                  index={index}
                   className="group rounded-[22px] shadow-card hover:shadow-card-hover border border-black/[0.04] bg-white transition-shadow duration-500 overflow-hidden"
                 >
                   {/* Illustration area */}
@@ -1053,10 +621,10 @@ export default function BusinessCentralContent() {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </FadeInChild>
               );
             })}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 
@@ -1072,12 +640,7 @@ export default function BusinessCentralContent() {
 
         <div className="container-apple relative z-10">
           {/* Section heading — inline dark */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-12 md:mb-14"
-          >
+          <FadeIn className="text-center mb-12 md:mb-14">
             <p className="text-caption font-semibold text-brand-400 uppercase tracking-widest mb-3">
               Why Business Central
             </p>
@@ -1088,21 +651,15 @@ export default function BusinessCentralContent() {
               Built for the way businesses actually work — unified, cloud-native,
               and ready to scale.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => {
               const BenefitIllustration = benefitSVGs[index];
               return (
-                <motion.div
+                <FadeInChild
                   key={benefit.text}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease,
-                  }}
+                  index={index}
                   className="rounded-[22px] bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] transition-all duration-500 overflow-hidden"
                 >
                   {/* Small illustration area */}
@@ -1115,10 +672,10 @@ export default function BusinessCentralContent() {
                       {benefit.text}
                     </p>
                   </div>
-                </motion.div>
+                </FadeInChild>
               );
             })}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 

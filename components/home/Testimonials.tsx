@@ -1,9 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
+import FadeIn, { FadeInStagger, FadeInChild } from "@/components/ui/FadeIn";
 
 const testimonials = [
   {
@@ -18,7 +16,7 @@ const testimonials = [
   },
   {
     quote:
-      "Our sales team was spending more time fighting the CRM than selling. ERP Biz Apps rebuilt our Salesforce instance from the ground up \u2014 proper pipeline stages, automated follow-ups, dashboards that actually make sense. Revenue visibility went from guesswork to real-time.",
+      "Our sales team was spending more time fighting the CRM than selling. ERP Biz Apps rebuilt our Salesforce instance from the ground up — proper pipeline stages, automated follow-ups, dashboards that actually make sense. Revenue visibility went from guesswork to real-time.",
     name: "David L.",
     title: "VP of Sales",
     company: "Apex Professional Services",
@@ -42,12 +40,7 @@ export default function Testimonials() {
   return (
     <section className="py-section bg-apple-gray-light/40">
       <div className="container-apple">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6, ease }}
-          className="mb-10"
-        >
+        <FadeIn className="mb-10">
           <p className="text-brand-500 text-caption font-semibold tracking-wide uppercase mb-3">
             Trusted by Growing Businesses
           </p>
@@ -59,15 +52,13 @@ export default function Testimonials() {
             Real results from real businesses that trusted us to transform their
             operations.
           </p>
-        </motion.div>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {testimonials.map((testimonial, i) => (
-            <motion.div
+            <FadeInChild
               key={testimonial.name}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.5, delay: i * 0.08, ease }}
+              index={i}
               className="rounded-[22px] bg-white border border-black/[0.04] shadow-card p-6 md:p-8 flex flex-col"
             >
               {/* Accent bar */}
@@ -90,9 +81,9 @@ export default function Testimonials() {
                   {testimonial.serviceLinkText}
                 </Link>
               </div>
-            </motion.div>
+            </FadeInChild>
           ))}
-        </div>
+        </FadeInStagger>
       </div>
     </section>
   );

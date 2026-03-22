@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn, { FadeInStagger, FadeInChild } from "@/components/ui/FadeIn";
 import CTABanner from "@/components/ui/CTABanner";
 import Button from "@/components/ui/Button";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
 
 /* ------------------------------------------------------------------ */
 /*  SVG Illustration Components                                        */
@@ -33,29 +31,6 @@ function BCtoSFIllustration() {
 
       {/* Connector Path */}
       <path d="M120 90 C160 90, 160 90, 200 90" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4 3" />
-
-      {/* Data flow particles */}
-      <motion.circle
-        cx="0" cy="0" r="3" fill="#2563eb"
-        animate={{ cx: [120, 200], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "linear", delay: 0 }}
-      >
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M120,90 C160,90 160,90 200,90" />
-      </motion.circle>
-      <motion.circle
-        cx="0" cy="0" r="2.5" fill="#14b8a6"
-        animate={{ cx: [200, 120], opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "linear", delay: 1.2 }}
-      >
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M200,90 C160,90 160,90 120,90" />
-      </motion.circle>
-      <motion.circle
-        cx="0" cy="0" r="2" fill="#2563eb" opacity="0.6"
-        animate={{ opacity: [0, 0.6, 0.6, 0] }}
-        transition={{ duration: 2.4, repeat: Infinity, ease: "linear", delay: 0.8 }}
-      >
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M120,90 C160,90 160,90 200,90" begin="0.8s" />
-      </motion.circle>
 
       {/* Bidirectional arrows in center */}
       <g transform="translate(152, 78)">
@@ -112,12 +87,6 @@ function ERPEcommerceIllustration() {
 
       {/* Connector */}
       <path d="M130 90 C160 90, 160 90, 190 90" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4 3" />
-      <motion.circle cx="0" cy="0" r="3" fill="#2563eb">
-        <animateMotion dur="2s" repeatCount="indefinite" path="M130,90 C160,90 160,90 190,90" />
-      </motion.circle>
-      <motion.circle cx="0" cy="0" r="2.5" fill="#14b8a6">
-        <animateMotion dur="2s" repeatCount="indefinite" path="M190,90 C160,90 160,90 130,90" />
-      </motion.circle>
 
       {/* Storefront */}
       <g transform="translate(200, 40)">
@@ -177,12 +146,6 @@ function CRMMarketingIllustration() {
 
       {/* Connector */}
       <path d="M130 90 C160 90, 160 90, 190 90" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4 3" />
-      <motion.circle cx="0" cy="0" r="3" fill="#2563eb">
-        <animateMotion dur="2.2s" repeatCount="indefinite" path="M130,90 C160,90 160,90 190,90" />
-      </motion.circle>
-      <motion.circle cx="0" cy="0" r="2.5" fill="#F25022">
-        <animateMotion dur="2.2s" repeatCount="indefinite" path="M190,90 C160,90 160,90 130,90" />
-      </motion.circle>
 
       {/* Marketing Automation */}
       <g transform="translate(200, 35)">
@@ -241,12 +204,6 @@ function ERPPayrollIllustration() {
 
       {/* Connector */}
       <path d="M130 90 C160 90, 160 90, 190 90" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4 3" />
-      <motion.circle cx="0" cy="0" r="3" fill="#2563eb">
-        <animateMotion dur="2.6s" repeatCount="indefinite" path="M130,90 C160,90 160,90 190,90" />
-      </motion.circle>
-      <motion.circle cx="0" cy="0" r="2.5" fill="#14b8a6">
-        <animateMotion dur="2.6s" repeatCount="indefinite" path="M190,90 C160,90 160,90 130,90" />
-      </motion.circle>
 
       {/* HR / Payroll */}
       <g transform="translate(200, 40)">
@@ -300,9 +257,6 @@ function CustomAPIIllustration() {
         <rect x="24" y="18" width="16" height="3" rx="1.5" fill="#f3f4f6" />
       </g>
       <path d="M86 45 L120 70" stroke="#d1d5db" strokeWidth="0.8" strokeDasharray="3 2" />
-      <motion.circle cx="0" cy="0" r="2.5" fill="#F25022">
-        <animateMotion dur="1.8s" repeatCount="indefinite" path="M86,45 L120,70" />
-      </motion.circle>
 
       {/* Endpoint nodes - bottom left */}
       <g transform="translate(30, 120)">
@@ -312,9 +266,6 @@ function CustomAPIIllustration() {
         <rect x="24" y="18" width="16" height="3" rx="1.5" fill="#f3f4f6" />
       </g>
       <path d="M86 135 L120 110" stroke="#d1d5db" strokeWidth="0.8" strokeDasharray="3 2" />
-      <motion.circle cx="0" cy="0" r="2.5" fill="#7FBA00">
-        <animateMotion dur="2s" repeatCount="indefinite" path="M86,135 L120,110" />
-      </motion.circle>
 
       {/* Endpoint nodes - top right */}
       <g transform="translate(234, 25)">
@@ -324,9 +275,6 @@ function CustomAPIIllustration() {
         <rect x="24" y="18" width="16" height="3" rx="1.5" fill="#f3f4f6" />
       </g>
       <path d="M234 45 L200 70" stroke="#d1d5db" strokeWidth="0.8" strokeDasharray="3 2" />
-      <motion.circle cx="0" cy="0" r="2.5" fill="#00A4EF">
-        <animateMotion dur="1.6s" repeatCount="indefinite" path="M234,45 L200,70" />
-      </motion.circle>
 
       {/* Endpoint nodes - bottom right */}
       <g transform="translate(234, 120)">
@@ -336,17 +284,6 @@ function CustomAPIIllustration() {
         <rect x="24" y="18" width="16" height="3" rx="1.5" fill="#f3f4f6" />
       </g>
       <path d="M234 135 L200 110" stroke="#d1d5db" strokeWidth="0.8" strokeDasharray="3 2" />
-      <motion.circle cx="0" cy="0" r="2.5" fill="#FFB900">
-        <animateMotion dur="2.2s" repeatCount="indefinite" path="M234,135 L200,110" />
-      </motion.circle>
-
-      {/* Central pulse */}
-      <motion.circle
-        cx="160" cy="90" r="6"
-        fill="none" stroke="#2563eb" strokeWidth="0.8"
-        animate={{ r: [6, 20, 6], opacity: [0.4, 0, 0.4] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      />
     </svg>
   );
 }
@@ -366,32 +303,18 @@ function AssessMapIllustration() {
       <text x="235" y="38" textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize="7" fontFamily="Inter, sans-serif">Shop</text>
 
       {/* Mapping lines */}
-      <motion.path
+      <path
         d="M45 50 L45 80 L140 80 L140 50"
         stroke="#2563eb" strokeWidth="1" fill="none" strokeDasharray="4 3"
-        animate={{ pathLength: [0, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.path
+      <path
         d="M140 50 L140 100 L235 100 L235 50"
         stroke="#14b8a6" strokeWidth="1" fill="none" strokeDasharray="4 3"
-        animate={{ pathLength: [0, 1] }}
-        transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.path
+      <path
         d="M45 50 L45 110 L235 110 L235 50"
         stroke="rgba(255,255,255,0.15)" strokeWidth="0.8" fill="none" strokeDasharray="3 4"
-        animate={{ pathLength: [0, 1] }}
-        transition={{ duration: 2.5, delay: 1, repeat: Infinity, ease: "easeInOut" }}
       />
-
-      {/* Data flow dots on paths */}
-      <motion.circle cx="0" cy="0" r="2.5" fill="#2563eb">
-        <animateMotion dur="3s" repeatCount="indefinite" path="M45,50 L45,80 L140,80 L140,50" />
-      </motion.circle>
-      <motion.circle cx="0" cy="0" r="2.5" fill="#14b8a6">
-        <animateMotion dur="3s" repeatCount="indefinite" path="M140,50 L140,100 L235,100 L235,50" begin="0.5s" />
-      </motion.circle>
 
       {/* Labels */}
       <text x="92" y="76" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="5.5" fontFamily="Inter, sans-serif">data flow</text>
@@ -427,34 +350,32 @@ function BuildTestIllustration() {
         <rect width="80" height="100" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="0.6" />
         <text x="12" y="20" fill="rgba(255,255,255,0.4)" fontSize="7" fontWeight="600" fontFamily="Inter, sans-serif">Tests</text>
         {/* Test rows with checkmarks */}
-        <motion.g animate={{ opacity: [0, 1] }} transition={{ duration: 0.5, delay: 0.5 }}>
+        <g>
           <circle cx="16" cy="36" r="4" fill="#7FBA00" opacity="0.2" />
           <path d="M13.5 36 L15.5 38 L19 34" stroke="#7FBA00" strokeWidth="1" fill="none" strokeLinecap="round" />
           <rect x="26" y="34" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.1)" />
-        </motion.g>
-        <motion.g animate={{ opacity: [0, 1] }} transition={{ duration: 0.5, delay: 1 }}>
+        </g>
+        <g>
           <circle cx="16" cy="52" r="4" fill="#7FBA00" opacity="0.2" />
           <path d="M13.5 52 L15.5 54 L19 50" stroke="#7FBA00" strokeWidth="1" fill="none" strokeLinecap="round" />
           <rect x="26" y="50" width="35" height="3" rx="1.5" fill="rgba(255,255,255,0.1)" />
-        </motion.g>
-        <motion.g animate={{ opacity: [0, 1] }} transition={{ duration: 0.5, delay: 1.5 }}>
+        </g>
+        <g>
           <circle cx="16" cy="68" r="4" fill="#7FBA00" opacity="0.2" />
           <path d="M13.5 68 L15.5 70 L19 66" stroke="#7FBA00" strokeWidth="1" fill="none" strokeLinecap="round" />
           <rect x="26" y="66" width="44" height="3" rx="1.5" fill="rgba(255,255,255,0.1)" />
-        </motion.g>
-        <motion.g animate={{ opacity: [0, 1] }} transition={{ duration: 0.5, delay: 2 }}>
+        </g>
+        <g>
           <circle cx="16" cy="84" r="4" fill="#7FBA00" opacity="0.2" />
           <path d="M13.5 84 L15.5 86 L19 82" stroke="#7FBA00" strokeWidth="1" fill="none" strokeLinecap="round" />
           <rect x="26" y="82" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.1)" />
-        </motion.g>
+        </g>
       </g>
 
       {/* Connection line */}
-      <motion.path
+      <path
         d="M165 70 L185 70"
-        stroke="#7FBA00" strokeWidth="1" strokeDasharray="3 2"
-        animate={{ opacity: [0.3, 0.8, 0.3] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        stroke="#7FBA00" strokeWidth="1" strokeDasharray="3 2" opacity="0.5"
       />
     </svg>
   );
@@ -470,36 +391,21 @@ function MonitorMaintainIllustration() {
         {/* Health status indicators */}
         <g transform="translate(15, 15)">
           <rect width="65" height="40" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
-          <motion.circle
-            cx="14" cy="14" r="4"
-            fill="#7FBA00"
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
+          <circle cx="14" cy="14" r="4" fill="#7FBA00" opacity="0.7" />
           <text x="24" y="17" fill="rgba(255,255,255,0.5)" fontSize="6" fontFamily="Inter, sans-serif">BC Sync</text>
           <text x="12" y="32" fill="rgba(255,255,255,0.35)" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">99.9%</text>
         </g>
 
         <g transform="translate(90, 15)">
           <rect width="65" height="40" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
-          <motion.circle
-            cx="14" cy="14" r="4"
-            fill="#7FBA00"
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2, delay: 0.3, repeat: Infinity }}
-          />
+          <circle cx="14" cy="14" r="4" fill="#7FBA00" opacity="0.7" />
           <text x="24" y="17" fill="rgba(255,255,255,0.5)" fontSize="6" fontFamily="Inter, sans-serif">SF API</text>
           <text x="12" y="32" fill="rgba(255,255,255,0.35)" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">100%</text>
         </g>
 
         <g transform="translate(165, 15)">
           <rect width="65" height="40" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
-          <motion.circle
-            cx="14" cy="14" r="4"
-            fill="#FFB900"
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2, delay: 0.6, repeat: Infinity }}
-          />
+          <circle cx="14" cy="14" r="4" fill="#FFB900" opacity="0.7" />
           <text x="24" y="17" fill="rgba(255,255,255,0.5)" fontSize="6" fontFamily="Inter, sans-serif">Shopify</text>
           <text x="12" y="32" fill="rgba(255,255,255,0.35)" fontSize="10" fontWeight="600" fontFamily="Inter, sans-serif">98.7%</text>
         </g>
@@ -512,11 +418,9 @@ function MonitorMaintainIllustration() {
           <line x1="0" y1="22" x2="210" y2="22" stroke="rgba(255,255,255,0.04)" strokeWidth="0.5" />
           <line x1="0" y1="33" x2="210" y2="33" stroke="rgba(255,255,255,0.04)" strokeWidth="0.5" />
           {/* Chart line */}
-          <motion.path
+          <path
             d="M5 30 L25 25 L45 28 L65 15 L85 18 L105 10 L125 14 L145 8 L165 12 L185 6 L205 10"
             stroke="#2563eb" strokeWidth="1.2" fill="none" strokeLinecap="round"
-            animate={{ pathLength: [0, 1] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
           {/* Glow under line */}
           <path
@@ -643,12 +547,7 @@ export default function IntegrationContent() {
       {/* ───────────────── What We Integrate ───────────────── */}
       <section className="py-section bg-white">
         <div className="container-apple">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-10"
-          >
+          <FadeIn className="text-center mb-10">
             <p className="text-[0.6875rem] font-semibold tracking-widest uppercase text-brand-500 mb-3">
               What we integrate
             </p>
@@ -659,19 +558,13 @@ export default function IntegrationContent() {
               We connect your systems so data flows automatically, accurately,
               and in real time.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
+          <FadeInStagger className="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
             {integrations.map((item, index) => (
-              <motion.div
+              <FadeInChild
                 key={item.title}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.08,
-                  ease,
-                }}
+                index={index}
                 className="group grid grid-cols-1 md:grid-cols-[1.2fr_1fr] rounded-[22px] shadow-card hover:shadow-card-hover border border-black/[0.04] bg-white overflow-hidden transition-all duration-500"
               >
                 {/* Illustration area */}
@@ -701,9 +594,9 @@ export default function IntegrationContent() {
                     {item.description}
                   </p>
                 </div>
-              </motion.div>
+              </FadeInChild>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 
@@ -715,12 +608,7 @@ export default function IntegrationContent() {
         </div>
 
         <div className="container-apple relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.7, ease }}
-            className="text-center mb-10"
-          >
+          <FadeIn className="text-center mb-10">
             <p className="text-[0.6875rem] font-semibold tracking-widest uppercase text-brand-400 mb-3">
               Our approach
             </p>
@@ -731,19 +619,13 @@ export default function IntegrationContent() {
               A proven methodology that ensures your integrations work today and
               keep working as your systems evolve.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <div className="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
+          <FadeInStagger className="flex flex-col gap-4 md:gap-5 max-w-4xl mx-auto">
             {approach.map((step, index) => (
-              <motion.div
+              <FadeInChild
                 key={step.number}
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.12,
-                  ease,
-                }}
+                index={index}
                 className="group grid grid-cols-1 md:grid-cols-[1fr_1.2fr] rounded-[22px] bg-white/[0.03] border border-white/[0.06] overflow-hidden hover:bg-white/[0.05] transition-all duration-500"
               >
                 {/* Content */}
@@ -763,9 +645,9 @@ export default function IntegrationContent() {
                 <div className="bg-white/[0.02] border-b md:border-b-0 md:border-l border-white/[0.04] p-4 md:p-5 flex items-center justify-center min-h-[160px] order-1 md:order-2">
                   <step.Illustration />
                 </div>
-              </motion.div>
+              </FadeInChild>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 

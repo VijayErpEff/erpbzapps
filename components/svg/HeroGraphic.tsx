@@ -1,13 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const ease = [0.21, 0.45, 0.27, 0.9] as const;
+import { EASING_ARRAY } from "@/lib/animation";
 
 /**
- * Sophisticated dashboard composition — floating UI cards at angles
- * showing ERP financials, CRM pipeline, and analytics connected together.
- * Apple-quality: refined shadows, real UI patterns, layered depth.
+ * Dashboard composition — floating UI cards at angles.
+ * Only 3 card fade-ins + 3 CSS floats + 1 sparkline draw.
  */
 export default function HeroGraphic({ className = "" }: { className?: string }) {
   return (
@@ -19,11 +17,10 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
       <motion.div
         initial={{ opacity: 0, y: 40, rotate: -3 }}
         animate={{ opacity: 1, y: 0, rotate: -3 }}
-        transition={{ duration: 0.9, delay: 0.6, ease }}
+        transition={{ duration: 0.9, delay: 0.6, ease: EASING_ARRAY }}
         className="absolute top-[8%] right-[2%] w-[65%] animate-float-slow"
       >
         <div className="bg-white rounded-2xl shadow-elevated p-5 border border-black/[0.04]">
-          {/* Title bar */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-brand-500" />
@@ -31,22 +28,18 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
             </div>
             <span className="text-[0.5625rem] text-apple-gray">Q1 2026</span>
           </div>
-          {/* Bar chart */}
+          {/* Static bar chart */}
           <div className="flex items-end gap-[6px] h-[72px] mb-3">
             {[45, 62, 38, 78, 55, 88, 72, 95, 68, 82, 90, 85].map((h, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 + i * 0.04, ease }}
-                style={{ height: `${h}%`, originY: 1 }}
+                style={{ height: `${h}%` }}
                 className={`flex-1 rounded-sm ${
                   i >= 9 ? "bg-gradient-to-t from-brand-500 to-teal-400" : "bg-brand-100"
                 }`}
               />
             ))}
           </div>
-          {/* Stats row */}
           <div className="flex gap-4">
             <div>
               <p className="text-[0.5rem] text-apple-gray uppercase tracking-wider">Revenue</p>
@@ -60,15 +53,14 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
         </div>
       </motion.div>
 
-      {/* ─── Middle layer: CRM Pipeline (Salesforce-style) ─── */}
+      {/* ─── Middle layer: CRM Pipeline ─── */}
       <motion.div
         initial={{ opacity: 0, y: 40, rotate: 2 }}
         animate={{ opacity: 1, y: 0, rotate: 2 }}
-        transition={{ duration: 0.9, delay: 0.3, ease }}
+        transition={{ duration: 0.9, delay: 0.3, ease: EASING_ARRAY }}
         className="absolute top-[32%] left-[0%] w-[62%] z-10 animate-float"
       >
         <div className="bg-white rounded-2xl shadow-elevated p-5 border border-black/[0.04]">
-          {/* Header with Salesforce cloud */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <svg width="14" height="10" viewBox="0 0 50 32" fill="none">
@@ -78,47 +70,39 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
             </div>
             <span className="text-[0.5625rem] font-semibold text-teal-500">$842K</span>
           </div>
-          {/* Pipeline stages */}
+          {/* Static pipeline stages */}
           <div className="space-y-2">
             {[
               { stage: "Qualification", value: "$320K", width: "100%", color: "bg-sf-blue/20" },
               { stage: "Proposal", value: "$248K", width: "77%", color: "bg-sf-blue/35" },
               { stage: "Negotiation", value: "$180K", width: "56%", color: "bg-sf-blue/55" },
               { stage: "Closed Won", value: "$94K", width: "29%", color: "bg-sf-blue" },
-            ].map((s, i) => (
-              <motion.div
-                key={s.stage}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.6 + i * 0.1, ease }}
-              >
+            ].map((s) => (
+              <div key={s.stage}>
                 <div className="flex justify-between text-[0.5rem] mb-0.5">
                   <span className="text-apple-gray-dark">{s.stage}</span>
                   <span className="font-semibold text-apple-black">{s.value}</span>
                 </div>
                 <div className="h-2 bg-apple-gray-light rounded-full overflow-hidden">
-                  <motion.div
+                  <div
                     className={`h-full rounded-full ${s.color}`}
-                    initial={{ width: 0 }}
-                    animate={{ width: s.width }}
-                    transition={{ duration: 0.8, delay: 0.8 + i * 0.12, ease }}
+                    style={{ width: s.width }}
                   />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </motion.div>
 
-      {/* ─── Front layer: ERP Financial card (Business Central style) ─── */}
+      {/* ─── Front layer: ERP Financial card ─── */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.1, ease }}
+        transition={{ duration: 0.9, delay: 0.1, ease: EASING_ARRAY }}
         className="absolute bottom-[6%] right-[5%] w-[58%] z-20 animate-float-delayed"
       >
         <div className="bg-white rounded-2xl shadow-elevated p-5 border border-black/[0.04]">
-          {/* Header with MS logo */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <svg width="12" height="12" viewBox="0 0 20 20">
@@ -134,21 +118,15 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
               <span className="text-[0.5rem] text-teal-500 font-medium">Live</span>
             </div>
           </div>
-          {/* Financial metrics */}
+          {/* Static financial metrics */}
           <div className="grid grid-cols-2 gap-3 mb-4">
             {[
               { label: "Accounts Receivable", value: "$284K", trend: "+12%" },
               { label: "Accounts Payable", value: "$156K", trend: "-8%" },
               { label: "Cash Flow", value: "$428K", trend: "+18%" },
               { label: "Open Orders", value: "47", trend: "+5" },
-            ].map((metric, i) => (
-              <motion.div
-                key={metric.label}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 + i * 0.08 }}
-                className="bg-apple-gray-light rounded-lg p-2"
-              >
+            ].map((metric) => (
+              <div key={metric.label} className="bg-apple-gray-light rounded-lg p-2">
                 <p className="text-[0.4375rem] text-apple-gray truncate">{metric.label}</p>
                 <div className="flex items-baseline gap-1 mt-0.5">
                   <span className="text-[0.6875rem] font-bold text-apple-black">{metric.value}</span>
@@ -158,10 +136,10 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
                     {metric.trend}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-          {/* Mini sparkline */}
+          {/* Sparkline — the ONE animated detail */}
           <div className="flex items-center gap-2">
             <span className="text-[0.5rem] text-apple-gray">30d trend</span>
             <svg width="80" height="20" viewBox="0 0 80 20" className="flex-1">
@@ -173,7 +151,7 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 0.8, ease }}
+                transition={{ duration: 1.5, delay: 0.8, ease: EASING_ARRAY }}
               />
               <defs>
                 <linearGradient id="spark-grad" x1="0" y1="0" x2="80" y2="0">
@@ -186,52 +164,23 @@ export default function HeroGraphic({ className = "" }: { className?: string }) 
         </div>
       </motion.div>
 
-      {/* ─── Floating connector particles ─── */}
-      {[
-        { left: "48%", top: "30%", delay: 0 },
-        { left: "52%", top: "58%", delay: 1.5 },
-        { left: "35%", top: "68%", delay: 3 },
-      ].map((p, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1.5 h-1.5 rounded-full bg-brand-500"
-          style={{ left: p.left, top: p.top }}
-          animate={{
-            scale: [1, 1.8, 1],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: 2.5,
-            delay: p.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* ─── Connection lines between cards ─── */}
+      {/* ─── Static connection lines ─── */}
       <svg className="absolute inset-0 w-full h-full z-[5] pointer-events-none" viewBox="0 0 540 540">
-        <motion.path
+        <path
           d="M320 180 Q 340 260 280 300"
           stroke="url(#conn-grad)"
           strokeWidth="1"
           strokeDasharray="4 3"
           fill="none"
           opacity="0.4"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.5, delay: 1.2, ease }}
         />
-        <motion.path
+        <path
           d="M280 380 Q 320 360 360 340"
           stroke="url(#conn-grad)"
           strokeWidth="1"
           strokeDasharray="4 3"
           fill="none"
           opacity="0.4"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.5, delay: 1.5, ease }}
         />
         <defs>
           <linearGradient id="conn-grad" x1="0%" y1="0%" x2="100%" y2="100%">
